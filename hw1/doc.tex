@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Homework 1}
+\docauthor{Parker Whaley}
+\docdate{August 30, 2016}
+
+\begin{document}
+
+\begin{exercise}{1.2.5}
+Use the triangle inequality to establish the following inequalities:
+\end{exercise}
+\begin{enumerate}[(a)]
+\item $|a-b| \le |a| + |b|$.
+\begin{proof}
+Note that $|a-b|=|a+(-b)|$.  By the triangle inequality we note that $|a+(-b)| \le |a|+|-b|$.  There are two possibilities eather $b< 0$, $b=0$, or $b> 0$.  In the case that $b< 0$ we know that $-b>0$ and from the definition of abselute value $|b|=-b$ and $|-b|=-b$ thus in this case $|b|=|-b|$.  In the case that $b= 0$ we know that $-b=0$ and from the definition of abselute value $|b|=b$ and $|-b|=b$ thus in this case $|b|=|-b|$.  In the case that $b> 0$ we know that $-b<0$ and from the definition of abselute value $|b|=b$ and $|-b|=-(-b)=b$ thus in this case $|b|=|-b|$.  Thus in all cases $|b|=|-b|$ and so $|a|+|-b|=|a|+|b|$ thus $|a-b|\le |a|+|b|$.
+\end{proof}
+\item $||a|-|b|| \le |a-b|$.
+\begin{proof}
+Note that $|c|=|c-d+d|$ wich by the triangle inequality means $|c|\le |c-d|+|d|$ so $|c|-|d|\le |c-d|$ for any $c$ and $d$ in $\mathbb{R}$.  Consider $||a|-|b||$ noting that there are two posibilitys, eather $||a|-|b||=|a|-|b|$ or $||a|-|b||=-(|a|-|b|)=|b|-|a|$ by the definition of absolute value.  In the case that $||a|-|b||=|a|-|b|$ we see from the first statement that $||a|-|b||=|a|-|b| \le |a-b|$.  In the second case $||a|-|b||=|b|-|a|\le |b-a|$ and we proved in the previous question that $|b-a|=|-(b-a)|=|a-b|$, thus in this case $||a|-|b||\le |a-b|$.  Thus in all cases $||a|-|b||\le |a-b|$.
+\end{proof}
+\end{enumerate}
+
+\begin{exercise}{1.2.6(b), (d)}
+Given a function $f$ and a supbset $A$ of its domain, let $f(A)$ represent the range of $f$ over the set A;
+that is, $f(a)=\{f(x):x\in A\}$.
+\end{exercise}
+\begin{enumerate}
+\item[(b)] Find two sets $A$ and $B$ for which $f(A\cap B) \neq f(A)\cap f(B)$.\\
+Suppose we let $A=\{1\}$ and $B=\{-1\}$.  Consider the function $f(x)=x^2$.  Note that $A\cap B=\varnothing$ and thus $f(A\cap B)=\varnothing$.  Also note that $f(A)\cap f(B)=\{1\}\cap \{1\}=\{1\}$ and since $\varnothing \neq \{1\}$ in this case $f(A\cap B) \neq f(A)\cap f(B)$.
+\item[(d)] Form and prove a conjecture concerning $f(A\cup B)$ and $f(A)\cup f(B)$.\\
+Conjecture $f(A\cup B) \subseteq f(A)\cup f(B)$
+\begin{proof}
+Chuse some element $y$ from the set $f(A\cup B)$.  By our definition of evaluating a function on a set there must exist some element $x$ in $A\cup B$ such that $f(x)=y$.  By the definition of union $x\in A$ or $x\in B$.  Thus $f(x)\in f(A)$ or $f(x)\in f(B)$ and so $y\in f(A)$ or $y\in f(B)$ wich means by definition $y\in f(A)\cup f(B)$.  Since we chose y arbitraraly from $f(A\cup B)$ and showed that y is in $f(A)\cup f(B)$ we can say by the definition of subset $f(A\cup B) \subseteq f(A)\cup f(B)$.
+\end{proof}
+\end{enumerate}
+
+\begin{exercise}{1.2.8}
+Form the logical negation of each claim. Do not use the easy way out: "It is not the case that$\ldots$" 
+is not permitted
+\begin{enumerate}[(a)]
+\item For all real numbers satisfying $a<b$, there exists $n\in\Nats$ such that $a+(1/n)<b$.\\
+There exists real numbers satisfying $a<b$, that for all $n\in\Nats$,  $a+(1/n)\ge b$.
+\item Between every two distinct real numbers there is a rational number.\\
+There exists two distinct real numbers where there is no rational number between them.
+\item For all natural numbers $n\in\Nats$, $\sqrt{n}$ is either a natural number or is an
+irrational number.\\
+There exists some natural number $n\in\Nats$ where $\sqrt{n}$ is not a natural number or an
+irrational number.
+\item Given any real number $x\in\Reals$ there exists $n\in\Nats$ satisfying $n>x$.\\
+There exists a real number $x\in\Reals$ where there is no $n\in\Nats$ satisfying $n>x$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{1.2.9} Show that the sequence $(x_1, x_2, x_3,\ldots)$ defined in Example
+1.2.7 is bounded above by 2.  That is, show that for every $i\in\Nats$, $x_i\le 2$.
+\end{exercise}
+\begin{proof}
+We will procede with a proof by induction on i.\\\\
+In the base case $i=1$ we are given $x_i=1$ since $1\le 2$ the statement $i\in\Nats$, $x_i\le 2$ holds in the base case.\\\\
+Suppose $x_i\le 2$.  Consider the next step $x_{i+1}$, note that by definition $x_{i+1}=(1/2) x_i+1$.  Note that $x_i\le 2\Rightarrow (1/2) x_i\le (1/2) 2=1\Rightarrow (1/2) x_i+1\le 1+1=2\Rightarrow x_{i+1}\le 2$.  Thus by induction we conclude that for all $i\in\Nats$, $x_i\le 2$.
+\end{proof}
+
+\begin{exercise}{1.3.4}
+Assume that $A$ and $B$ are nonempty, bounded above, and satisfy $B\subseteq A$.
+Show that $\sup B \le \sup A$.
+\end{exercise}
+\begin{proof}
+Assume to the contrary, namely that there exists sets $A$ and $B$ that are nonempty, bounded above, and satisfy $B\subseteq A$.  Furthur suppose that $\sup B > \sup A$.  Lets define $\alpha=\sup A$.  Suppose there is no element in B grater than $\alpha$.  By the definition of upper bound, $\alpha$ would be a upper bound to B, however $\sup B>\alpha$, a contradiction, thus our assumption that there is no element of B grater than $\alpha$ must be false, and there is some element of B grater than $\alpha$.  Lets take one of these elements with the property $\gamma \in B$ and $\gamma > \alpha$.  Note that since $B\subseteq A$, $\gamma \in A$.  Since $\alpha$ is a upper bound to A we know that eavery element of A is less than or equal to $\alpha$ thus $\gamma \leq \alpha$.  Contradiction $\gamma > \alpha$ and $\gamma \leq \alpha$, thus our initial supposition that $\sup B > \sup A$ must be false and so we are forced to conclude $\sup B \le \sup A$.
+\end{proof}
+
+\begin{exercise}{1.3.5}  Let $A$ be bounded above and let $c\in\Reals$.
+Define the sets $c+A = \{a+c:a\in A\}$ and $cA = \{ca:a\in A\}$.
+\begin{enumerate}[(a)]
+\item Show that $\sup(c+A) = c + \sup(A)$.
+\item If $c\ge 0$, show that $\sup(cA) = c\sup(A)$.
+\item Postulate a similar statment for $\sup(cA)$ when $c<0$.
+\end{enumerate}
+\end{exercise}
+\begin{proof}[Proof (a)]
+Lets start by defining $\alpha=\sup(A)$, $\beta=c + \sup(A)$.  We will procede by showing that $\beta$ must have the two properties defining $\sup(c+A)$.\\\\
+Suppose that there existed some $\gamma\in c+A$ where $\gamma>\beta$.  Note that $\gamma-c\in A$ and that $\gamma-c>\beta-c=\alpha$.  Contradiction, we have found a element in A, $\gamma-c$, that is greater than $\sup(A)$.  We are forced to conclude the negation of our suposition and so conclude that there is no element in $c+A$ that is greater than $\beta$, and so $\beta$ is a upper bound on $c+A$, the first condition on $\sup(c+A)$.\\\\
+Suppose that there is a upper bound to $c+A$, lets call it $\lambda$, that is smaller than $\beta$.  Note that $\lambda-c<\beta-c=\alpha$.  Since $\alpha$ is larger than $\lambda-c$ we know from the definition of $\sup$ that $\lambda-c$ is not a upper bound on A, therfore there must be at least one element in A greater than $\lambda-c$, lets call it $\tau$.  Since $\tau$ is in A $c+\tau$ is in $c+A$, and since $\tau>\lambda-c$, $\tau+c>\lambda$.  Contradiction, lambda is a upper bound on $c+A$ but there is a element in $c+A$, namely $\tau+c$, that is grater than $\lambda$.  Thus we are forced to conclude the negation of our supposition, that all upper bounds on $c+A$ are grater than or equal to $\beta$.\\\\
+$\beta$ meets the definition of $\sup(c+A)$ and so $\beta=\sup(c+A)$ and $c + \sup(A)=\sup(c+A)$.
+\end{proof}
+\begin{proof}[Proof (b)]
+Firstly let me eliminate a special case, $c=0$.  In this case $cA=\{0\}$, by inspection $\sup(cA)=0$ and also $c\sup(A)=0*\sup(A)=0$.  In this degenerate case it is clearly true that $c\sup(A)=\sup(cA)$.  From here on I will work with $c>0$.  Note, in this proof I am taking advantage of the fact that deviding over a positive number across a inequality does not affect the inequality, that is why $c>0$ is nessesary for this proof.\\\\
+Lets start by defining $\alpha=\sup(A)$, $\beta=c\sup(A)$.  We will procede by showing that $\beta$ must have the two properties defining $\sup(cA)$.\\\\
+Suppose that there existed some $\gamma\in cA$ where $\gamma>\beta$.  Note that $\gamma/c\in A$ and that $\gamma/c>\beta/c=\alpha$.  Contradiction, we have found a element in A, $\gamma/c$, that is greater than $\sup(A)$.  We are forced to conclude the negation of our suposition and so conclude that there is no element in $cA$ that is greater than $\beta$, and so $\beta$ is a upper bound on $cA$, the first condition on $\sup(cA)$.\\\\
+Suppose that there is a upper bound to $cA$, lets call it $\lambda$, that is smaller than $\beta$.  Note that $\lambda/c<\beta/c=\alpha$.  Since $\alpha$ is larger than $\lambda/c$ we know from the definition of $\sup$ that $\lambda/c$ is not a upper bound on A, therfore there must be at least one element in A greater than $\lambda/c$, lets call it $\tau$.  Since $\tau$ is in A $c\tau$ is in $cA$, and since $\tau>\lambda/c$, $\tau c>\lambda$.  Contradiction, lambda is a upper bound on $cA$ but there is a element in $cA$, namely $\tau c$, that is grater than $\lambda$.  Thus we are forced to conclude the negation of our supposition, that all upper bounds on $cA$ are grater than or equal to $\beta$.\\\\
+$\beta$ meets the definition of $\sup(cA)$ and so $\beta=\sup(cA)$ and $c  \sup(A)=\sup(cA)$.
+\end{proof}
+Statement for part (c): \\
+The region A would be flipped across $0$ and be magnified by a factor of $|c|$, thus $\sup(cA)=c \inf(A)$.
+
+\begin{exercise}{1.3.6} Compute, without proof, the suprema and infima of the 
+following sets.
+\begin{enumerate}[(a)]
+\item $\{n\in\Nats: n^2<10\}$.
+\item $\{n/(n+m): n,m\in\Nats\}$.
+\item $\{n/(2n+1): n\in\Nats\}$.
+\item $\{n/m: \text{$m,n\in\Nats$ with $m+n\le 10$}\}$.
+\end{enumerate}
+\end{exercise}
+\solution
+\begin{enumerate}[(a)]
+\item
+\item
+\item
+\item
+\end{enumerate}
+
+\begin{exercise}{1.3.7} Prove that if $a$ is an upper bound for $A$ an dif $a$ is also an element of $A$,
+then $a=\sup A$.
+\end{exercise}
+\begin{proof}
+\end{proof}
+
+\begin{exercise}{1.3.8}  If $\sup A < \sup B$ then show that there exists an element $b\in B$ that is an upper bound for $A$.
+\end{exercise}
+\begin{proof}
+\end{proof}
+
+\end{document}
