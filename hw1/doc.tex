@@ -182,15 +182,18 @@ following sets.
 \item $\sup=1/9$, $\inf=9$
 \end{enumerate}
 
-\begin{exercise}{1.3.7} Prove that if $a$ is an upper bound for $A$ an dif $a$ is also an element of $A$,
+\begin{exercise}{1.3.7} Prove that if $a$ is an upper bound for $A$ and if $a$ is also an element of $A$,
 then $a=\sup A$.
 \end{exercise}
 \begin{proof}
+Suppose $b$ is a upper bound of $A$ and that $b<a$.  Since $b$ is a upper bound on $A$ and $a\in A$ we know that $a\le b$.  We have arrived at a contradiction, thus there is no upper bound on $A$ that is less than $a$, and so all upper bounds on $A$ are grater than or equal to $a$.  We now can say that $a$ meets boath of the elements of the definition of $\sup A$ thus $a=\sup A$
 \end{proof}
 
 \begin{exercise}{1.3.8}  If $\sup A < \sup B$ then show that there exists an element $b\in B$ that is an upper bound for $A$.
 \end{exercise}
 \begin{proof}
+Let's begin with a short contradiction, suppose there is no element in $B$ greater than $\sup A$.  By the definition of upper bound $\sup A$ is a upper bound for $B$.  Thus by the definition of $\sup B$ we conclude $\sup B\le \sup A$.  This is a contradiction, and so we are forced to conclude that there is at least one element of $B$ greater than $\sup A$.  Chuse one of these elements, $\beta \in B$, $\sup A<\beta$.  The definition of $\sup A$ gives us that for all $\alpha \in A$, $\alpha\le \sup A\Rightarrow \alpha\le \beta$.  We then see that $\beta$ must be a upper bound on $A$ and thus there is a element in $B$ that is a upper bound on $A$.
 \end{proof}
+Authors note: Is it nessesary that $\sup A < \sup B$, or only that $\sup A \le \sup B$?  Consider $A=[0,1]$ and $B=[0,1)$, here $\sup A \le \sup B$ but there is no element of $B$ that is a upper bound for $A$.
 
 \end{document}
