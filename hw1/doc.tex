@@ -85,16 +85,16 @@ Use the triangle inequality to establish the following inequalities:
 \begin{enumerate}[(a)]
 \item $|a-b| \le |a| + |b|$.
 \begin{proof}
-Note that $|a-b|=|a+(-b)|$.  By the triangle inequality we note that $|a+(-b)| \le |a|+|-b|$.  There are two possibilities eather $b< 0$, $b=0$, or $b> 0$.  In the case that $b< 0$ we know that $-b>0$ and from the definition of abselute value $|b|=-b$ and $|-b|=-b$ thus in this case $|b|=|-b|$.  In the case that $b= 0$ we know that $-b=0$ and from the definition of abselute value $|b|=b$ and $|-b|=b$ thus in this case $|b|=|-b|$.  In the case that $b> 0$ we know that $-b<0$ and from the definition of abselute value $|b|=b$ and $|-b|=-(-b)=b$ thus in this case $|b|=|-b|$.  Thus in all cases $|b|=|-b|$ and so $|a|+|-b|=|a|+|b|$ thus $|a-b|\le |a|+|b|$.
+Note that $|a-b|=|a+(-b)|$.  By the triangle inequality we note that $|a+(-b)| \le |a|+|-b|$.  There are three possibilities ether $b< 0$, $b=0$, or $b> 0$.  In the case that $b< 0$ we know that $-b>0$.  From the definition of absolute value $|b|=-b$ and $|-b|=-b$ thus in this case $|b|=|-b|$.  In the case that $b= 0$ we know that $-b=0$.  From the definition of absolute value $|b|=b$ and $|-b|=b$ thus in this case $|b|=|-b|$.  In the case that $b> 0$ we know that $-b<0$.  From the definition of absolute value $|b|=b$ and $|-b|=-(-b)=b$ thus in this case $|b|=|-b|$.  Thus in all cases $|b|=|-b|$ and so $|a|+|-b|=|a|+|b|$ thus $|a-b|\le |a|+|b|$.
 \end{proof}
 \item $||a|-|b|| \le |a-b|$.
 \begin{proof}
-Note that $|c|=|c-d+d|$ wich by the triangle inequality means $|c|\le |c-d|+|d|$ so $|c|-|d|\le |c-d|$ for any $c$ and $d$ in $\mathbb{R}$.  Consider $||a|-|b||$ noting that there are two posibilitys, eather $||a|-|b||=|a|-|b|$ or $||a|-|b||=-(|a|-|b|)=|b|-|a|$ by the definition of absolute value.  In the case that $||a|-|b||=|a|-|b|$ we see from the first statement that $||a|-|b||=|a|-|b| \le |a-b|$.  In the second case $||a|-|b||=|b|-|a|\le |b-a|$ and we proved in the previous question that $|b-a|=|-(b-a)|=|a-b|$, thus in this case $||a|-|b||\le |a-b|$.  Thus in all cases $||a|-|b||\le |a-b|$.
+Note that $|c|=|c-d+d|$ witch by the triangle inequality means $|c|\le |c-d|+|d|$ so $|c|-|d|\le |c-d|$ for any $c$ and $d$ in $\mathbb{R}$.  Consider $||a|-|b||$ noting that there are two possibilities, eater $||a|-|b||=|a|-|b|$ or $||a|-|b||=-(|a|-|b|)=|b|-|a|$, by the definition of absolute value.  In the case that $||a|-|b||=|a|-|b|$ we see from the first statement that $||a|-|b||=|a|-|b| \le |a-b|$.  In the second case $||a|-|b||=|b|-|a|\le |b-a|$ and we proved in the previous question that $|b-a|=|-(b-a)|=|a-b|$, thus in this case $||a|-|b||\le |a-b|$.  Thus in all cases $||a|-|b||\le |a-b|$.
 \end{proof}
 \end{enumerate}
 
 \begin{exercise}{1.2.6(b), (d)}
-Given a function $f$ and a supbset $A$ of its domain, let $f(A)$ represent the range of $f$ over the set A;
+Given a function $f$ and a subset $A$ of its domain, let $f(A)$ represent the range of $f$ over the set A;
 that is, $f(a)=\{f(x):x\in A\}$.
 \end{exercise}
 \begin{enumerate}
@@ -103,7 +103,7 @@ Suppose we let $A=\{1\}$ and $B=\{-1\}$.  Consider the function $f(x)=x^2$.  Not
 \item[(d)] Form and prove a conjecture concerning $f(A\cup B)$ and $f(A)\cup f(B)$.\\
 Conjecture $f(A\cup B) \subseteq f(A)\cup f(B)$
 \begin{proof}
-Chuse some element $y$ from the set $f(A\cup B)$.  By our definition of evaluating a function on a set there must exist some element $x$ in $A\cup B$ such that $f(x)=y$.  By the definition of union $x\in A$ or $x\in B$.  Thus $f(x)\in f(A)$ or $f(x)\in f(B)$ and so $y\in f(A)$ or $y\in f(B)$ wich means by definition $y\in f(A)\cup f(B)$.  Since we chose y arbitraraly from $f(A\cup B)$ and showed that y is in $f(A)\cup f(B)$ we can say by the definition of subset $f(A\cup B) \subseteq f(A)\cup f(B)$.
+Choose some element $y$ from the set $f(A\cup B)$.  By our definition of evaluating a function on a set there must exist some element $x$ in $A\cup B$ such that $f(x)=y$.  By the definition of union $x\in A$ or $x\in B$.  Thus $f(x)\in f(A)$ or $f(x)\in f(B)$ and so $y\in f(A)$ or $y\in f(B)$ witch means by definition $y\in f(A)\cup f(B)$.  Since we chose y arbitrarily from $f(A\cup B)$ and showed that y is in $f(A)\cup f(B)$ we can say by the definition of subset $f(A\cup B) \subseteq f(A)\cup f(B)$.
 \end{proof}
 \end{enumerate}
 
@@ -124,21 +124,14 @@ There exists a real number $x\in\Reals$ where there is no $n\in\Nats$ satisfying
 \end{enumerate}
 \end{exercise}
 
-\begin{exercise}{1.2.9} Show that the sequence $(x_1, x_2, x_3,\ldots)$ defined in Example
-1.2.7 is bounded above by 2.  That is, show that for every $i\in\Nats$, $x_i\le 2$.
-\end{exercise}
-\begin{proof}
-We will procede with a proof by induction on i.\\\\
-In the base case $i=1$ we are given $x_i=1$ since $1\le 2$ the statement $i\in\Nats$, $x_i\le 2$ holds in the base case.\\\\
-Suppose $x_i\le 2$.  Consider the next step $x_{i+1}$, note that by definition $x_{i+1}=(1/2) x_i+1$.  Note that $x_i\le 2\Rightarrow (1/2) x_i\le (1/2) 2=1\Rightarrow (1/2) x_i+1\le 1+1=2\Rightarrow x_{i+1}\le 2$.  Thus by induction we conclude that for all $i\in\Nats$, $x_i\le 2$.
-\end{proof}
+
 
 \begin{exercise}{1.3.4}
 Assume that $A$ and $B$ are nonempty, bounded above, and satisfy $B\subseteq A$.
 Show that $\sup B \le \sup A$.
 \end{exercise}
 \begin{proof}
-Assume to the contrary, namely that there exists sets $A$ and $B$ that are nonempty, bounded above, and satisfy $B\subseteq A$.  Furthur suppose that $\sup B > \sup A$.  Lets define $\alpha=\sup A$.  Suppose there is no element in B grater than $\alpha$.  By the definition of upper bound, $\alpha$ would be a upper bound to B, however $\sup B>\alpha$, a contradiction, thus our assumption that there is no element of B grater than $\alpha$ must be false, and there is some element of B grater than $\alpha$.  Lets take one of these elements with the property $\gamma \in B$ and $\gamma > \alpha$.  Note that since $B\subseteq A$, $\gamma \in A$.  Since $\alpha$ is a upper bound to A we know that eavery element of A is less than or equal to $\alpha$ thus $\gamma \leq \alpha$.  Contradiction $\gamma > \alpha$ and $\gamma \leq \alpha$, thus our initial supposition that $\sup B > \sup A$ must be false and so we are forced to conclude $\sup B \le \sup A$.
+Assume to the contrary, namely that there exists sets $A$ and $B$ that are nonempty, bounded above, and satisfy $B\subseteq A$.  Further suppose that $\sup B > \sup A$.  Lets define $\alpha=\sup A$.  Suppose there is no element in B grater than $\alpha$.  By the definition of upper bound, $\alpha$ would be a upper bound to B, however $\sup B>\alpha$, a contradiction, thus our assumption that there is no element of B grater than $\alpha$ must be false, and there is some element of B grater than $\alpha$.  Lets take one of these elements with the property $\gamma \in B$ and $\gamma > \alpha$.  Note that since $B\subseteq A$, $\gamma \in A$.  Since $\alpha$ is a upper bound to A we know that every element of A is less than or equal to $\alpha$ thus $\gamma \leq \alpha$.  Contradiction $\gamma > \alpha$ and $\gamma \leq \alpha$, thus our initial supposition that $\sup B > \sup A$ must be false and so we are forced to conclude $\sup B \le \sup A$.
 \end{proof}
 
 \begin{exercise}{1.3.5}  Let $A$ be bounded above and let $c\in\Reals$.
@@ -146,20 +139,20 @@ Define the sets $c+A = \{a+c:a\in A\}$ and $cA = \{ca:a\in A\}$.
 \begin{enumerate}[(a)]
 \item Show that $\sup(c+A) = c + \sup(A)$.
 \item If $c\ge 0$, show that $\sup(cA) = c\sup(A)$.
-\item Postulate a similar statment for $\sup(cA)$ when $c<0$.
+\item Postulate a similar statement for $\sup(cA)$ when $c<0$.
 \end{enumerate}
 \end{exercise}
 \begin{proof}[Proof (a)]
-Lets start by defining $\alpha=\sup(A)$, $\beta=c + \sup(A)$.  We will procede by showing that $\beta$ must have the two properties defining $\sup(c+A)$.\\\\
-Suppose that there existed some $\gamma\in c+A$ where $\gamma>\beta$.  Note that $\gamma-c\in A$ and that $\gamma-c>\beta-c=\alpha$.  Contradiction, we have found a element in A, $\gamma-c$, that is greater than $\sup(A)$.  We are forced to conclude the negation of our suposition and so conclude that there is no element in $c+A$ that is greater than $\beta$, and so $\beta$ is a upper bound on $c+A$, the first condition on $\sup(c+A)$.\\\\
-Suppose that there is a upper bound to $c+A$, lets call it $\lambda$, that is smaller than $\beta$.  Note that $\lambda-c<\beta-c=\alpha$.  Since $\alpha$ is larger than $\lambda-c$ we know from the definition of $\sup$ that $\lambda-c$ is not a upper bound on A, therfore there must be at least one element in A greater than $\lambda-c$, lets call it $\tau$.  Since $\tau$ is in A $c+\tau$ is in $c+A$, and since $\tau>\lambda-c$, $\tau+c>\lambda$.  Contradiction, lambda is a upper bound on $c+A$ but there is a element in $c+A$, namely $\tau+c$, that is grater than $\lambda$.  Thus we are forced to conclude the negation of our supposition, that all upper bounds on $c+A$ are grater than or equal to $\beta$.\\\\
+Lets start by defining $\alpha=\sup(A)$, $\beta=c + \sup(A)$.  We will proceed by showing that $\beta$ must have the two properties defining $\sup(c+A)$.\\\\
+Suppose that there existed some $\gamma\in c+A$ where $\gamma>\beta$.  Note that $\gamma-c\in A$ and that $\gamma-c>\beta-c=\alpha$.  Contradiction, we have found a element in A, $\gamma-c$, that is greater than $\sup(A)$.  We are forced to conclude the negation of our supposition and so conclude that there is no element in $c+A$ that is greater than $\beta$, and so $\beta$ is a upper bound on $c+A$, the first condition on $\sup(c+A)$.\\\\
+Suppose that there is a upper bound to $c+A$, lets call it $\lambda$, that is smaller than $\beta$.  Note that $\lambda-c<\beta-c=\alpha$.  Since $\alpha$ is larger than $\lambda-c$ we know from the definition of $\sup$ that $\lambda-c$ is not a upper bound on A, therefore there must be at least one element in A greater than $\lambda-c$, lets call it $\tau$.  Since $\tau$ is in A $c+\tau$ is in $c+A$, and since $\tau>\lambda-c$, $\tau+c>\lambda$.  Contradiction, $\lambda$ is a upper bound on $c+A$ but there is a element in $c+A$, namely $\tau+c$, that is grater than $\lambda$.  Thus we are forced to conclude the negation of our supposition, that all upper bounds on $c+A$ are grater than or equal to $\beta$.\\\\
 $\beta$ meets the definition of $\sup(c+A)$ and so $\beta=\sup(c+A)$ and $c + \sup(A)=\sup(c+A)$.
 \end{proof}
 \begin{proof}[Proof (b)]
-Firstly let me eliminate a special case, $c=0$.  In this case $cA=\{0\}$, by inspection $\sup(cA)=0$ and also $c\sup(A)=0*\sup(A)=0$.  In this degenerate case it is clearly true that $c\sup(A)=\sup(cA)$.  From here on I will work with $c>0$.  Note, in this proof I am taking advantage of the fact that deviding over a positive number across a inequality does not affect the inequality, that is why $c>0$ is nessesary for this proof.\\\\
-Lets start by defining $\alpha=\sup(A)$, $\beta=c\sup(A)$.  We will procede by showing that $\beta$ must have the two properties defining $\sup(cA)$.\\\\
-Suppose that there existed some $\gamma\in cA$ where $\gamma>\beta$.  Note that $\gamma/c\in A$ and that $\gamma/c>\beta/c=\alpha$.  Contradiction, we have found a element in A, $\gamma/c$, that is greater than $\sup(A)$.  We are forced to conclude the negation of our suposition and so conclude that there is no element in $cA$ that is greater than $\beta$, and so $\beta$ is a upper bound on $cA$, the first condition on $\sup(cA)$.\\\\
-Suppose that there is a upper bound to $cA$, lets call it $\lambda$, that is smaller than $\beta$.  Note that $\lambda/c<\beta/c=\alpha$.  Since $\alpha$ is larger than $\lambda/c$ we know from the definition of $\sup$ that $\lambda/c$ is not a upper bound on A, therfore there must be at least one element in A greater than $\lambda/c$, lets call it $\tau$.  Since $\tau$ is in A $c\tau$ is in $cA$, and since $\tau>\lambda/c$, $\tau c>\lambda$.  Contradiction, lambda is a upper bound on $cA$ but there is a element in $cA$, namely $\tau c$, that is grater than $\lambda$.  Thus we are forced to conclude the negation of our supposition, that all upper bounds on $cA$ are grater than or equal to $\beta$.\\\\
+Firstly let me eliminate a special case, $c=0$.  In this case $cA=\{0\}$, by inspection $\sup(cA)=0$ and also $c\sup(A)=0*\sup(A)=0$.  In this degenerate case it is clearly true that $c\sup(A)=\sup(cA)$.  From here on I will work with $c>0$.  Note, in this proof I am taking advantage of the fact that dividing over a positive number across a inequality does not affect the inequality, that is why $c>0$ is necessary for this proof.\\\\
+Lets start by defining $\alpha=\sup(A)$, $\beta=c\sup(A)$.  We will proceed by showing that $\beta$ must have the two properties defining $\sup(cA)$.\\\\
+Suppose that there existed some $\gamma\in cA$ where $\gamma>\beta$.  Note that $\gamma/c\in A$ and that $\gamma/c>\beta/c=\alpha$.  Contradiction, we have found a element in A, $\gamma/c$, that is greater than $\sup(A)$.  We are forced to conclude the negation of our supposition and so conclude that there is no element in $cA$ that is greater than $\beta$, and so $\beta$ is a upper bound on $cA$, the first condition on $\sup(cA)$.\\\\
+Suppose that there is a upper bound to $cA$, lets call it $\lambda$, that is smaller than $\beta$.  Note that $\lambda/c<\beta/c=\alpha$.  Since $\alpha$ is larger than $\lambda/c$ we know from the definition of $\sup$ that $\lambda/c$ is not a upper bound on A, therefore there must be at least one element in A greater than $\lambda/c$, lets call it $\tau$.  Since $\tau$ is in A $c\tau$ is in $cA$, and since $\tau>\lambda/c$, $\tau c>\lambda$.  Contradiction, $\lambda$ is a upper bound on $cA$ but there is a element in $cA$, namely $\tau c$, that is grater than $\lambda$.  Thus we are forced to conclude the negation of our supposition, that all upper bounds on $cA$ are grater than or equal to $\beta$.\\\\
 $\beta$ meets the definition of $\sup(cA)$ and so $\beta=\sup(cA)$ and $c  \sup(A)=\sup(cA)$.
 \end{proof}
 Statement for part (c): \\
@@ -186,14 +179,32 @@ following sets.
 then $a=\sup A$.
 \end{exercise}
 \begin{proof}
-Suppose $b$ is a upper bound of $A$ and that $b<a$.  Since $b$ is a upper bound on $A$ and $a\in A$ we know that $a\le b$.  We have arrived at a contradiction, thus there is no upper bound on $A$ that is less than $a$, and so all upper bounds on $A$ are grater than or equal to $a$.  We now can say that $a$ meets boath of the elements of the definition of $\sup A$ thus $a=\sup A$
+Suppose $b$ is a upper bound of $A$ and that $b<a$.  Since $b$ is a upper bound on $A$ and $a\in A$ we know that $a\le b$.  We have arrived at a contradiction, thus there is no upper bound on $A$ that is less than $a$, and so all upper bounds on $A$ are grater than or equal to $a$.  We now can say that $a$ meets both of the elements of the definition of $\sup A$ thus $a=\sup A$
 \end{proof}
 
 \begin{exercise}{1.3.8}  If $\sup A < \sup B$ then show that there exists an element $b\in B$ that is an upper bound for $A$.
 \end{exercise}
 \begin{proof}
-Let's begin with a short contradiction, suppose there is no element in $B$ greater than $\sup A$.  By the definition of upper bound $\sup A$ is a upper bound for $B$.  Thus by the definition of $\sup B$ we conclude $\sup B\le \sup A$.  This is a contradiction, and so we are forced to conclude that there is at least one element of $B$ greater than $\sup A$.  Chuse one of these elements, $\beta \in B$, $\sup A<\beta$.  The definition of $\sup A$ gives us that for all $\alpha \in A$, $\alpha\le \sup A\Rightarrow \alpha\le \beta$.  We then see that $\beta$ must be a upper bound on $A$ and thus there is a element in $B$ that is a upper bound on $A$.
+Let's begin with a short contradiction, suppose there is no element in $B$ greater than $\sup A$.  By the definition of upper bound $\sup A$ is a upper bound for $B$.  Thus by the definition of $\sup B$ we conclude $\sup B\le \sup A$.  This is a contradiction, and so we are forced to conclude that there is at least one element of $B$ greater than $\sup A$.  Cause one of these elements, $\beta \in B$, $\sup A<\beta$.  The definition of $\sup A$ gives us that for all $\alpha \in A$, $\alpha\le \sup A\Rightarrow \alpha\le \beta$.  We then see that $\beta$ must be a upper bound on $A$ and thus there is a element in $B$ that is a upper bound on $A$.
 \end{proof}
-Authors note: Is it nessesary that $\sup A < \sup B$, or only that $\sup A \le \sup B$?  Consider $A=[0,1]$ and $B=[0,1)$, here $\sup A \le \sup B$ but there is no element of $B$ that is a upper bound for $A$.
+Authors note: Is it necessary that $\sup A < \sup B$, or only that $\sup A \le \sup B$?  Consider $A=[0,1]$ and $B=[0,1)$, here $\sup A \le \sup B$ but there is no element of $B$ that is a upper bound for $A$.
+
+
+\newpage
+\begin{exercise}{1.2.9} Show that the sequence $(x_1, x_2, x_3,\ldots)$ defined in Example
+1.2.7 is bounded above by 2.  That is, show that for every $i\in\Nats$, $x_i\le 2$.
+\end{exercise}
+\begin{proof}
+We will proceed with a proof by induction on i.\\\\
+In the base case $i=1$ we are given $x_i=1$ since $1\le 2$ the statement $i\in\Nats$, $x_i\le 2$ holds in the base case.\\\\
+Suppose $x_i\le 2$.  Consider the next step $x_{i+1}$, note that by definition $x_{i+1}=(1/2) x_i+1$.  Note that $x_i\le 2\Rightarrow (1/2) x_i\le (1/2) 2=1\Rightarrow (1/2) x_i+1\le 1+1=2\Rightarrow x_{i+1}\le 2$.  Thus by induction we conclude that for all $i\in\Nats$, $x_i\le 2$.
+\end{proof}
+
+\begin{exercise}{1.3.7} Prove that if $a$ is an upper bound for $A$ and if $a$ is also an element of $A$,
+then $a=\sup A$.
+\end{exercise}
+\begin{proof}
+Suppose $b$ is a upper bound of $A$ and that $b<a$.  Since $b$ is a upper bound on $A$ and $a\in A$ we know that $a\le b$.  We have arrived at a contradiction, thus there is no upper bound on $A$ that is less than $a$, and so all upper bounds on $A$ are grater than or equal to $a$.  We now can say that $a$ meets both of the elements of the definition of $\sup A$ thus $a=\sup A$
+\end{proof}
 
 \end{document}
