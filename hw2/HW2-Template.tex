@@ -94,8 +94,20 @@ and addition.  What can be said about $st$ and $s+t$ when $s,t\in\mathbb{I}$?
 \end{exercise}
 \begin{enumerate}[(a)]
 \item \begin{proof}
-Select two arbitrary elements from the rational numbers, since they are rational we can represent them as $i/j$ and $m/n$ where $j\neq 0$ and $n\neq 0$.  Note that $i/j*m/n=\frac{im}{jn}$ from the definition of multiplication of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer $\frac{im}{jn}\in \mathbb{Q}$.
+Select two arbitrary elements from the rational numbers, since they are rational we can represent them as $i/j$ and $m/n$ where $i,j,m,n\in \mathbb{Z}$ and $j\neq 0$ and $n\neq 0$.\\\\
+Note that $i/j*m/n=\frac{im}{jn}$, from the definition of multiplication of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer so $jn\in \mathbb{Z}-\{0\}$ and $im\in \mathbb{Z}$ therfore $\frac{im}{jn}\in \mathbb{Q}$.\\\\
+Note that $i/j+m/n=\frac{in+mj}{jn}$, from the definition of addition of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer so $jn\in \mathbb{Z}-\{0\}$ and $in,mj\in \mathbb{Z}$ and so also $in+mj \in \mathbb{Z}$ therfore $\frac{in+mj}{jn}\in \mathbb{Q}$.
 \end{proof}
+
+\item \begin{proof}
+Proof by contradiction.\\
+Suppose that there exists $a\in\Rats$ and $t\in\mathbb{I}$ where $a+t=b\notin\mathbb{I}$.  Since the reals are closed under addition we can say $b\in\mathbb{R}$.  Note that $b\in\mathbb{R} -\mathbb{I}=\mathbb{Q}$.  We can do a little math and see $a+t=b$ means $t=b+(-a)$.  Since the addative inverse of a rational is a rational and since the sum of two rationals is rational we conclude $t\in \mathbb{Q}$.  A contradiction has been reached, the rationals and irrationals are, by deffinition, mutualy exclusive and so $t$ cannot be a element of both.\\\\
+Proof by contradiction.\\
+Suppose that there exists $a\in\Rats-\{0\}$ and $t\in\mathbb{I}$ where $at=b\notin\mathbb{I}$.  Since the reals are closed under multiplication, and since the multiple of any two non zero numbers is itself non zero, we can say $b\in\mathbb{R}-\{0\}$.  Note that $b\in\mathbb{R}-\{0\} -\mathbb{I}=\mathbb{Q}-\{0\}$.  We can do a little math and see $at=b$ means $t=b(a^{-1})$.  Since the multiplicative inverse of a non zero rational is a rational (informaly $(\frac{i}{m})(\frac{m}{i})=1$) and since the multiple of two rationals is rational we conclude $t\in \mathbb{Q}$.  A contradiction has been reached, the rationals and irrationals are, by deffinition, mutualy exclusive and so $t$ cannot be a element of both.
+\end{proof}
+
+\item 
+All we can conclude is that $st\in \mathbb{R}-\{0\}$ and that $s+t\in \mathbb{R}$.  As a example that the irrationals are not closed with respect to multiplication or addition note that $\sqrt{2}\sqrt{2}=2$ and that $\pi+(-\pi)=0$.
 \end{enumerate}
 
 \begin{exercise}{1.4.2}
