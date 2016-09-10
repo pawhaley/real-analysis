@@ -116,19 +116,26 @@ the property that for all $n\in\Nats$, $s+(1/n)$ is an upper bound for $A$
 but $s-(1/n)$ is not an upper bound for $A$.  Show that $s=\sup A$.
 \end{exercise}
 \begin{proof}
+Take some $a\in\mathbb{R}$ where $s<a$.  Note $a-s\in \mathbb{R}^+$ and so by the proof we previously compleated in class there is a natural number $n$ with the property $\frac{1}{n}<a-s$.  So $s+\frac{1}{n}<a$ wich means $a$ is bigger than a upper bound on $A$ and so is itself not in $A$.  Since we chose a arbitrary real grater than $s$ and showed it is not in $A$ we can conclude no real biger than $s$ is in $A$, in other words all elements of $A$ are less than or equal to $s$.  By definition $s$ is a upper bound on $A$.\\
+Next take some $b\in\mathbb{R}$ where $b<a$.  Note $s-b\in \mathbb{R}^+$ and so by the proof we previously compleated in class there is a natural number $n$ with the property $\frac{1}{n}<s-b$.  So $b<s-\frac{1}{n}$ wich means $b$ is smaller than a number that is not a upper bound on $A$.  Noting that if $b$ were upper bound on $A$ we would be forced to conclude $s-\frac{1}{n}$ is a upper bound on $A$, wich we know to be falce, we are forced to conclude $b$ is not a upper bound on A.  and since $b$ was chosen arbitraraly we can conclude all upper bounds on $A$ are grater than or equal to $s$.\\
+Noting that $s$ has both properties of a suppremum we conclude $s=\sup A$.
 \end{proof}
 
 \begin{exercise}{1.4.3} Show that $\cap_{n=1}^\infty (0,1/n)=\emptyset$.
 \end{exercise}
 \begin{proof}
+Proof by contradiction.\\
+Suppose $a\in \cap_{n=1}^\infty (0,1/n)$.  Note that $a\in (0,1) \subseteq \mathbb{R}^+$ so $a\in\mathbb{R}^+$.  By the proof done in class there exists a natural i with the property $1/i<a$.  Since a is in the intersect of all of the $(0,1/n)$ sets $a\in (0,1/i)$ so $a<1/i$ a contradiction.  We now conclude the negation of our supposition namely there is no $a$ with the property $a\in \cap_{n=1}^\infty (0,1/n)$ or a logicaly equivelent statement $\cap_{n=1}^\infty (0,1/n)=\emptyset$.
 \end{proof}
 
 \begin{exercise}{1.4.4} \W 
 
 Let $a<b$ be real numbers and let $T=[a,b]\cap\Rats$.
-Show that $\sup T=a$.
+Show that $\sup T=b$.
 \end{exercise}
 \begin{proof}
+First we note that $b$ is a upper bound on $T$, since $T\subseteq [a,b]$ and eavery element of $[a,b]$ is less than or equal to b.\\
+Take some real number $c<b$.  Note that $b-c\in\mathbb{R}^+$ and thus there exists a $n\in\mathbb{N}$ where $1/n<b-c$.  Note $cn\in\mathbb{R}$ and so there are natural numbers larger than $cn$, take the smallest of these lets call it m so $m-1<cn<m$ .
 \end{proof}
 
 \begin{exercise}{1.4.5} Use Exercise 1.4.1 to provide a proof of Corollary 1.4.4 by considering real numbers $a-\sqrt{2}$ and $b-\sqrt{2}$.
