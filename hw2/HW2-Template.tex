@@ -95,59 +95,53 @@ and addition.  What can be said about $st$ and $s+t$ when $s,t\in\mathbb{I}$?
 \begin{enumerate}[(a)]
 \item \begin{proof}
 Select two arbitrary elements from the rational numbers, since they are rational we can represent them as $i/j$ and $m/n$ where $i,j,m,n\in \mathbb{Z}$ and $j\neq 0$ and $n\neq 0$.\\\\
-Note that $i/j*m/n=\frac{im}{jn}$, from the definition of multiplication of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer so $jn\in \mathbb{Z}-\{0\}$ and $im\in \mathbb{Z}$ therfore $\frac{im}{jn}\in \mathbb{Q}$.\\\\
-Note that $i/j+m/n=\frac{in+mj}{jn}$, from the definition of addition of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer so $jn\in \mathbb{Z}-\{0\}$ and $in,mj\in \mathbb{Z}$ and so also $in+mj \in \mathbb{Z}$ therfore $\frac{in+mj}{jn}\in \mathbb{Q}$.
+Note that $i/j*m/n=\frac{im}{jn}$, from the definition of multiplication of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer so $jn\in \mathbb{Z}-\{0\}$ and $im\in \mathbb{Z}$ therefore $\frac{im}{jn}\in \mathbb{Q}$.\\\\
+Note that $i/j+m/n=\frac{in+mj}{jn}$, from the definition of addition of rational numbers.  Since the multiple of any two non-zero numbers is non-zero and since the multiple of any two integers is a integer so $jn\in \mathbb{Z}-\{0\}$ and $in,mj\in \mathbb{Z}$ and so also $in+mj \in \mathbb{Z}$ therefore $\frac{in+mj}{jn}\in \mathbb{Q}$.
 \end{proof}
 
 \item \begin{proof}
 Proof by contradiction.\\
-Suppose that there exists $a\in\Rats$ and $t\in\mathbb{I}$ where $a+t=b\notin\mathbb{I}$.  Since the reals are closed under addition we can say $b\in\mathbb{R}$.  Note that $b\in\mathbb{R} -\mathbb{I}=\mathbb{Q}$.  We can do a little math and see $a+t=b$ means $t=b+(-a)$.  Since the addative inverse of a rational is a rational and since the sum of two rationals is rational we conclude $t\in \mathbb{Q}$.  A contradiction has been reached, the rationals and irrationals are, by deffinition, mutualy exclusive and so $t$ cannot be a element of both.\\\\
+Suppose that there exists $a\in\Rats$ and $t\in\mathbb{I}$ where $a+t=b\notin\mathbb{I}$.  Since the reals are closed under addition we can say $b\in\mathbb{R}$.  Note that $b\in\mathbb{R} -\mathbb{I}=\mathbb{Q}$.  We can do a little math and see $a+t=b$ means $t=b+(-a)$.  Since the additive inverse of a rational is a rational and since the sum of two rationals is rational we conclude $t\in \mathbb{Q}$.  A contradiction has been reached since the rationals and irrationals are, by definition, mutually exclusive, $t$ cannot be a element of both.\\\\
 Proof by contradiction.\\
-Suppose that there exists $a\in\Rats-\{0\}$ and $t\in\mathbb{I}$ where $at=b\notin\mathbb{I}$.  Since the reals are closed under multiplication, and since the multiple of any two non zero numbers is itself non zero, we can say $b\in\mathbb{R}-\{0\}$.  Note that $b\in\mathbb{R}-\{0\} -\mathbb{I}=\mathbb{Q}-\{0\}$.  We can do a little math and see $at=b$ means $t=b(a^{-1})$.  Since the multiplicative inverse of a non zero rational is a rational (informaly $(\frac{i}{m})(\frac{m}{i})=1$) and since the multiple of two rationals is rational we conclude $t\in \mathbb{Q}$.  A contradiction has been reached, the rationals and irrationals are, by deffinition, mutualy exclusive and so $t$ cannot be a element of both.
+Suppose that there exists $a\in\Rats-\{0\}$ and $t\in\mathbb{I}$ where $at=b\notin\mathbb{I}$.  Since the reals are closed under multiplication, and since the multiple of any two non zero numbers is itself non zero, we can say $b\in\mathbb{R}-\{0\}$.  Note that $b\in\mathbb{R}-\{0\} -\mathbb{I}=\mathbb{Q}-\{0\}$.  We can do a little math and see $at=b$ means $t=b(a^{-1})$.  Since the multiplicative inverse of a non zero rational is a rational (informally $(\frac{i}{m})(\frac{m}{i})=1$) and since the multiple of two rationals is rational we conclude $t\in \mathbb{Q}$.  A contradiction has been reached since the rationals and irrationals are, by definition, mutually exclusive, $t$ cannot be a element of both.
 \end{proof}
 
 \item 
 All we can conclude is that $st\in \mathbb{R}-\{0\}$ and that $s+t\in \mathbb{R}$.  As a example that the irrationals are not closed with respect to multiplication or addition note that $\sqrt{2}\sqrt{2}=2$ and that $\pi+(-\pi)=0$.
 \end{enumerate}
 
+
+\newpage
 \begin{exercise}{1.4.2}
 Let $A\subseteq \Reals$ be nonempty and bounded above. Let $s\in\Reals$ have
 the property that for all $n\in\Nats$, $s+(1/n)$ is an upper bound for $A$
 but $s-(1/n)$ is not an upper bound for $A$.  Show that $s=\sup A$.
 \end{exercise}
 \begin{proof}
-Take some $a\in\mathbb{R}$ where $s<a$.  Note $a-s\in \mathbb{R}^+$ and so by the proof we previously compleated in class there is a natural number $n$ with the property $\frac{1}{n}<a-s$.  So $s+\frac{1}{n}<a$ wich means $a$ is bigger than a upper bound on $A$ and so is itself not in $A$.  Since we chose a arbitrary real grater than $s$ and showed it is not in $A$ we can conclude no real biger than $s$ is in $A$, in other words all elements of $A$ are less than or equal to $s$.  By definition $s$ is a upper bound on $A$.\\
-Next take some $b\in\mathbb{R}$ where $b<a$.  Note $s-b\in \mathbb{R}^+$ and so by the proof we previously compleated in class there is a natural number $n$ with the property $\frac{1}{n}<s-b$.  So $b<s-\frac{1}{n}$ wich means $b$ is smaller than a number that is not a upper bound on $A$.  Noting that if $b$ were upper bound on $A$ we would be forced to conclude $s-\frac{1}{n}$ is a upper bound on $A$, wich we know to be falce, we are forced to conclude $b$ is not a upper bound on A.  and since $b$ was chosen arbitraraly we can conclude all upper bounds on $A$ are grater than or equal to $s$.\\
-Noting that $s$ has both properties of a suppremum we conclude $s=\sup A$.
+Take some $a\in\mathbb{R}$ where $s<a$.  Note $a-s\in \mathbb{R}^+$ and so by the proof we previously completed in class there is a natural number $n$ with the property $\frac{1}{n}<a-s$.  So $s+\frac{1}{n}<a$ witch means $a$ is bigger than a upper bound on $A$ and so is itself not in $A$.  Since we chose a arbitrary real grater than $s$ and showed it is not in $A$ we can conclude no real bigger than $s$ is in $A$, in other words all elements of $A$ are less than or equal to $s$.  By definition $s$ is a upper bound on $A$.\\
+Next take some $b\in\mathbb{R}$ where $b<s$.  Note $s-b\in \mathbb{R}^+$ and so by the proof we previously completed in class there is a natural number $n$ with the property $\frac{1}{n}<s-b$.  So $b<s-\frac{1}{n}$ witch means $b$ is smaller than a number that is not a upper bound on $A$.  Noting that if $b$ were upper bound on $A$ we would be forced to conclude $s-\frac{1}{n}$ is a upper bound on $A$, witch we know to be false, we are forced to conclude $b$ is not a upper bound on A.  and since $b$ was chosen arbitrarily we can conclude all upper bounds on $A$ are grater than or equal to $s$.\\
+Noting that $s$ has both properties of a $\sup$ we conclude $s=\sup A$.
 \end{proof}
+
 
 \begin{exercise}{1.4.3} Show that $\cap_{n=1}^\infty (0,1/n)=\emptyset$.
 \end{exercise}
 \begin{proof}
 Proof by contradiction.\\
-Suppose $a\in \cap_{n=1}^\infty (0,1/n)$.  Note that $a\in (0,1) \subseteq \mathbb{R}^+$ so $a\in\mathbb{R}^+$.  By the proof done in class there exists a natural i with the property $1/i<a$.  Since a is in the intersect of all of the $(0,1/n)$ sets $a\in (0,1/i)$ so $a<1/i$ a contradiction.  We now conclude the negation of our supposition namely there is no $a$ with the property $a\in \cap_{n=1}^\infty (0,1/n)$ or a logicaly equivelent statement $\cap_{n=1}^\infty (0,1/n)=\emptyset$.
+Suppose $a\in \cap_{n=1}^\infty (0,1/n)$.  Note that $a\in (0,1) \subseteq \mathbb{R}^+$ so $a\in\mathbb{R}^+$.  By the proof done in class there exists a natural i with the property $1/i<a$.  Since a is in the intersect of all of the $(0,1/n)$ sets $a\in (0,1/i)$ so $a<1/i$ a contradiction.  We now conclude the negation of our supposition namely there is no $a$ with the property $a\in \cap_{n=1}^\infty (0,1/n)$ or a logically equivalent statement $\cap_{n=1}^\infty (0,1/n)=\emptyset$.
 \end{proof}
 
-\begin{exercise}{1.4.4} \W 
 
-Let $a<b$ be real numbers and let $T=[a,b]\cap\Rats$.
-Show that $\sup T=b$.
-\end{exercise}
-\begin{proof}
-First we note that $b$ is a upper bound on $T$, since $T\subseteq [a,b]$ and eavery element of $[a,b]$ is less than or equal to b.\\
-Assume that there is a upper bound on $T$ less than $b$ lets call it $c$.  We know that there is at least one element in $T$ since we proved in class that there is a rational between any two reals take one of these rationals and call it $d$.  Note $d\geq a$.  From that we can say $c\geq a$ as otherwise $c<d$ wich is not possible if $c$ is a upper bound.  Next we note that there is a rational between $\frac{c+b}{2}$ and $b$, lets call it $f$ such that $a\leq c<\frac{c+b}{2}\leq f\leq b$ and $f\in\mathbb{Q}$.  Note that $f\in T$.  Contradiction there is a element of $T$ grater than $c$ and yet $c$ is a upper bound on $T$.  Thus we conclude that there are no upper bounds on $T$ less than $b$.\\
-We see that $b$ fufills the definition of $\sup T$ and so $b=\sup T$.
-\end{proof}
 
 \begin{exercise}{1.4.5} Use Exercise 1.4.1 to provide a proof of Corollary 1.4.4 by considering real numbers $a-\sqrt{2}$ and $b-\sqrt{2}$.
 \end{exercise}
 \begin{proof}
 We are asked to prove that for all $a,b\in\mathbb{R}$ where $a<b$ there is a $t\in (a,b)$ where $t\in \mathbb{I}$.\\
-I will start by chosing a arbitrary set $a,b\in\mathbb{R}$ where $a<b$.  Next let $c=a+\frac{1}{3}(b-a)$ and $d=a+\frac{2}{3}(b-a)$.  Note that $a<c<d<b$ so $[c,d]\subseteq (a,b)$.  Now consider two cases, eather $c,d\in\mathbb{Q}$ or one or more of them is irrational.  In the case that one or more of them is irrational then it would be a irrational in $(a,b)$ and we're done.  So now we only need to consider the case where $c,d\in\mathbb{Q}$.  In this case consider $t=c+\frac{\sqrt{2}}{2}(d-c)$.  Noting that $(d-c)\neq 0$ we conclude $\frac{\sqrt{2}}{2}(d-c)\in \mathbb{I}$ and thus $c+\frac{\sqrt{2}}{2}(d-c)\in \mathbb{I}$ also note that $0<\frac{\sqrt{2}}{2}<1$ so $c<c+\frac{\sqrt{2}}{2}(d-c)<d$ therfore $c+\frac{\sqrt{2}}{2}(d-c)\in (a,b)$ and we have found a irrational in $(a,b)$.
+I will start by choosing a arbitrary set $a,b\in\mathbb{R}$ where $a<b$.  Next let $c=a+\frac{1}{3}(b-a)$ and $d=a+\frac{2}{3}(b-a)$.  Note that $a<c<d<b$ so $[c,d]\subseteq (a,b)$.  Now consider two cases, ether $c,d\in\mathbb{Q}$ or one or more of them is irrational.  In the case that one or more of them is irrational then it would be a irrational in $(a,b)$ and we're done.  So now we only need to consider the case where $c,d\in\mathbb{Q}$.  In this case consider $t=c+\frac{\sqrt{2}}{2}(d-c)$.  Noting that $(d-c)\neq 0$ we conclude $\frac{\sqrt{2}}{2}(d-c)\in \mathbb{I}$ and thus $c+\frac{\sqrt{2}}{2}(d-c)\in \mathbb{I}$ also note that $0<\frac{\sqrt{2}}{2}<1$ so $c<c+\frac{\sqrt{2}}{2}(d-c)<d$ therefore $c+\frac{\sqrt{2}}{2}(d-c)\in (a,b)$ and we have found a irrational in $(a,b)$.
 \end{proof}
 
 
-
+\newpage
 \begin{exercise}{Supplemental 1} Show that the sets $[0,1)$ and $(0,1)$ have the same cardinality.
 \end{exercise}
 Consider the function $f:[0,1)\rightarrow (0,1)$
@@ -160,9 +154,21 @@ $$
 note that f has a inverse $g:(0,1)\rightarrow [0,1)$
 $$g(x)=\begin{cases}
 0 & x=1/2\\
-(1/2)^{n-1} & x=(1/2)^n $ for some $ n\in \mathbb{N}\\
+(1/2)^{n-1} & x=(1/2)^n $ for some $ n\in \mathbb{N}-\{1\}\\
 x & $otherwise$
 \end{cases}
 $$
 We now know $f$ is bijective and so we have found a bijective mapping from $[0,1)$ to $(0,1)$ so by definition they have the same cardinality.
+
+\newpage
+\begin{exercise}{1.4.4} \W 
+
+Let $a<b$ be real numbers and let $T=[a,b]\cap\Rats$.
+Show that $\sup T=b$.
+\end{exercise}
+\begin{proof}
+First we note that $b$ is a upper bound on $T$, since $T\subseteq [a,b]$ and every element of $[a,b]$ is less than or equal to b.\\
+Assume that there is a upper bound on $T$ less than $b$, lets call it $c$.  We know that there is at least one element in $T$ since we proved in class that there is a rational between any two reals take one of these rationals and call it $d$.  Note $d\geq a$.  From that we can say $c\geq a$ as otherwise $c<d$ witch is not possible since $c$ is a upper bound.  Next we note that there is a rational between $c$ and $b$, lets call it $f$ such that $a\leq c< f< b$ and $f\in\mathbb{Q}$.  Note that $f\in T$.  Contradiction there is a element of $T$ grater than $c$ and yet $c$ is a upper bound on $T$.  Thus we conclude that there are no upper bounds on $T$ less than $b$.\\
+We see that $b$ fulfills the definition of $\sup T$ and so $b=\sup T$.
+\end{proof}
 \end{document}
