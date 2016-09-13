@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.4)  12 SEP 2016 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.4)  12 SEP 2016 17:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**HW2-Template.tex
-(./HW2-Template.tex
+**HW3.tex
+(./HW3.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -258,9 +258,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `bold'
 LaTeX Info: Redefining \not on input line 1043.
 LaTeX Info: Redefining \textsquare on input line 1063.
 LaTeX Info: Redefining \openbox on input line 1064.
-)
-(./HW2-Template.aux)
-\openout1 = `HW2-Template.aux'.
+) (./HW3.aux)
+\openout1 = `HW3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 84.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 84.
@@ -368,47 +367,31 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 87.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
-)
-Underfull \hbox (badness 10000) in paragraph at lines 97--100
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--107
-
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-] [2] [3] [4]
-(./HW2-Template.aux) ) 
+] [2] (./HW3.aux) ) 
 Here is how much of TeX's memory you used:
  3109 strings out of 494910
- 39068 string characters out of 6179837
- 99149 words of memory out of 5000000
+ 38987 string characters out of 6179837
+ 97155 words of memory out of 5000000
  6356 multiletter control sequences out of 15000+600000
  21426 words of font info for 57 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 27i,11n,43p,820b,202s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.en
-c}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
-s/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on HW2-Template.pdf (4 pages, 61344 bytes).
+ 27i,11n,43p,713b,339s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
+/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t
+xsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on HW3.pdf (2 pages, 53678 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
