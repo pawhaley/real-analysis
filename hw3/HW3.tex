@@ -103,7 +103,7 @@ $$f(a,b)=\begin{cases}
 B_{a,b} & B_a$ has a $b$th element$\\
 B_{1,1} & $otherwise$
 \end{cases}$$
-Note that this function is surjective, since given a $B_{j,k}$ we see that $(j,k)$ maps to it.  There is also a surjection between each of our $B_{j,k}$ and $\cup B$ simply map the element $B_{j,k}$ to itself in $\cup B$.  From knowing that $\Nats$ and $\Nats\times \Nats$ have the same cardinality, I conclude that there is a surjection between $\Nats$ and $\Nats\times \Nats$.  Thus I can surjectively map $\Nats \rightarrow \Nats\times \Nats \rightarrow B_{j,k} \rightarrow \cup B$.  Thus B is at most countably infinate.
+Note that this function is surjective, since given a $B_{j,k}$ we see that $(j,k)$ maps to it.  There is also a surjection between each of our $B_{j,k}$ and $\cup B$ simply map the element $B_{j,k}$ to itself in $\cup B$.  From knowing that $\Nats$ and $\Nats\times \Nats$ have the same cardinality, I conclude that there is a surjection between $\Nats$ and $\Nats\times \Nats$.  Thus I can surjectively map $\Nats \rightarrow \Nats\times \Nats \rightarrow B_{j,k} \rightarrow \cup B$.  Thus $\cup B$ is at most countably infinate.
 \end{proof}
 
 \begin{exercise}{Supplemental 2}\W
@@ -111,6 +111,8 @@ Note that this function is surjective, since given a $B_{j,k}$ we see that $(j,k
 Suppose $B$ is finite and $A\subseteq B$.  Show that
 $A$ is empty or finite.
 \end{exercise}
+Consider the case where $A\neq \emptyset$.  There must exist a bijective function mapping $f:S_m\rightarrow B$, the definition of finite.  Since $A\subseteq B$ there must be a subset of $S_m$, lets call it $S_m|_A$ that has the property $f(S_m|_A)=A$.  Lets now consider the function $g:S_m|_A\rightarrow A$ where g(x)=f(x).  Note that by construction $g$ is onto, since $g(S_m|_A)=f(S_m|_A)=A$ and since $f$ is one-to-one on B we can see $g(a)=g(b)$ implies $f(a)=f(b)$ implies $a=b$, and so g is one-to-one.  Thus $g$ is bijective.  Since $S_m|_A\in \Nats$ it will have a least element.  Construct a map $h:S_m|_A\rightarrow S_l$ where the minimum of $S_m|_A$ gets mapped to 1 and the next smallest gets maped to 2 and so on until the last element maps to $l$.  We can say that this procedure is possiable since at most it could take $m$ steps and $m$ is finite.  By construction this function is onto and one-to-one.  We now have a bijection between $S_m|_A$ and $S_l$, notice that we can now bijectively map $A$ to $S_m|_A$ and $S_m|_A$ to $S_l$ thus by definition $A$ is finite.
+
 
 \begin{exercise}{1.5.10 (a) (c)}\noindent\par
 
