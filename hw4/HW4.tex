@@ -182,9 +182,38 @@ If $a_n\rightarrow 0$ and $|b_n-b|\leq a_n$ for all $n$ then $b_n\rightarrow b$.
 Suppose $a_n\rightarrow 0$ and $|b_n-b|\leq a_n$ for all $n$.  Note that $0\leq |b_n-b|\leq a_n$ thus $|a_n|=a_n$.  Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|a_n|<\epsilon$.  Note that $|b_n-b|\leq a_n=|a_n|<\epsilon$ for all $n\geq N$.  Thus by the definition of limit $b_n\rightarrow b$.
 \end{proof}
 
+\begin{exercise}
 
+2.4.1(a)\\
+Prove that the sequence $x_1=3$ and
+$$x_{n+1}=\frac{1}{4-x_n}
+$$
+converges.
+\end{exercise}
+\begin{proof}
+I will use the monotone convergence therum.  So what I need to show is that our sequence is bounded and that our sequence is monotonic.\\\\
+Suppose $0\leq x_n \leq 3$.  Note that $-0\geq -x_n \geq -3$, $4\geq 4-x_n \geq 1$, and since $4-x_n\geq 1>0$ we see $0\leq 1/4\leq1/( 4-x_n) \leq 1\leq 3$.  Thus $0\leq x_{n+1} \leq 3$.  Noting that $0\leq x_1=3\leq 3$, we conclude by induction that all $x_n$ are in $0\leq x_n \leq 3$.  Thus $|x_n|\leq 3$ for all n and so the sequence is bounded.\\\\
+I will prove the sequence is monotonic decreasing by induction.\\
+In the base case is $x_n\geq x_{n+1}$?  Well that would be, for $n=1$, $3\geq \frac{1}{4-3}=1$.  So it is monotonic decreasing in the base case.\\
+Suppose $x_n\geq x_{n+1}$.  Note that $x_n\geq x_{n+1}$, $-x_n\leq -x_{n+1}$, $4-x_n\leq 4-x_{n+1}$, and noting that $4-x_n\geq1>0$ since the sequence is bounded by 3, $\frac{1}{4-x_n}=x_{n+1}\geq \frac{1}{4-x_{n+1}}=x_{n+2}$.  So I have shown that if $x_n\geq x_{n+1}$ we can conclude that $x_{n+1}\geq x_{n+2}$, and so by induction I conclude that $x_n\geq x_{n+1}$ for all $n$ and thus the sequence is monotonic decreasing.\\\\
+By the monotone convergence therum we can conclude that the sequence converges.
+\end{proof}
+\begin{exercise}
 
+2.4.1(b)\\
+Given the sequence $x_n\rightarrow l$.  Prove that the sequence $s_n=x_{n+1}\rightarrow l$
+\end{exercise}
+\begin{proof}
+Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $m\geq N$, $|x_m-l|<\epsilon$.  Choose $n\geq N$ let $m=n+1\geq N$.  Note that $|x_m-l|<\epsilon$, $|x_{n+1}-l|<\epsilon$, $|s_n-l|<\epsilon$.  Thus by the definiton of limit $s_n\rightarrow l$.
+\end{proof}
+\begin{exercise}
 
+2.4.1(c)\\
+Given the sequence $x_n\rightarrow l$ and $s_n=x_{n+1}\rightarrow l$, where $x_1=3$ and
+$$x_{n+1}=\frac{1}{4-x_n}
+$$
+find $l$.
+\end{exercise}
 
 
 
