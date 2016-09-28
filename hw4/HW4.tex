@@ -79,7 +79,7 @@
 % The following commands set up the material that appears in the header.
 \doclabel{Math 401: Homework 4}
 \docauthor{Parker Whaley}
-\docdate{Due September 19, 2016}
+\docdate{Due September 28, 2016}
 
 \begin{document}
 Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.
@@ -89,7 +89,7 @@ Note that I am operating under the convention that $N,n,m,i,j$ are natural numbe
 The limit of a sequence, if it exists is unique
 \end{exercise}
 \begin{proof}
-Suppose to the contrary that there exists a sequence $\{a_x\}^\infty_{x=1}$ that converges to two values, $a$ and $b$ where $a\neq b$.  Without loss of generality assume $a>b$.  Define $2\epsilon=a-b>0$ and note that $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N_a$ such that for all $n\geq N_a$, $|a_n-a|<\epsilon$.  Also note that by the definition of limit of a sequence we know that there exists a $N_b$ such that for all $n\geq N_b$, $|a_n-b|<\epsilon$.  Take $N=\max(N_a,N_b)$ note that for all $n\geq N$, $|a_n-a|<\epsilon$ and $|a_n-b|<\epsilon$.  Now we see that $|a_N-a|<\epsilon$ and $|a_N-b|<\epsilon$ so $|a_N-a|+|a_N-b|<2\epsilon$ or $|a-a_N+a_N-b|\leq |a-a_N|+|a_N-b|<2\epsilon$ via the tryangle inequality.  Thus $|a-b|<2\epsilon$, and noting that $a-b>0$ we get $a-b<2\epsilon=a-b$, a contradiction.  We are forced to conclude the negation of our supposition, that there is no sequence with two limits, or that a limit to a sequence, if it exists is unique.
+Suppose to the contrary that there exists a sequence $\{a_x\}^\infty_{x=1}$ that converges to two values, $a$ and $b$ where $a\neq b$.  Without loss of generality assume $a>b$.  Define $2\epsilon=a-b>0$ and note that $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N_a$ such that for all $n\geq N_a$, $|a_n-a|<\epsilon$.  Also note that by the definition of limit of a sequence we know that there exists a $N_b$ such that for all $n\geq N_b$, $|a_n-b|<\epsilon$.  Take $N=\max(N_a,N_b)$ note that for all $n\geq N$, $|a_n-a|<\epsilon$ and $|a_n-b|<\epsilon$.  Now we see that $|a_N-a|<\epsilon$ and $|a_N-b|<\epsilon$ so $|a_N-a|+|a_N-b|<2\epsilon$ or $|a-a_N+a_N-b|\leq |a-a_N|+|a_N-b|<2\epsilon$ via the triangle inequality.  Thus $|a-b|<2\epsilon$, and noting that $a-b>0$ we get $a-b<2\epsilon=a-b$, a contradiction.  We are forced to conclude the negation of our supposition, that there is no sequence with two limits, or that a limit to a sequence, if it exists is unique.
 \end{proof}
 
 \begin{exercise}
@@ -98,7 +98,7 @@ Suppose to the contrary that there exists a sequence $\{a_x\}^\infty_{x=1}$ that
 Let $x_n\geq 0$ for all $n\in\mathbb{N}$.  If $x_n\rightarrow0$ show $\sqrt{x_n}\rightarrow0$.
 \end{exercise}
 \begin{proof}
-Chuse a $\epsilon>0$.  Define $\omega=\epsilon^2$.  Note that $x_n\rightarrow0$ implies that there exists a $N$ such that for all $n\geq N$, $|x_n|<\omega$.  Note that $|x_n|<\omega=\epsilon^2$ implies $\sqrt{|x_n|}<\epsilon$ wich means $|\sqrt{x_n}-0|<\epsilon$ for all $n\geq N$.  Thus by definition $\sqrt{x_n}\rightarrow0$.
+Choose a $\epsilon>0$.  Define $\omega=\epsilon^2$.  Note that $x_n\rightarrow0$ implies that there exists a $N$ such that for all $n\geq N$, $|x_n|<\omega$.  Note that $|x_n|<\omega=\epsilon^2$ implies $\sqrt{|x_n|}<\epsilon$ witch means $|\sqrt{x_n}-0|<\epsilon$ for all $n\geq N$.  Thus by definition $\sqrt{x_n}\rightarrow0$.
 \end{proof}
 
 \begin{exercise}
@@ -107,8 +107,8 @@ Chuse a $\epsilon>0$.  Define $\omega=\epsilon^2$.  Note that $x_n\rightarrow0$ 
 Let $x_n\geq 0$ for all $n\in\mathbb{N}$.  If $x_n\rightarrow x$ show $\sqrt{x_n}\rightarrow \sqrt{x}$.
 \end{exercise}
 \begin{proof}
-Assume $x\neq0$ since we have already proven the statement true in that case, furthur note that since the sequence is bounded below by $0$, $x\geq 0$\\
-Chuse a $\epsilon>0$.  Define $\omega=\epsilon \sqrt{x}>0$.  Note that $x_n\rightarrow x$ implies that there exists a $N$ such that for all $n\geq N$, $|x_n-x|<\omega$.  Note that $|x_n-x|<\omega=\epsilon \sqrt{x}$ implies $|x-x_n|<\epsilon \sqrt{x}$, $|\sqrt{x}+\sqrt{x_n}||\sqrt{x}-\sqrt{x_n}|<\epsilon \sqrt{x}$.  Noting that $|\sqrt{x}+\sqrt{x_n}|=\sqrt{x}+\sqrt{x_n}\geq \sqrt{x}$ implies $\sqrt{x}|\sqrt{x}-\sqrt{x_n}| \leq|\sqrt{x}+\sqrt{x_n}||\sqrt{x}-\sqrt{x_n}|<\epsilon \sqrt{x}$.  Thus $|\sqrt{x}-\sqrt{x_n}|<\epsilon$ for all $n\geq N$.  By definition $\sqrt{x_n}\rightarrow \sqrt{x}$.
+Assume $x\neq0$ since we have already proven the statement true in that case, further note that since the sequence is bounded below by $0$, $x\geq 0$\\
+Choose a $\epsilon>0$.  Define $\omega=\epsilon \sqrt{x}>0$.  Note that $x_n\rightarrow x$ implies that there exists a $N$ such that for all $n\geq N$, $|x_n-x|<\omega$.  Note that $|x_n-x|<\omega=\epsilon \sqrt{x}$ implies $|x-x_n|<\epsilon \sqrt{x}$, $|\sqrt{x}+\sqrt{x_n}||\sqrt{x}-\sqrt{x_n}|<\epsilon \sqrt{x}$.  Noting that $|\sqrt{x}+\sqrt{x_n}|=\sqrt{x}+\sqrt{x_n}\geq \sqrt{x}$ implies $\sqrt{x}|\sqrt{x}-\sqrt{x_n}| \leq|\sqrt{x}+\sqrt{x_n}||\sqrt{x}-\sqrt{x_n}|<\epsilon \sqrt{x}$.  Thus $|\sqrt{x}-\sqrt{x_n}|<\epsilon$ for all $n\geq N$.  By definition $\sqrt{x_n}\rightarrow \sqrt{x}$.
 \end{proof}
 
 \begin{exercise}
@@ -116,15 +116,15 @@ Chuse a $\epsilon>0$.  Define $\omega=\epsilon \sqrt{x}>0$.  Note that $x_n\righ
 2.3.3\\
 Show that if $x_n\leq y_n\leq z_n$ for all $n\in\mathbb{N}$, and $\lim x_n=\lim z_n=l$, then $\lim y_n=l$.
 \end{exercise}
-For this proof I need the therum that $|a|<b\Leftrightarrow -b<a<b$ where $b>0$.
+For this proof I need the therm that $|a|<b\Leftrightarrow -b<a<b$ where $b>0$.
 \begin{proof}
 There are two cases $a\geq 0$ or $a<0$.\\
-Case $a\geq 0$.  In this case $|a|=a$ and our statement becomes $0\leq a<b\Leftrightarrow -b<a<b$ wich is clearly true.\\
-Case $a< 0$.  In this case $|a|=-a$ and our statement becomes $0\leq -a<b\Leftrightarrow -b<a<b$ wich,noting that $0\leq -a<b$ is equivelent to $0\geq a>-b$ , is clearly true.
+Case $a\geq 0$.  In this case $|a|=a$ and our statement becomes $0\leq a<b\Leftrightarrow -b<a<b$ witch is clearly true.\\
+Case $a< 0$.  In this case $|a|=-a$ and our statement becomes $0\leq -a<b\Leftrightarrow -b<a<b$ witch,noting that $0\leq -a<b$ is equivalent to $0\geq a>-b$ , is clearly true.
 \end{proof}
 \begin{proof}
 Suppose $x_n\leq y_n\leq z_n$ for all $n\in\mathbb{N}$, and $\lim x_n=\lim z_n=l$.\\
-Chuse $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N_1$ such that for all $n\geq N_1$, $|x_n-l|<\epsilon$.  By the definition of limit of a sequence we know that there exists a $N_2$ such that for all $n\geq N_2$, $|z_n-l|<\epsilon$.  Define $N=\max(N_1,N_2)$.  Note that for all $n\geq N$, $|x_n-l|<\epsilon$ and $|z_n-l|<\epsilon$ or by the above therum $-\epsilon< x_n-l<\epsilon$ and $-\epsilon< z_n-l<\epsilon$.  Note that $-\epsilon<x_n-l\leq y_n-l\leq z_n-l<\epsilon$ thus $-\epsilon<y_n-l<\epsilon$ and so $|y_n-l|<\epsilon$ for all $n>N$.  Thus by the definition of the limit of a sequence $\lim y_n=l$.
+Choose $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N_1$ such that for all $n\geq N_1$, $|x_n-l|<\epsilon$.  By the definition of limit of a sequence we know that there exists a $N_2$ such that for all $n\geq N_2$, $|z_n-l|<\epsilon$.  Define $N=\max(N_1,N_2)$.  Note that for all $n\geq N$, $|x_n-l|<\epsilon$ and $|z_n-l|<\epsilon$ or by the above therm $-\epsilon< x_n-l<\epsilon$ and $-\epsilon< z_n-l<\epsilon$.  Note that $-\epsilon<x_n-l\leq y_n-l\leq z_n-l<\epsilon$ thus $-\epsilon<y_n-l<\epsilon$ and so $|y_n-l|<\epsilon$ for all $n>N$.  Thus by the definition of the limit of a sequence $\lim y_n=l$.
 \end{proof}
 
 \begin{exercise}
@@ -133,19 +133,19 @@ Chuse $\epsilon>0$.  By the definition of limit of a sequence we know that there
 Find what $b_n=n-\sqrt{n^2+2n}$ converges to.
 \end{exercise}
 \begin{proof}
-Note that $b_n=\frac{(n-\sqrt{n^2+2n})(n+\sqrt{n^2+2n})}{n+\sqrt{n^2+2n}}=\frac{-2n}{n+\sqrt{n^2+2n}}=\frac{-2}{1+\sqrt{1+2/n}}=\frac{a_n}{c_n}$, where $a_n=-2$ and $c_n=1+\sqrt{1+2/n}=d_n+e_n$, where $d_n=1$ and $e_n=\sqrt{1+2/n}=\sqrt{f_n}$, where $f_n=1+2/n$.  Noting that $1/n\rightarrow 0$ we see that $f_n\rightarrow 1$.  Using 2.3.1 we see that $e_n\rightarrow \sqrt{1}=1$.  By inspection $d_n\rightarrow 1$ and so by the algebreic limit therum $c_n\rightarrow 2$.  Noting that $a_n\rightarrow -2$ and that $c_n\not\rightarrow 0$ we see by the algebreic limit therum $b_n\rightarrow \frac{-2}{2}=-1$.
+Note that $b_n=\frac{(n-\sqrt{n^2+2n})(n+\sqrt{n^2+2n})}{n+\sqrt{n^2+2n}}=\frac{-2n}{n+\sqrt{n^2+2n}}=\frac{-2}{1+\sqrt{1+2/n}}=\frac{a_n}{c_n}$, where $a_n=-2$ and $c_n=1+\sqrt{1+2/n}=d_n+e_n$, where $d_n=1$ and $e_n=\sqrt{1+2/n}=\sqrt{f_n}$, where $f_n=1+2/n$.  Noting that $1/n\rightarrow 0$ we see that $f_n\rightarrow 1$.  Using 2.3.1 we see that $e_n\rightarrow \sqrt{1}=1$.  By inspection $d_n\rightarrow 1$ and so by the algebraic limit therm $c_n\rightarrow 2$.  Noting that $a_n\rightarrow -2$ and that $c_n\not\rightarrow 0$ we see by the algebraic limit therm $b_n\rightarrow \frac{-2}{2}=-1$.
 \end{proof}
 
 \begin{exercise}
 
 2.3.9(a)\\
-Let $(a_n)$ be a bounded sequence, and assume $\lim b_n=0$.  Show that $\lim (a_nb_n)=0$.  Why are we not allowed to use the algebreic limit therum to do this?
+Let $(a_n)$ be a bounded sequence, and assume $\lim b_n=0$.  Show that $\lim (a_nb_n)=0$.  Why are we not allowed to use the algebraic limit therm to do this?
 \end{exercise}
-Firstly this is outside of the algebreic limit therum entiarly since we are not garenteed that $a_n$ has a limit.
+Firstly this is outside of the algebraic limit therm entirely since we are not guaranteed that $a_n$ has a limit.
 
 \begin{proof}
 Suppose $(a_n)$ to be a bounded sequence, and $\lim b_n=0$.\\
-Chuse $\epsilon>0$.  Since $(a_n)$ is bounded there exists a $M>0$ such that $|a_n|\leq M$ for all $n$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|b_n|<\epsilon/M$, since $\epsilon/M>0$.  Note that $|a_nb_n-0|=|a_nb_n|=|a_n||b_n|\leq M|b_n|<\epsilon$ for all $n\geq N$, thus by the definition of limit $\lim (a_nb_n)=0$.
+Choose $\epsilon>0$.  Since $(a_n)$ is bounded there exists a $M>0$ such that $|a_n|\leq M$ for all $n$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|b_n|<\epsilon/M$, since $\epsilon/M>0$.  Note that $|a_nb_n-0|=|a_nb_n|=|a_n||b_n|\leq M|b_n|<\epsilon$ for all $n\geq N$, thus by the definition of limit $\lim (a_nb_n)=0$.
 \end{proof}
 
 \begin{exercise}
@@ -153,7 +153,7 @@ Chuse $\epsilon>0$.  Since $(a_n)$ is bounded there exists a $M>0$ such that $|a
 2.3.10(a)\\
 If $\lim(a_n-b_n)=0$ then $\lim a_n=\lim b_n$.
 \end{exercise}
-Couterexample, consider the case $a_n=b_n=n$.  In this case $\lim(a_n-b_n)=\lim (0)=0$.  However $\lim a_n=\lim n$ wich does not exist and so the statement $\lim a_n=\lim b_n$ cannot be true.
+Counterexample, consider the case $a_n=b_n=n$.  In this case $\lim(a_n-b_n)=\lim (0)=0$.  However $\lim a_n=\lim n$ witch does not exist and so the statement $\lim a_n=\lim b_n$ cannot be true.
 
 \begin{exercise}
 
@@ -161,7 +161,7 @@ Couterexample, consider the case $a_n=b_n=n$.  In this case $\lim(a_n-b_n)=\lim 
 If $\lim b_n=b$ then $\lim |b_n|=|b|$.
 \end{exercise}
 \begin{proof}
-Chuse $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|b_n-b|<\epsilon$.  Recall that we proved on the first homework that  $||a| - |b|| \leq |a - b|$, thus $||b_n|-|b||\leq |b_n-b|<\epsilon$ for all $n\geq N$.  By the definiton of limit $\lim |b_n|=|b|$.
+Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|b_n-b|<\epsilon$.  Recall that we proved on the first homework that  $||a| - |b|| \leq |a - b|$, thus $||b_n|-|b||\leq |b_n-b|<\epsilon$ for all $n\geq N$.  By the definition of limit $\lim |b_n|=|b|$.
 \end{proof}
 
 \begin{exercise}
@@ -170,7 +170,7 @@ Chuse $\epsilon>0$.  By the definition of limit there exists a $N$ such that for
 If $\lim a_n=a$ and $\lim(b_n-a_n)=0$ then $\lim b_n=a$.
 \end{exercise}
 \begin{proof}
-Define $s_n=b_n-a_n$.  Note that $s_n\rightarrow 0$ and $a_n\rightarrow a$.  By the algebreic limit therum $b_n=(s_n+a_n)\rightarrow a+0=a$ thus $b_n\rightarrow a$.
+Define $s_n=b_n-a_n$.  Note that $s_n\rightarrow 0$ and $a_n\rightarrow a$.  By the algebraic limit therm $b_n=(s_n+a_n)\rightarrow a+0=a$ thus $b_n\rightarrow a$.
 \end{proof}
 
 \begin{exercise}
@@ -191,12 +191,12 @@ $$
 converges.
 \end{exercise}
 \begin{proof}
-I will use the monotone convergence therum.  So what I need to show is that our sequence is bounded and that our sequence is monotonic.\\\\
+I will use the monotone convergence therm.  So what I need to show is that our sequence is bounded and that our sequence is monotonic.\\\\
 Suppose $0\leq x_n \leq 3$.  Note that $-0\geq -x_n \geq -3$, $4\geq 4-x_n \geq 1$, and since $4-x_n\geq 1>0$ we see $0\leq 1/4\leq1/( 4-x_n) \leq 1\leq 3$.  Thus $0\leq x_{n+1} \leq 3$.  Noting that $0\leq x_1=3\leq 3$, we conclude by induction that all $x_n$ are in $0\leq x_n \leq 3$.  Thus $|x_n|\leq 3$ for all n and so the sequence is bounded.\\\\
 I will prove the sequence is monotonic decreasing by induction.\\
 In the base case is $x_n\geq x_{n+1}$?  Well that would be, for $n=1$, $3\geq \frac{1}{4-3}=1$.  So it is monotonic decreasing in the base case.\\
 Suppose $x_n\geq x_{n+1}$.  Note that $x_n\geq x_{n+1}$, $-x_n\leq -x_{n+1}$, $4-x_n\leq 4-x_{n+1}$, and noting that $4-x_n\geq1>0$ since the sequence is bounded by 3, $\frac{1}{4-x_n}=x_{n+1}\geq \frac{1}{4-x_{n+1}}=x_{n+2}$.  So I have shown that if $x_n\geq x_{n+1}$ we can conclude that $x_{n+1}\geq x_{n+2}$, and so by induction I conclude that $x_n\geq x_{n+1}$ for all $n$ and thus the sequence is monotonic decreasing.\\\\
-By the monotone convergence therum we can conclude that the sequence converges.
+By the monotone convergence therm we can conclude that the sequence converges.
 \end{proof}
 \begin{exercise}
 
@@ -204,7 +204,7 @@ By the monotone convergence therum we can conclude that the sequence converges.
 Given the sequence $x_n\rightarrow l$.  Prove that the sequence $s_n=x_{n+1}\rightarrow l$
 \end{exercise}
 \begin{proof}
-Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $m\geq N$, $|x_m-l|<\epsilon$.  Choose $n\geq N$ let $m=n+1\geq N$.  Note that $|x_m-l|<\epsilon$, $|x_{n+1}-l|<\epsilon$, $|s_n-l|<\epsilon$.  Thus by the definiton of limit $s_n\rightarrow l$.
+Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $m\geq N$, $|x_m-l|<\epsilon$.  Choose $n\geq N$ let $m=n+1\geq N$.  Note that $|x_m-l|<\epsilon$, $|x_{n+1}-l|<\epsilon$, $|s_n-l|<\epsilon$.  Thus by the definition of limit $s_n\rightarrow l$.
 \end{proof}
 \begin{exercise}
 
@@ -214,14 +214,99 @@ $$x_{n+1}=\frac{1}{4-x_n}
 $$
 find $l$.
 \end{exercise}
+\begin{proof}
+Note that $x_n-s_n\rightarrow l-l = 0$ by the arithmetic limit therm.  Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|x_n-s_n-0|<1/14\epsilon$.  Note that
+$$|x_n-s_n|=$$
+$$|x_n-x_{n+1}|=$$
+$$|x_n-\frac{1}{4-x_n}|=$$
+$$|\frac{x_n(4-x_n)-1}{4-x_n}|=$$
+$$\frac{|-x_n^2+4x_n-1|}{|4-x_n|}$$
+Recalling that $x_n$ is bounded by $3$ we get 
+$$-3\leq x_n\leq 3$$
+$$4+3=7\geq 4-x_n\geq 4-3=1$$
+and so $0<|4-x_n|\leq 7$ thus
+$$\frac{|-x_n^2+4x_n-1|}{|4-x_n|}\geq 1/7|-x_n^2+4x_n-1|$$
+Note
+$$1/7|-x_n^2+4x_n-1|=$$
+$$1/7|-(x_n-(2+\sqrt{3}))(x_n-(2-\sqrt{3}))|=$$
+$$1/7|x_n-(2+\sqrt{3})||x_n-(2-\sqrt{3})|$$
+via the quadratic equation.\\
+Recalling that $x_n$ is bounded by $3$ we get
+$$-3\leq x_n\leq 3$$
+$$6.5\geq 3.5-x_n\geq .5$$
+Noting that $2+\sqrt{3}>3.5$ we get
+$$|x_n-(2+\sqrt{3})|=|2+\sqrt{3}-x_n|=2+\sqrt{3}-x_n\geq 3.5-x_n\geq 1/2$$
+It follows that
+$$1/7|x_n-(2+\sqrt{3})||x_n-(2-\sqrt{3})|\geq 1/14|x_n-(2-\sqrt{3})|$$
+Combining all of our inequalities we get $1/14 |x_n-(2-\sqrt{3} )|\leq |x_n-s_n|< 1/14\epsilon$, or $|x_n-(2-\sqrt{3})|< \epsilon$ for all $n\geq N$.  By the definition of limit we can say $x_n\rightarrow 2-\sqrt{3}$.
+\end{proof}
 
+\begin{exercise}
 
+2.4.3(a)\\
+Show that 
+$$\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},...$$
+converges and find it's limit.
+\end{exercise}
+We can formalize this sequence as $x_1=\sqrt{2}$ and $x_{n+1}=\sqrt{2+x_n}$.\\\\
+In the case that $n=1$, $1\leq x_n\leq 2$ since $1\leq \sqrt{2}\leq 2$\\
+Suppose $1\leq x_n\leq 2$.  Note that
+$$3=2+1\leq 2+x_n\leq 2+2=4$$
+$$1\leq \sqrt{3}\leq \sqrt{2+x_n}\leq \sqrt{4}=2$$
+$$1\leq x_{n+1}\leq 2$$
+We can conclude by induction that $1\leq x_n\leq 2$ for all $n$.  And so our sequence is bounded.\\\\
+In the case that $n=1$, $x_{n}\leq x_{n+1}$ since $\sqrt{2}\leq \sqrt{2+\sqrt{2}}$.\\
+Suppose $x_{n}\leq x_{n+1}$.  Note that
+$$1\leq x_{n}\leq x_{n+1}\leq 2$$
+$$3\leq 2+x_{n}\leq 2+x_{n+1}\leq 4$$
+$$\sqrt{3}\leq \sqrt{2+x_{n}}\leq \sqrt{2+x_{n+1}}\leq 2$$
+$$\sqrt{2+x_{n}}\leq \sqrt{2+x_{n+1}}$$
+$$x_{n+1}\leq x_{n+2}$$
+We can conclude by induction that $x_{n}\leq x_{n+1}$ for all $n$.  And so our sequence is monotone increasing.\\\\
+This sequence is bounded and monotone therefore it has a limit lets call it $l$.\\\\
+Define a new set $s_n = x_{n+1}$ note that $x_n\rightarrow l$ and $s_n\rightarrow l$ (from 2.4.1(b)).\\
+Note that $(x_n-s_n)\rightarrow l-l=0$.  Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|x_n-s_n-0|<1/4\epsilon$.  Choose some $n>N$.  Note that $1\leq x_n\leq 2$ and $1\leq s_n=x_{n+1}\leq 2$ thus $2\leq x_n+s_n=|x_n+s_n|\leq 4$ and so $|x_n^2-s_n^2|=|x_n-s_n||x_n+s_n|<\epsilon$.  Note that
+$$|x_n^2-s_n^2|<\epsilon$$
+$$|x_n^2-2-x_n|<\epsilon$$
+$$|x_n-2||x_n+1|<\epsilon$$
+Note that $1\leq x_n\leq 2$ thus $2\leq x_n+1\leq 3$ and $x_n+1=|x_n+1|$ so
+$$2|x_n-2|\leq|x_n-2||x_n+1|$$
+$$2|x_n-2|<\epsilon$$
+$$|x_n-2|<\epsilon$$
+By the definition of limit $x_n\rightarrow 2$.
 
+\begin{exercise}
 
-
-
-
-
+2.4.3(b)\\
+Show that 
+$$\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},...$$
+converges and find it's limit.
+\end{exercise}
+We can formalize this sequence as $x_1=\sqrt{2}$ and $x_{n+1}=\sqrt{2x_n}$.\\\\
+In the case that $n=1$, $1\leq x_n\leq 2$ since $1\leq \sqrt{2}\leq 2$\\
+Suppose $1\leq x_n\leq 2$.  Note that
+$$2\leq 2x_n\leq 4$$
+$$1\leq \sqrt{2}\leq \sqrt{2x_n}\leq \sqrt{4}=2$$
+$$1\leq x_{n+1}\leq 2$$
+We can conclude by induction that $1\leq x_n\leq 2$ for all $n$.  And so our sequence is bounded.\\\\
+In the case that $n=1$, $x_{n}\leq x_{n+1}$ since $\sqrt{2}\leq \sqrt{2\sqrt{2}}$.\\
+Suppose $x_{n}\leq x_{n+1}$.  Note that
+$$1\leq x_{n}\leq x_{n+1}\leq 2$$
+$$2\leq 2x_{n}\leq 2x_{n+1}\leq 4$$
+$$\sqrt{2}\leq \sqrt{2x_{n}}\leq \sqrt{2x_{n+1}}\leq 2$$
+$$\sqrt{2x_{n}}\leq \sqrt{2x_{n+1}}$$
+$$x_{n+1}\leq x_{n+2}$$
+We can conclude by induction that $x_{n}\leq x_{n+1}$ for all $n$.  And so our sequence is monotone increasing.\\\\
+This sequence is bounded and monotone therefore it has a limit lets call it $l$.\\\\
+Define a new set $s_n = x_{n+1}$ note that $x_n\rightarrow l$ and $s_n\rightarrow l$ (from 2.4.1(b)).\\
+Note that $(x_n-s_n)\rightarrow l-l=0$.  Choose $\epsilon>0$.  By the definition of limit there exists a $N$ such that for all $n\geq N$, $|x_n-s_n-0|<1/4\epsilon$.  Choose some $n>N$.  Note that $1\leq x_n\leq 2$ and $1\leq s_n=x_{n+1}\leq 2$ thus $2\leq x_n+s_n=|x_n+s_n|\leq 4$ and so $|x_n^2-s_n^2|=|x_n-s_n||x_n+s_n|<\epsilon$.  Note that
+$$|x_n^2-s_n^2|<\epsilon$$
+$$|x_n^2-2x_n|<\epsilon$$
+$$|x_n-2||x_n|<\epsilon$$
+Note that $1\leq x_n$ so
+$$|x_n-2|\leq|x_n-2||x_n|$$
+$$|x_n-2|<\epsilon$$
+By the definition of limit $x_n\rightarrow 2$.
 
 
 
@@ -243,14 +328,14 @@ y_{n/2}&$otherwise$\\
 \end{cases}$$
 We are asked in this proof to prove a "if and only if" statement, basically prove a double implication.  I will break this up into proving two implications, first $\lim x_n=\lim y_n$ implies $(z_n)$ is convergent, and second $(z_n)$ is convergent implies $\lim x_n=\lim y_n$.\\\\
 Suppose $\lim x_n=\lim y_n=l$.\\
-Chuse $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N_1$ such that for all $n\geq N_1$, $|x_n-l|<\epsilon$.  By the definition of limit of a sequence we know that there exists a $N_2$ such that for all $n\geq N_2$, $|y_n-l|<\epsilon$.  Define $N=2*(\max(N_1,N_2))$.  Chuse $n\geq N$.  There are two possibilities, eather $n\in$ odd or $n\notin$ odd.\\
+Choose $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N_1$ such that for all $n\geq N_1$, $|x_n-l|<\epsilon$.  By the definition of limit of a sequence we know that there exists a $N_2$ such that for all $n\geq N_2$, $|y_n-l|<\epsilon$.  Define $N=2*(\max(N_1,N_2))$.  Choose $n\geq N$.  There are two possibilities, eater $n\in$ odd or $n\notin$ odd.\\
 Case $n\in$ odd.  In this case $z_n=x_{(n+1)/2}$.  Note that $(n+1)/2>n/2\geq N/2\geq N_1$ and so $|z_n-l|=|x_{(n+1)/2}-l|<\epsilon$.\\
 Case $n\notin$ odd.  In this case $z_n=y_{n/2}$.  Note that $n/2\geq N/2\geq N_2$ and so $|z_n-l|=|y_{n/2}-l|<\epsilon$.\\
 So $|z_n-l|<\epsilon$ for all $n\geq N$ and thus $z_n$ will converge.\\\\
 Suppose $(z_n)$ is convergent.\\
 let $l=\lim z_n$.\\
-Chuse $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N$ such that for all $m\geq N$, $|z_m-l|<\epsilon$.  Chuse a $n\geq N$.  let $m=2n-1$.  Note that $m\geq n\geq N$ and that $m\in$ odds, so $z_m=x_{(m+1)/2}=x_n$.  Since $m\geq N$, $|x_n-l|=|z_m-l|<\epsilon$.  Thus $x_n$ converges to $l$.\\
-Chuse $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N$ such that for all $m\geq N$, $|z_m-l|<\epsilon$.  Chuse a $n\geq N$.  let $m=2n$.  Note that $m> n\geq N$ and that $m\notin$ odds, so $z_m=y_{m/2}=y_n$.  Since $m\geq N$, $|y_n-l|=|z_m-l|<\epsilon$.  Thus $y_n$ converges to $l$.\\
+Choose $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N$ such that for all $m\geq N$, $|z_m-l|<\epsilon$.  Choose a $n\geq N$.  let $m=2n-1$.  Note that $m\geq n\geq N$ and that $m\in$ odds, so $z_m=x_{(m+1)/2}=x_n$.  Since $m\geq N$, $|x_n-l|=|z_m-l|<\epsilon$.  Thus $x_n$ converges to $l$.\\
+Choose $\epsilon>0$.  By the definition of limit of a sequence we know that there exists a $N$ such that for all $m\geq N$, $|z_m-l|<\epsilon$.  Choose a $n\geq N$.  let $m=2n$.  Note that $m> n\geq N$ and that $m\notin$ odds, so $z_m=y_{m/2}=y_n$.  Since $m\geq N$, $|y_n-l|=|z_m-l|<\epsilon$.  Thus $y_n$ converges to $l$.\\
 We conclude that $\lim x_n=\lim y_n$.\\\\
 We can now conclude $(z_n)$ is convergent if and only if $\lim x_n=\lim y_n$.
 
