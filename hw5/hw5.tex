@@ -1,0 +1,258 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Homework 5}
+\docauthor{Parker Whaley}
+\docdate{Due October 5, 2016}
+
+\begin{document}
+Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.
+\begin{exercise}
+
+Suppose $\{n_j\}_{j=1}^\infty$ is a sequence of natural numbers such that $n_j < n_{j+1}$ for all $j \in \mathbb{N}$.  Show that $n_j \geq j$ for all $j \in \mathbb{N}$.
+\end{exercise}
+\begin{proof}
+Suppose $\{n_j\}_{j=1}^\infty$ is a sequence of natural numbers such that $n_j < n_{j+1}$ for all $j \in \mathbb{N}$.  I will prove that $n_j \geq j$ for all $j \in \mathbb{N}$ by induction on $j$.\\
+Base case $j=1$.  Note that $n_1$ is a natural number, and by construction the smallest natural number is $1$.  Thus in the base case $n_j \geq j$.\\
+Suppose $n_j \geq j$.  Note that $n_{j+1}>n_j$, thus $n_{j+1}-n_j>0$,noting that the integers are closed under subtraction I conclude that $n_{j+1}-n_j\in\mathbb{Z}$, thus $n_{j+1}-n_j\geq 1$ and $n_{j+1}\geq 1+n_j\geq 1+j$.
+\end{proof}
+
+\begin{exercise}
+
+Show that a subsequence of a convergent sequence converges to the same limit. Be sure
+to use the previous problem in your proof!
+\end{exercise}
+\begin{proof}
+Suppose $\{a_n\} \rightarrow l$ and it has a subsequence $b_j$.  By the definition of subsequence we can express $b_j=a_{n_j}$ where $\{n_j\}$ is a sequence of natural numbers such that $n_j < n_{j+1}$.  Choose $\epsilon>0$.  Since $\{a_n\} \rightarrow l$ there must exist a $N\in\mathbb{N}$ such that for any $n\geq N$, $|a_n-l|<\epsilon$.  Note that for any $j\geq N$, $n_j\geq j$ thus $n_j\geq N$ and so $|b_{j}-l|=|a_{n_j}-l|<\epsilon$.  Thus $|b_{j}-l|<\epsilon$ for all $j\geq N$ by the definition of convergence $b_j\rightarrow l$.
+\end{proof}
+
+\begin{exercise}
+
+2.4.4\\
+Prove NIP using MCT.
+\end{exercise}
+\begin{proof}
+Axium: if a sequence is monotone and bounded it converges.\\
+Suppose we have sets $I_n=[a_n,b_n]$ defined for all $n\in\mathbb{N}$, where $a_n\leq a_{n+1}\leq b_{n+1}\leq b_n$.\\
+Note that for $n=1$, $a_1\leq a_{n}\leq b_{n}\leq b_1$.  Suppose $a_1\leq a_{n}\leq b_{n}\leq b_1$.  Note that $a_1\leq a_{n}\leq a_{n+1}\leq b_{n+1}\leq  b_{n}\leq b_1$ and thus $a_1\leq a_{n+1}\leq b_{n+1}\leq b_1$.  By induction we are forced to conclude that $a_1\leq a_{n}\leq b_{n}\leq b_1$ for all $n\in \mathbb{N}$.\\
+Noting that $a_n$ is bounded and monotonic we can conclude that it converges to some values $a_n\rightarrow a$.\\
+Suppose there existed a $c\in \mathbb{N}$ where $a\not\in I_c$.  There are two sensibilities eater $a<a_c$ or $b_c<a$, I will proceed to prove both of these are impossible.\\
+Suppose $a<a_c$.  Choose $\epsilon=a_c-a>0$.  By the definition of limit there exists a $N\in\mathbb{N}$ such that for all $n\geq N$, $|a_n-a|<\epsilon$.  Note that $N>c$ since if $N\leq c$ we could conclude $|a_c-a|<\epsilon$ and $|a_c-a|=|\epsilon|=\epsilon$ a contradiction.  Note that $a_N\geq a_c> a$ since $a_n$ is monotonic increasing, thus $\epsilon>|a_N-a|=a_N-a\geq a_c-a=\epsilon$.  A contradiction thus it is impossible that $a<a_c$, and we conclude that $b_c<a$.\\
+Choose $\epsilon=a-b_c>0$.  By the definition of limit there exists a $N\in\mathbb{N}$ such that for all $n\geq N$, $|a_n-a|<\epsilon$.  Note that $N>c$ since if $N\leq c$ we could conclude $|a_c-a|<\epsilon$ and $a_c\leq b_c<a$, $|a_c-a|=a-a_c\geq a-b_c=\epsilon$ a contradiction.  Note that $a_N\leq b_N\leq b_c < a$ since $b_n$ is monotonic decreasing, thus $\epsilon>|a_N-a|=a-a_N\geq a-b_c=\epsilon$ a contradiction.  We are thus forced to conclude that for all $c\in\mathbb{N}$ $a\in I_c$.  Thus $a\in\cap I_n$, proving that there exists at least one value in $\cap I_n$, the nested interval property.
+\end{proof}
+
+\begin{exercise}
+
+2.4.5(a)\\
+Let $x_1=2$ 
+$$ x_{n+1} =\frac{1}{2} \biggr(x_n+\frac{2}{x_n}\biggr)$$
+Show $(x_n)^2\geq 2$ prove $x_n-x_{n+1}\geq 0$.  Conclude $x_n\rightarrow \sqrt{2}$.
+\end{exercise}
+\begin{proof}
+Note that for $n=1$, $(x_n)^2=4\geq 2$.  Suppose $(x_n)^2\geq 2$.  Note that
+$$ x_{n+1} =\frac{1}{2} \biggr(x_n+\frac{2}{x_n}\biggr)$$
+$$ (x_{n+1})^2 =\frac{1}{4} \biggr((x_n)^2+2\cdot x_n\cdot \frac{2}{x_n}+\frac{4}{(x_n)^2}\biggr)$$
+$$= \frac{(x_n)^2}{4}+1+\frac{1}{(x_n)^2}$$
+$$= 1+\frac{(x_n)^4+4}{4(x_n)^2}$$
+Note that there exists some $\epsilon\geq 0$ where $2+\epsilon=(x_n)^2$.
+$$= 1+\frac{(2+\epsilon)^2+4}{4(2+\epsilon)}$$
+$$= 1+\frac{\epsilon^2+4\epsilon+8}{4(2+\epsilon)}$$
+$$\geq 1+\frac{4(2+\epsilon)}{4(2+\epsilon)}$$
+$$\geq 2$$
+Thus by induction $(x_n)^2\geq 2$.\\\\
+Note 
+$$(x_{n})^2\geq 2$$
+$$x_{n}\geq \frac{2}{x_{n}}$$
+$$\frac{1}{x_{n}}\leq \frac{x_{n}}{2}$$
+$$0\leq \frac{x_{n}}{2}-\frac{1}{x_{n}}$$
+$$0\leq x_{n}-\frac{x_{n}}{2}-\frac{1}{x_{n}}$$
+$$0\leq x_{n}-\frac{1}{2}\biggr(x_{n}+\frac{2}{x_{n}}\biggr)$$
+$$0\leq x_{n}-x_{n+1}$$\\\\
+Since $x_n$ is monotonic decreasing and bounded below we know it converges to some value, lets call it $l$.  Note that $x_n\rightarrow l$ and $x_{n+1}\rightarrow l$ thus $x_nx_{n+1}\rightarrow l^2$ or in other words $(x_n^2+2)/2\rightarrow l^2$.  Thus $x_n^2\rightarrow 2l^2-2$ however $x_n^2\rightarrow l^2$ so $l^2=2l^2-2$ or $l^2=2$.  Therefore this sequence converges on $\sqrt{2}$.
+\end{proof}
+
+\begin{exercise}
+
+2.4.5(b)\\
+Modify the original sequence so it converges to $\sqrt{c}$. ($c>0$)
+\end{exercise}
+Let $x_1=\max(c,1)$ 
+$$ x_{n+1} =\frac{1}{2} \biggr(x_n+\frac{c}{x_n}\biggr)$$
+\begin{proof}
+Note that for $n=1$, $(x_n)^2=\max(c^2,1)\geq c$.  Suppose $(x_n)^2\geq c$.  Note that
+$$ x_{n+1} =\frac{1}{2} \biggr(x_n+\frac{c}{x_n}\biggr)$$
+$$ (x_{n+1})^2 =\frac{1}{4} \biggr((x_n)^2+2\cdot x_n\cdot \frac{c}{x_n}+\frac{c^2}{(x_n)^2}\biggr)$$
+$$= \frac{1}{4} \biggr((x_n)^2+2c+\frac{c^2}{(x_n)^2}\biggr)$$
+$$= \frac{1}{4} \biggr(2c+(x_n)^2+\frac{c^2}{(x_n)^2}\biggr)$$
+Note that there exists some $\epsilon\geq 0$ where $c+\epsilon=(x_n)^2$.
+$$= \frac{1}{4} \biggr(2c+\frac{(c+\epsilon)^2+c^2}{c+\epsilon}\biggr)$$
+$$= \frac{1}{4} \biggr(2c+\frac{c^2+2c\epsilon+\epsilon^2+c^2}{c+\epsilon}\biggr)$$
+$$\geq \frac{1}{4} \biggr(2c+\frac{2c^2+2c\epsilon}{c+\epsilon}\biggr)$$
+$$\geq \frac{1}{4} (2c+2c)=c$$
+Thus by induction $(x_n)^2\geq c$.\\\\
+Note 
+$$(x_{n})^2\geq c$$
+$$x_{n}\geq \frac{c}{x_{n}}$$
+$$\frac{1}{x_{n}}\leq \frac{x_{n}}{c}$$
+$$0\leq \frac{x_{n}}{c}-\frac{1}{x_{n}}$$
+$$0\leq \frac{2x_{n}}{c}-\frac{x_{n}}{c}-\frac{1}{x_{n}}$$
+$$0\leq \frac{2x_{n}}{c}-\frac{2}{2c}\biggr(x_{n}+\frac{c}{x_{n}}\biggr)$$
+$$0\leq \frac{2}{c}\biggr(x_{n}-\frac{1}{2}\biggr(x_{n}+\frac{c}{x_{n}}\biggr)\biggr)$$
+$$0\leq x_{n}-\frac{1}{2}\biggr(x_{n}+\frac{c}{x_{n}}\biggr)$$
+$$0\leq x_{n}-x_{n+1}$$\\\\
+Since $x_n$ is monotonic decreasing and bounded below we know it converges to some value, lets call it $l$.  Note that $x_n\rightarrow l$ and $x_{n+1}\rightarrow l$ thus $x_nx_{n+1}\rightarrow l^2$ or in other words $(x_n^2+c)/2\rightarrow l^2$.  Thus $x_n^2\rightarrow 2l^2-c$ however $x_n^2\rightarrow l^2$ so $l^2=2l^2-c$ or $l^2=c$.  Therefore this sequence converges on $\sqrt{c}$.
+\end{proof}
+
+\begin{exercise}
+
+2.5.6\\
+Show that $a_n=b^{1/n}\rightarrow l_b$ if $b\geq 0$ and find $l_b$.
+\end{exercise}
+\begin{proof}
+I will consider two cases $b\leq 1$ or $b>1$.\\
+In the case that $b\leq 1$.\\
+Note that $b\leq b^{1/2}\leq b^{1/3}\leq \dots\leq 1$.  Note that $a_n$ is monotone increasing and bounded above therefore it converges.\\
+In the case that $b > 1$.\\
+Note that $b>b^{1/2}>b^{1/3}>\dots>1$.  Note that $a_n$ is monotone decreasing and bounded below therefore it converges.\\
+We conclude that this sequence will converge to some limit for any value $b\geq 0$.  Let's consider this for a particular $b$.  Note that $b^{1/n}=a_n\rightarrow l$ and $\sqrt{a_n}=b^{1/2n}=a_{2n}\rightarrow l$ thus $\sqrt{a_n} \rightarrow l$ and $\sqrt{a_n} \rightarrow \sqrt{l}$ so $\sqrt{l}=l$ and so $l=1$ or $l=0$.  We can see above that if $b > 1$, then $a_n>1$ and so our limit can not be $0$ thus in this case $l_b=1$.  If $b\leq 1$ and $b\neq 0$ we can see that we have a monotone increasing sequence starting above $0$ thus $0<a_1<a_n$ and we can not converge on $0$ since we never get closer then $a_1$ and so $l_b=1$.  If $b=0$ we get $a_n=0$ and thus our sequence converges to $0$.\\
+In summery $a_n\rightarrow 1$ if $b\neq 0$ and $a_n\rightarrow 0$ if $b= 0$
+\end{proof}
+\begin{exercise}
+
+Suppose $|a_n|\rightarrow 0$.  Show $a_n \rightarrow 0$.
+\end{exercise}
+Suppose $|a_n|\rightarrow 0$.\\
+Choose $\epsilon>0$.  By the definition of limit there exists some $N$ such that for all $n\geq N$, $||a_n|-0|<\epsilon$.  Note that $||a_n|-0|=||a_n||=|a_n|=|a_n-0|$.  Choose $n\geq N$.  Note that $|a_n-0|=||a_n|-0|<\epsilon$.  By the definition of limit $a_n \rightarrow 0$.
+\begin{exercise}
+
+2.5.7\\
+\end{exercise}
+\begin{proof}
+We know that $b^n\rightarrow 0$ for $0\leq b<1$.  Note that $-(b^n)\rightarrow 0$ for $0\leq b<1$.  Noting that $|b^n|=|b|^n$ for all $b$ we see that $-|b|^n\leq b^n \leq |b|^n$.  Thus if $-1<b<1$ we know that $0\leq |b|<1$ and so $-|b|^n\rightarrow 0$ and $|b|^n\rightarrow 0$.  By the squeeze therm $b^n\rightarrow 0$ if $-1<b<1$.  Suppose $b\not\in (-1,1)$.  Further suppose $b^n\rightarrow 0$.  Note that $|b^n|\rightarrow 0$ thus $|b|^n\rightarrow 0$.  Note that $1\leq |b|\leq |b|^n$.  We have a contradiction all terms in the sequence are grater than $1$ however they converge to $0$.  We are forced to conclude the negation of our supposition that $b^n\rightarrow 0$ only if $-1< b<1$.
+\end{proof}
+
+\begin{exercise}
+
+2.6.2\\
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+$a_n=(-1)^n/n$\\
+Note that this sequence is not monotone.  Also we proved in class that this sequence converges and thus by the Cauchy criterion it is Cauchy.
+\item
+This is impossible.  Any sequence with a unbounded sub sequence is unbounded and thus cannot converge, since all convergent sequences are bounded, and thus is not Cauchy.
+\item
+Suppose $a_n$ is a monotone sequence and $a_{n_j}$ is a Cauchy sub sequence of $a_n$.  Choose $\epsilon>0$ there exists $N$ such that $i,j\geq N$, $|a_{n_j}-a_{n_i}|<\epsilon$.  Choose $n,m\geq n_N\geq N$.  Define $J=\max(n,m)$.  Note that $n_J\geq \max(n,m)\geq n_N\geq N$ so $J\geq N$.  Note $\epsilon>|a_{n_J}-a_{n_N}|\geq |a_n-a_m|$ since $a_n$ is monotone.  Thus $a_n$ is Cauchy and so $a_n$ is convergent.  There are no monotone divergent sequences with a Cauchy sub sequence.
+\item
+$$a_n=\begin{cases}
+n & n\in $ odds$\\
+0 &$otherwise$
+\end{cases}$$
+Clearly $a_n$ is unbounded but the sub sequence $a_{2n}$ is a sequence of zeros and thus clearly converges and thus by the Cauchy criterion it is Cauchy.
+\end{enumerate}
+\begin{exercise}
+
+2.6.5\\
+\end{exercise}
+\begin{enumerate}[(i)]
+\item
+Definitely not.  Consider $a_i=1/i$ and $s_n=\sum_{i=1}^n a_i$.  We have previously proven this sequence is unbounded.  Choose $\epsilon>0$.  There exists $N$ such that $1/N<\epsilon$.  Choose $n\geq N$.  $|s_{n+1}-s_n|=|a_{n+1}|=1/(n+1)<1/N<\epsilon$.  This sequence is pseudo-Cauchy and unbounded.
+\item
+Suppose $a_n$ and $b_n$ are pseudo-Cauchy.  Define $c_n=a_n+b_n$.\\
+Choose $\epsilon>0$.  There exists $N_a$ such that for all $n>N_a$, $|a_{n+1}-a_n|<\epsilon/2$.  There exists $N_b$ such that for all $n>N_b$, $|b_{n+1}-b_n|<\epsilon/$.  Choose $n\geq \max(N_a,N_b)$.  Note that $|a_{n+1}-a_n|<\epsilon/2$ and $|b_{n+1}-b_n|<\epsilon/$.  Note that $|c_{n+1}-c_n|=|a_{n+1}-a_n+b_{n+1}-b_n|\leq|a_{n+1}-a_n|+|b_{n+1}-b_n|<\epsilon$.  Thus $c_n$ is pseudo-Cauchy.
+\end{enumerate}
+
+
+
+
+\newpage
+\begin{exercise}
+
+2.5.5\W\\
+Assume $(a_n)$ is a bounded sequence with the property that every convergent subsequence converges to $a$.  Show that $a_n$ must converge to $a$.
+\end{exercise}
+\begin{proof}
+Suppose that $a_n\not\rightarrow a$.  That must mean that the statement $(\forall \epsilon>0)$, $(\exists N\in\mathbb{N})$, $(\forall n\geq N)$, $|a_n-a|<\epsilon$ must be false, thus its negation is true.  We now know $(\exists \epsilon>0)$, $(\forall N\in\mathbb{N})$, $(\exists n\geq N)$, $|a_n-a|\geq \epsilon$, let's name one of the $\epsilon$ with this property call it $\epsilon_o$ so we know that $(\forall N\in\mathbb{N})$, $(\exists n\geq N)$, $|a_n-a|\geq \epsilon_o$.\\\\
+author's note: the symbolic representation is necessary here to illustrate to the reader what I am doing.  putting it all in paragraph form would needlessly complicate this proof for the reader.\\\\
+To summarize I now have in hand $\epsilon_o$ a positive number with the property that for any natural number $N$ there is a $n\geq N$ with the property that $|a_n-a|\geq \epsilon_o$.\\
+Let's construct a subsequence, and call it $a_{n_j}$.  How I will construct this sequence $n_1$ is the first $n\geq 1$ where $|a_n-a|\geq \epsilon_o$, this must exist since $1$ is a natural number.  I define $n_{k+1}$ to be the first $n\geq n_k+1$ with the property $|a_n-a|\geq \epsilon_o$, this must exist since $n_k+1$ is a natural number.  Thus for all $j$, $|a_{n_j}-a|\geq \epsilon_o$.\\
+Since $a_n$ is bounded we know that any subsequence of it will be bounded, thus $a_{n_j}$ is bounded.  By the Bolzano-Weierstrass theorem we conclude $a_{n_j}$ has a convergent subsequence lets call it $a_{n_{j_i}}$.  Note that $a_{n_{j_i}}$ is a subsequence of $a_n$.  Since $a_{n_{j_i}}$ is a convergent subsequence of $a_n$ we know $a_{n_{j_i}}\rightarrow a$.\\
+Let $\epsilon=\epsilon_o>0$.  By the definition of convergence there exists a $N\in\mathbb{N}$ such that for all $i\geq N$, $|a_{n_{j_i}}-a|<\epsilon$.  Thus $|a_{n_{j_N}}-a|<\epsilon$.  Define $J=j_N$.  Note that $|a_{n_{J}}-a|<\epsilon$.  Recall from above that by construction $|a_{n_j}-a|\geq \epsilon_o$, for all $j$, including $J$!  Thus we have arrived at a contradiction, $\epsilon>|a_{n_J}-a|\geq \epsilon_o$ or $\epsilon_o>\epsilon_o$.  We conclude the negation of our supposition $a_n\rightarrow a$.
+\end{proof}
+\end{document}
