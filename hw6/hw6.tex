@@ -1,0 +1,225 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Homework 6}
+\docauthor{Parker Whaley}
+\docdate{Due October 11, 2016}
+
+\begin{document}
+Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.  Also note that I am operating under a convention that $\sum=\sum_{n=1}^\infty$ and the convention that $\sum_i^j=\sum_{n=i}^j$.
+\begin{exercise}
+
+Prove the alternating series theorem.  If $\{a_n\}$ is monotone decreasing sequence, $a_n\rightarrow 0$, and $a_n\geq 0$.  Then 
+$$\sum_{n=1}^{\infty}(-1)^{n+1}a_n$$
+converges.
+\end{exercise}
+\begin{proof}
+Let's start with some notation.  Define $b_n=(-1)^{n+1}a_n$.  Define $s_n=\sum_{i=1}^{n}b_i$.  Note that $|b_n|\geq|b_{n+1}|$, since $|b_n|=a_n$.  Note that $b_n\rightarrow 0$ since $|b_n|=a_n\rightarrow 0$.  Note that $b_n\leq 0$ if $n$ is even and $b_n\geq 0$ if $n$ is odd.\\
+Note that
+Consider the sub sequence $s_{2j+1}$.  Note that $s_{2(j+1)+1}=s_{2j+3}=s_{2j+1}+b_{2j+2}+b_{2j+3}$.  Note that $2j+2$ is even so $|b_{2j+2}|=-b_{2j+2}$.  Note that $2j+3$ is odd so $|b_{2j+3}|=b_{2j+3}$.  Note that $|b_{2j+2}|\geq|b_{2j+3}|$ so $-b_{2j+2}\geq b_{2j+3}$ so $b_{2j+2}+b_{2j+3}\leq 0$ thus $s_{2j+1}+b_{2j+2}+b_{2j+3}\leq s_{2j+1}$ and so $s_{2(j+1)+1}\leq s_{2j+1}$.  Thus this sequence is monotone decreasing.\\
+Consider the sub sequence $s_{2j}$.  Note that $s_{2(j+1)}=s_{2j+2}=s_{2j}+b_{2j+1}+b_{2j+2}$.  Note that $2j+2$ is even so $|b_{2j+2}|=-b_{2j+2}$.  Note that $2j+1$ is odd so $|b_{2j+1}|=b_{2j+1}$.  Note that $|b_{2j+2}|\leq|b_{2j+1}|$ so $-b_{2j+2}\leq b_{2j+1}$ so $b_{2j+2}+b_{2j+1}\geq 0$ thus $s_{2j}+b_{2j+1}+b_{2j+2}\geq s_{2j+1}$ and so $s_{2(j+1)}\geq s_{2j}$.  Thus this sequence is monotone increasing.\\
+Note that $s_{1}\leq s_{1}$.  Suppose $s_{2j+1}\leq s_{1}$, noting that $s_{2(j+1)+1}\leq s_{2j+1}\leq s_1$, we conclude by induction on $j$ that $s_{2j+1}\leq s_1$.  Note that $s_{2}=b_1+b_2\geq 0$.  Suppose $s_{2j}\geq 0$, noting that $s_{2(j+1)}\geq s_{2j}\geq 0$, we conclude by induction on $j$ that $s_{2j}\geq 0$.  Note that $s_{2j+1}=s_{2j}+b_{2j+1}\geq s_{2j}$.  We can now see the following inequality $s_{1}\geq s_{2j+1}\geq s_{2j}\geq 0$.  And conclude $s_1$ is a upper bound on $\{s_{2j}\}^{\infty}_{j=1}$ and $0$ is a lower bound on $\{s_{2j+1}\}^{\infty}_{j=0}$.\\
+We now see that both of these sequences are bounded and monotone, therefore they both converge.  Define $f$ and $g$ so that $s_{2j}\rightarrow f$ and $s_{2j+1}\rightarrow g$.  Note that $s_{2j+1}-s_{2j}\rightarrow g-f$.  Note that $s_{2j+1}-s_{2j}=b_{2j+1}\rightarrow 0$.  Conclude $g-f=0$ so $g=f$.  By the shuffle sequence therm I conclude $s_n$ converges.
+\end{proof}
+\begin{exercise}
+
+2.7.2\\
+Determine if the following converge or diverge.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+$\sum_{n=1}^{\infty}\frac{1}{2^n+n}$\\
+This converges.  Define $s_k=\sum_{n=1}^{k}\frac{1}{2^n+n}$.  We can see that $s_n$ is monotone increasing, since $\frac{1}{2^n+n}>0$.  We can also see that $\sum_{n=1}^{k}\frac{1}{2^n+n}<\sum_{n=1}^{k}\frac{1}{2^n}<\sum_{n=1}^{\infty}(\frac{1}{2})^n=l$, and so $s_n$ is bounded above by $l$.  Thus $s_n$ converges.
+\item
+$\sum_{n=1}^{\infty}\frac{\sin(n)}{n^2}$\\
+This converges.  Define $s_k=\sum_{n=1}^{k}|\frac{\sin(n)}{n^2}|$.  We can see that $s_n$ is monotone increasing, since $|\frac{\sin(n)}{n^2}|\geq 0$.  We can also see that $\sum_{n=1}^{k}|\frac{\sin(n)}{n^2}|\leq \sum_{n=1}^{k}\frac{1}{n^2}<\sum_{n=1}^{\infty}\frac{1}{n^2}=l$, and so $s_n$ is bounded above by $l$.  Thus our original sum is absolutely convergent and therefore converges.
+\item
+$\sum_{n=1}^{\infty}(-1)^{n-1}\frac{n+1}{2n}$\\
+Noting that the terms $(-1)^{n-1}\frac{n+1}{2n}\not\rightarrow 0$ we conclude the series does not converge.
+\item
+$\sum_{n=0}^{\infty} \frac{1}{1+3n}+\frac{1}{2+3n}-\frac{1}{3+3n}$\\
+Note that $\frac{1}{1+3n}+\frac{1}{2+3n}-\frac{1}{3+3n}\geq \frac{1}{1+3n}\geq \frac{1}{3(n+1)}$ so $\sum_{n=0}^{\infty} \frac{1}{1+3n}+\frac{1}{2+3n}-\frac{1}{3+3n}\geq \sum_{n=0}^{\infty}\frac{1}{3(n+1)}= \frac{1}{3}\sum_{n=1}^{\infty}\frac{1}{n}$.  Recalling that $\sum_{n=1}^{k}\frac{1}{n} \rightarrow \infty$ we can see that the series diverges towards $\infty$.
+\item
+$\sum_{n=1}^{\infty} \frac{1}{2n-1}-\frac{1}{(2n)^2}$\\
+Note that $\frac{1}{2n-1}-\frac{1}{(2n)^2}\geq \frac{1}{2n}-\frac{1}{4n}=\frac{1}{4}\frac{1}{n}$.  So recalling that $\sum_{n=1}^{k}\frac{1}{n} \rightarrow \infty$ and that $\sum_{n=1}^{k} \frac{1}{2n-1}-\frac{1}{(2n)^2}\geq \frac{1}{4}\sum_{n=1}^{k}\frac{1}{n}$ we see that our series diverges towards infinity.
+\end{enumerate}
+\begin{exercise}
+
+2.7.4\\
+Give a example or explain why it is impossible.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Two sequences $a_n$ and $b_n$ where $\sum a_n$ and $\sum b_n$ diverge and $\sum a_nb_n$ converges.\\
+We have already dealt with this, define $a_n=b_n=1/n$.
+\item
+Two sequences $a_n$ and $b_n$ where $\sum a_n$ converges and $b_n$ is bounded and $\sum b_na_n$ diverges.\\
+Define $a_n=(-1)^n1/n$ and $b_n=(-1)^n$.  Note that all properties are fulfilled, $\sum (-1)^n1/n$ converges and $(-1)^n$ is bounded and $\sum 1/n$ diverges.
+\item
+Two sequences $a_n$ and $b_n$ where $\sum a_n$ converges and $\sum a_n+b_n$ converges and $\sum b_n$ diverges.\\
+Define $s_n=\sum^n a_i$, $t_n=\sum^n a_i+b_i$, $u_n=\sum^n b_i$.  Suppose $\sum a_n$ converges and $\sum a_n+b_n$ converges.  Define $l$,$m$ as $s_n\rightarrow l$ and $t_n\rightarrow m$.  Note that $u_n=t_n-s_n\rightarrow m-l$.  Thus the desired $a_n$ and $b_n$ do not exist.
+\item
+A sequence $a_n$ where $0\leq a_n\leq 1/n$ and $\sum (-1)^{n+1}a_n$ diverges.\\
+Define 
+$$a_n=\begin{cases}
+1/n & 2\nmid n\\
+0 & 2\mid n
+\end{cases}$$
+Note that $\sum (-1)^{n+1}a_n=\sum a_n$ witch behaves like $\sum 1/n$ with every other term removed and therefore diverges.
+\end{enumerate}
+\begin{exercise}
+
+Consider the series $\sum_{k=1}^\infty a_k$. Let
+$$c_k =\begin{cases}
+a_k & a_k \geq 0\\
+0 & a_k < 0
+\end{cases}$$
+and
+$$d_k =\begin{cases}
+-a_k & a_k \leq 0\\
+0 & a_k > 0
+\end{cases}$$
+\end{exercise}
+Let's define $s_n=\sum_{k=1}^n a_k$, $t_n=\sum^{n}_{k=1} c_k$, $u_n=\sum^{n}_{k=1} d_k$.  Note that $a_k=c_k-d_k$ also note that $|a_k|=|c_k|+|d_k|$ since eater $c_k=0$ or $d_k=0$.  Note that $s_n=\sum_{k=1}^n a_k=\sum_{k=1}^n c_k-d_k=t_n-u_n$.
+\begin{enumerate}[a)]
+\item
+Prove that $s_n$ is absolutely convergent if and only if $t_n$ and $u_n$ are both convergent.\\
+\begin{proof}
+Define $s^a_n$ to be $\sum_{k=1}^n |a_k|$ and $t^a_n$ and $u_n^a$ in similar fashion.\\
+Suppose $s^a_n\rightarrow l$.  Note that $|c_k|\leq |a_k|$ thus $t^a_n\leq s^a_n\leq l$ also note that $t^a_n$ is a sum of positive terms and therefore monotonic increasing, it is bounded above and monotonic increasing therefore convergent.\\
+Note that $|d_k|\leq |a_k|$ thus $u^a_n\leq s^a_n\leq l$ also note that $u^a_n$ is a sum of positive terms and therefore monotonic increasing, it is bounded above and monotonic increasing therefore convergent.\\
+Suppose $t^a_n\rightarrow l$ and $u^a_n\rightarrow k$.  Note that $s^a_n=t^a_n+u^a_n\rightarrow l+k$.  Therefore $s_n$ is absolutely convergent if and only if $t_n$ and $u_n$ are both convergent.
+\end{proof}
+\item
+Prove that if $s^a_n$ is convergent and $s_n$ is divergent, then $t_n$ and $u_n$ are both divergent.
+\begin{proof}
+Suppose that if $s^a_n$ is convergent and $s_n$ is divergent.\\
+Further suppose $t_n$ is convergent.  Note that $c_k\geq 0$ thus $t_n=t^a_n$.  Note that $d_k\geq 0$ thus $u_n=u^a_n$.  Note that $s^a_n-t^a_n=u^a_n=u_n$, by the arithmetic limit therm $u_n$ converges.  Note that $s_n=t_n-u_n$, by the arithmetic limit therm $s_n$ converges, a contradiction, thus $t_n$ is divergent.\\
+Suppose $u_n$ is convergent.  Note that $s^a_n-u^a_n=t^a_n=t_n$, by the arithmetic limit therm $t_n$ converges.  Note that $s_n=t_n-u_n$, by the arithmetic limit therm $s_n$ converges, a contradiction, thus $u_n$ is divergent.
+\end{proof}
+\item
+If $\sum c_n$ and $\sum d_n$ are divergent, is it true that $\sum a_n$ is conditionally convergent.\\
+No, examine the following counterexample.\\
+Define $a_n=(-1)^n$ note that $c_n=\begin{cases}1 & 2\mid n\\ 0 & 2\nmid n\end{cases}$ and $d_n=\begin{cases}0 & 2\mid n\\ 1 & 2\nmid n\end{cases}$.  Note that $\sum |a_n|$ is divergent and $\sum c_n$, $\sum d_n$ are divergent.  This is clearly a case where $\sum c_n$, $\sum d_n$ are divergent and $\sum a_n$ is not conditionally convergent.
+\end{enumerate}
+\begin{exercise}
+
+2.7.7\\
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Show that if $a_n>0$ and $na_n\rightarrow l\neq 0$ then $\sum a_n$ diverges.
+\begin{proof}
+Suppose $a_n>0$ and $na_n\rightarrow l\neq 0$.\\
+Note that since $n\geq 0$ and $a_n\geq 0$ we can say that $l\geq 0$ and since $l\neq 0$ we note that $l>0$ thus $l/2>0$.  There must exist a $N$ such that for all $n\geq N$, $|na_n-l|<l/2$.  Therefore $-l/2<na_n-l<l/2$ and $l/2*1/n<a_n$.  Note that we can break up the sum to $\sum a_n=\sum^N_1a_n+\sum_N^\infty a_n$.  Note that $\sum^N_1a_n$ is the sum of finitely many finite terms and thus is finite.  However we see that $\sum_N^\infty a_n\geq l/2\sum_N^\infty 1/n$.  Since $\sum_N^\infty 1/n$ tends towards infinity we conclude $\sum_N^\infty a_n$ tends towards infinity and therefore $\sum a_n$ tends towards infinity and thus diverges.
+\end{proof}
+\item
+Assume $a_n>0$ and $n^2a_n\rightarrow l$, show that $\sum a_n$ converges.
+\begin{proof}
+Suppose $a_n>0$ and $n^2a_n\rightarrow l$.\\
+Define $0<k=max(1,1-l)$.  There must exist a $N$ such that for all $n\geq N$, $|n^2a_n-l|<k$.  Therefore $-k<n^2a_n-l<k\leq 1-l$ and $a_n<1/n^2$.  Note that we can break up the sum to $\sum a_n=\sum^N_1a_n+\sum_N^\infty a_n$.  Note that $\sum^N_1a_n$ is the sum of finitely many finite terms and thus is finite.  Define $s_n=\sum_N^n a_n$, where $n>N$.  Note that $s_n\leq\sum_N^n 1/n^2\leq\sum_1^n1/n^2\leq \sum_1^\infty 1/n^2=f$ where $f$ is a finite value.  Also note $s_n= s_{n+1}-a_{n+1}\leq s_{n+1}$.  Conclude that $s_n$ is monotonic increasing and has a upper bound, so it converges to a finite value.  The sum of two finite is finite thus $\sum a_n$ is finite and we can say it converges.
+\end{proof}
+\end{enumerate}
+\newpage
+Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.  Also note that I am operating under a convention that $\sum=\sum_{n=1}^\infty$ and the convention that $\sum_i^j=\sum_{n=i}^j$.
+\begin{exercise}
+
+2.7.9\W\\
+Given a series $\sum a_n$ with $a_n\neq 0$ and $$\biggr|\frac{a_{n+1}}{a_n}\biggr|\rightarrow r<1$$
+The series converges absolutely.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Let $r<r'<1$.  Explain why there exists an $N$ such that for all $n\geq N$, $|a_{n+1}|\leq |a_n|r'$.
+\begin{proof}
+Let $r<r'<1$.  Note that $0<r'-r$, thus there must exist a $N$ such that for all $n\geq N$, $||\frac{a_{n+1}}{a_n}|-r|<r'-r$, definition of limit.  So $|\frac{a_{n+1}}{a_n}|-r<r'-r$ or $|\frac{a_{n+1}}{a_n}|<r'$ so $|a_{n+1}|<|a_n|r'$.
+\end{proof}
+\item
+Why does $|a_N|\sum(r')^n$ converge?\\
+Note that $|a_N|\sum(r')^n=\sum|a_N|(r')^n$ since $|a_N|$ is simply some finite value.  We can see this is a geometric series and Example 2.7.5 tells us that it will converge if $|r'|<1$ and since $0\leq r<r'<1$ we can say that the series converges.
+\item
+Show that $\sum |a_n|$ converges and that $\sum a_n$ converges.\\
+\begin{proof}
+Define $s_k=\sum_1^k |a_n|$.  Note that for $k\geq N$, $s_k=\sum_1^N |a_n|+\sum_N^k |a_n|$.\\
+Note that for $k=N$, $|a_k|(r')^N\leq |a_N|(r')^k$.  Suppose $|a_k|(r')^N\leq |a_N|(r')^k$ for some $k\geq N$.  Recall that $|a_{k+1}|<|a_k|r'$ and thus $|a_{k+1}|(r')^N\leq |a_N|(r')^{k+1}$.  By induction we can conclude for all $k\geq N$, $|a_k|(r')^N\leq |a_N|(r')^k$.\\
+Thus for $k\geq N$, $\sum_N^k |a_n|\leq \sum_N^k |a_N|(r')^n/(r')^N=|a_N|/(r')^N\sum_N^k (r')^n$ Noting that $(r')^n\geq 0$ we can say $\sum_N^k (r')^n\leq \sum_1^k (r')^n\leq \sum (r')^n=f$ where $f$ is some finite value, since this geometric series converges.  Thus for $k\geq N$, $\sum_N^k |a_n|\leq |a_N|/(r')^N f$ and so $s_k\leq \sum_1^N |a_n|+|a_N|/(r')^N f$.  Noting that $\sum_1^N |a_n|+|a_N|/(r')^N f=g$ is finite we can say $g$ is a upper bound on $s_k$ while $k\geq N$.  Note that $s_k=s_{k+1}-|a_{k+1}|\leq s_{k+1}$, so $s_k$ is monotonic increasing.  Thus for $k<N$, $s_k\leq s_N\leq g$, so $g$ is a upper bound on $s_k$ for all $k$.  The sequence $s_k$ is bounded above and monotonic increasing therefore it converges.\\
+Since $\sum a_n$ is absolutely convergent, so we can conclude that $\sum a_n$ is convergent.
+\end{proof}
+\end{enumerate}
+\end{document}
