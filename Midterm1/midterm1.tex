@@ -82,10 +82,46 @@
 \docdate{Due October 19, 2016}
 
 \begin{document}
-Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.  Also note that I am operating under a convention that $\sum=\sum_{n=1}^\infty$ and the convention that $\sum_i^j=\sum_{n=i}^j$.
+Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.
 \begin{exercise}
 
 Let $A$ and $B$ be nonempty sets that are bounded above. Suppose $\sup A < \sup B$. Prove that there is an element of $B$ that is an upper bound for $A$.
 \end{exercise}
-Suppose $A$ and $B$ are nonempty sets that are bounded above. Furthur suppose $\sup A < \sup B$. Define $a=\sup A$ and $b=\sup B$.  Note that $a$ is less than the suppremum of $B$ thus $a$ is not a upper bound on $B$.  Since $a$ is not a upper bound on $B$ there must exist at least one element of $B$ grater than $a$, take one of these elements lets call it $k$, $k\in B$, $a<k$.
+\begin{proof}
+Suppose $A$ and $B$ are nonempty sets that are bounded above. Furthur suppose $\sup A < \sup B$. Define $a=\sup A$ and $b=\sup B$.  Note that $a$ is less than the suppremum of $B$ thus $a$ is not a upper bound on $B$.  Since $a$ is not a upper bound on $B$ there must exist at least one element of $B$ grater than $a$, take one of these elements lets call it $k$, $k\in B$, $a<k$.  Choose a arbitrary element $c\in A$.  Since $a=\sup A$ we know that $a$ is a upper bound on $A$ therfore $c\leq a < k$.  Since we chose a arbitrary element from $A$ and showed that it is less than $k$ we can say that all elements in $A$ are less then $k$ thus $k$ is a upper bound on $A$.
+\end{proof}
+
+\begin{exercise}
+
+In class we proved that $\mathbb{N}^2$ is countably infinite. Use this fact and a proof by induction to show that $\mathbb{N}^n$ is countably infinite for every $n \in \mathbb{N}$.
+\end{exercise}
+\begin{proof}
+We want to show that for every $n \in \mathbb{N}$, $\mathbb{N}^n$ is countably infinite.  I will procede with a proof by induction.\\
+Base case $n=1$.  There is a bijective map, the identity map, mapping $\mathbb{N}^1\rightarrow\mathbb{N}$.  So the statement holds in the $n=1$ case.\\
+Suppose $\mathbb{N}^m$ is countably infinite for all $m\leq n$ where $n\geq 1$.  There must exist a bijective map from $\mathbb{N}^n\rightarrow \mathbb{N}$, the definition of countably infinate.  Note that $\mathbb{N}^{n+1}$ can trivially be bijectively mapped to $\mathbb{N}^n\times \mathbb{N}$, by mapping the first term to $\mathbb{N}$ and the next terms to $\mathbb{N}^n$.  Note that there exists a bijective map from $\mathbb{N}^2\rightarrow \mathbb{N}$ since $\mathbb{N}^2$ is countably infinate.  Note that we can bijectively map $\mathbb{N}^{n+1}\rightarrow \mathbb{N}^n\times \mathbb{N}\rightarrow \mathbb{N}\times \mathbb{N}\rightarrow \mathbb{N}^2\rightarrow \mathbb{N}$.  Thus $\mathbb{N}^{n+1}$ is countably infinate.\\
+By induction we can conclude that for every $n \in \mathbb{N}$, $\mathbb{N}^n$ is countably infinite.
+\end{proof}
+\begin{exercise}
+
+Compute $$\lim_{n\rightarrow\infty}\frac{3^n}{n!}$$.
+\end{exercise}
+Define $a_n=0$,$b_n=\frac{3^n}{n!}$,$c_n=\frac{3^n}{4^{n-4}}$.  Note that for $1\leq n\leq 4$, $b_n=\frac{3^n}{n!}\leq 3^n\leq \frac{3^n}{4^{n-4}}=c_n$.  Note that for $n=4$, $b_n\leq c_n$.  Suppose for some $n\geq 4$, $b_n\leq c_n$.  Note that $b_{n+1}=\frac{3^{n+1}}{(n+1)!}=\frac{3^{n}}{n!}\frac{3}{n+1}=b_n\frac{3}{n+1}\leq c_n\frac{3}{n+1}\leq c_n\frac{3}{4}=\frac{3^n}{4^{n-4}}\frac{3}{4}=\frac{3^{n+1}}{4^{(n+1)-4}}=c_{n+1}$.  By induction I conclude that for all $n\geq 4$, $b_n\leq c_n$.  So for all $n\in \mathbb{N}$, $b_n\leq c_n$.  Also note that $b_n$ is always positive and thus $a_n\leq b_n$.  Note that $a_n\rightarrow 0$.  Note that $c_n$ is bounded bellow by $0$.  Also note that $c_{n+1}=\frac{3}{4}c_n\leq c_n$, so $c_n$ is monotone decreasing and bounded below, by the MCT it must converge.  Define $l$ as the limit of $c_n$.  Note that $c_{n+1}\rightarrow l$ also note that $c_{n+1}=\frac{3}{4}c_n\rightarrow \frac{3}{4}l$.  So $l=\frac{3}{4}l$ therfore $l=0$.  By the squeze teorem $\frac{3^n}{n!}\rightarrow 0$.
+
+\begin{exercise}
+
+Suppose $F$ is a collection of open intervals such that if $I, J \in F$ and $I \neq J$, then $I \cap J = \emptyset$.
+Prove that $F$ is countable.\\
+\begin{proof}
+Suppose $F$ is a collection of open intervals such that if $I, J \in F$ and $I \neq J$, then $I \cap J = \emptyset$.\\
+If $F$ is finite then it is at most countable.\\
+Suppose $F$ is non-finite.  Select one element of $F$, let's call it $d$ (for default).  Consider the mapping $f:\mathbb{Q}\rightarrow G$ where $G=P(F)$, the power set of $F$, so that $G$ is the set of all subsets of $F$.
+$$f(q)=\begin{cases}
+\{f\in F: q\in f\} & \{f\in F: q\in f\}\neq \emptyset\\
+\{d\} & $otherwise$
+\end{cases}$$
+Suppose there existed a $q$ such that $f(q)$ did not have cardinality $1$.  Note that $f(q)\neq \emptyset$, since we map anything that would have maped to the emptyset to the set containing the default set.  Thus $f(q)$ must have at least two elements $I, J\in f(q)$.  Also note that $f(q)\neq \{d\}$ since that has cardinality of one, $f(q)=\{f\in F: q\in f\}$.  Note that by our above construction $I, J \in F$ and $I\neq J$ and $q\in I$, $q\in J$, since $f(q)\neq \{d\}$.  Thus $q\in I\cap J$ so $I\cap J\neq \emptyset$.  This is a contradiction since our initial upposition tells us $I \cap J = \emptyset$, we conclude the negation of our supposition, that $f(q)$ has one element for all $q\in \mathbb{Q}$.\\
+We can now construct a function $g:\mathbb{Q}\rightarrow F$, where $g(q)$ is the one element in $f(q)$, noting that $f(q)\in G$ means that $f(q)\subseteq F$ and thus the one element in $f(q)$ is a element of $F$.\\
+Choose $I\in F$.  Note that by the density of the rationals there is a rational in the open interval $I$, select one of these elements and call it $q$, $q\in I$ and $q\in \mathbb{Q}$.  Note that $g(q)$ is the element in $f(q)$, and $I\in \{f\in F: q\in f\}\neq \emptyset$ thus $f(q)=\{f\in F: q\in f\}$ and $I\in f(q)$ thus $g(q)=I$.  Since we chose a arbitrary element in $F$ and found a $q\in\mathbb{Q}$ that maps to it via $f$ we can say $f$ is onto.  We know that there is a onto map $h:\mathbb{N}\rightarrow\mathbb{Q}$ since $\mathbb{N}$ and $\mathbb{Q}$ have the same cardinality.  Consider the map $m:\mathbb{N}\rightarrow F$ where $m(n)=g(h(n))$.  Note that $m$ is onto.  Since there is a onto map from $\mathbb{N}\rightarrow F$ we know that $F$ is at most countably infinate.
+\end{proof}
+\end{exercise}
 \end{document}
