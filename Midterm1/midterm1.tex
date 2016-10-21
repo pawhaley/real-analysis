@@ -121,7 +121,79 @@ $$f(q)=\begin{cases}
 \end{cases}$$
 Suppose there existed a $q$ such that $f(q)$ did not have cardinality $1$.  Note that $f(q)\neq \emptyset$, since we map anything that would have maped to the emptyset to the set containing the default set.  Thus $f(q)$ must have at least two elements $I, J\in f(q)$.  Also note that $f(q)\neq \{d\}$ since that has cardinality of one, $f(q)=\{f\in F: q\in f\}$.  Note that by our above construction $I, J \in F$ and $I\neq J$ and $q\in I$, $q\in J$, since $f(q)\neq \{d\}$.  Thus $q\in I\cap J$ so $I\cap J\neq \emptyset$.  This is a contradiction since our initial upposition tells us $I \cap J = \emptyset$, we conclude the negation of our supposition, that $f(q)$ has one element for all $q\in \mathbb{Q}$.\\
 We can now construct a function $g:\mathbb{Q}\rightarrow F$, where $g(q)$ is the one element in $f(q)$, noting that $f(q)\in G$ means that $f(q)\subseteq F$ and thus the one element in $f(q)$ is a element of $F$.\\
-Choose $I\in F$.  Note that by the density of the rationals there is a rational in the open interval $I$, select one of these elements and call it $q$, $q\in I$ and $q\in \mathbb{Q}$.  Note that $g(q)$ is the element in $f(q)$, and $I\in \{f\in F: q\in f\}\neq \emptyset$ thus $f(q)=\{f\in F: q\in f\}$ and $I\in f(q)$ thus $g(q)=I$.  Since we chose a arbitrary element in $F$ and found a $q\in\mathbb{Q}$ that maps to it via $f$ we can say $f$ is onto.  We know that there is a onto map $h:\mathbb{N}\rightarrow\mathbb{Q}$ since $\mathbb{N}$ and $\mathbb{Q}$ have the same cardinality.  Consider the map $m:\mathbb{N}\rightarrow F$ where $m(n)=g(h(n))$.  Note that $m$ is onto.  Since there is a onto map from $\mathbb{N}\rightarrow F$ we know that $F$ is at most countably infinate.
+Choose $I\in F$.  Note that by the density of the rationals there is a rational in the open interval $I$, select one of these elements and call it $q$, $q\in I$ and $q\in \mathbb{Q}$.  Note that $g(q)$ is the element in $f(q)$, and $I\in \{f\in F: q\in f\}\neq \emptyset$ thus $f(q)=\{f\in F: q\in f\}$ and $I\in f(q)$ thus $g(q)=I$.  Since we chose a arbitrary element in $F$ and found a $q\in\mathbb{Q}$ that maps to it via $g$ we can say $g$ is onto.  We know that there is a onto map $h:\mathbb{N}\rightarrow\mathbb{Q}$ since $\mathbb{N}$ and $\mathbb{Q}$ have the same cardinality.  Consider the map $m:\mathbb{N}\rightarrow F$ where $m(n)=g(h(n))$.  Note that $m$ is onto.  Since there is a onto map from $\mathbb{N}\rightarrow F$ we know that $F$ is at most countably infinate.
 \end{proof}
 \end{exercise}
+\begin{exercise}
+
+Let $(x_n)$ be a sequence converging to $L$. Define $$y_n =\frac{x_1 + \cdots + x_n}{n}$$.
+That is, $y_n$ is the average of the first $n$ terms of the sequence of $x_n$. Show that $\lim y_n = L$ as well.
+\end{exercise}
+\begin{proof}
+Suppose $(x_n)$ be a sequence converging to $L$. Define $$y_n =\frac{x_1 + \cdots + x_n}{n}$$.\\
+Choose $\epsilon>0$.  There exists a $N_0\in \mathbb{N}$ such that for all $n\geq N_0$, $|x_n-L|<\epsilon/2$.  There are a finite number of terms of $x_n$ with $n\leq N_0$, thus we can find a $n_0\in [1,N_0]$ that makes $|x_{n_0}-L|$ a maximum.  Define $b=|x_{n_0}-L|$.  There exists a natural number $C\geq 2*b*N_0/\epsilon$.  Define $N=\max(C ,N_0+1)$, note that $N\in\mathbb{N}$ and $N\geq 2*b*N_0/\epsilon$ and $N\geq N_0+1$.  Choose $n>N$.  Note that 
+$$|y_n-L|=$$
+$$|\frac{x_1 + \cdots + x_n}{n}-L|\leq$$(triangle inequality) 
+$$1/n\sum^{n}_{k=1}|x_k-L|=$$ (noting that $n\geq N\geq N_0+1$)
+$$1/n\sum^{N_0}_{k=1}|x_k-L|+1/n\sum^{n}_{k=N_0+1}|x_k-L|<$$ (in the range $N_0\leq k$, $|x_k-L|<\epsilon/2)$
+$$1/n\sum^{N_0}_{k=1}|x_k-L|+1/n\sum^{n}_{k=N_0+1}\epsilon/2\leq $$ ($n\geq N\geq (2bN_0)/\epsilon$, $1/n\leq \epsilon/(2bN_0)$)
+$$\epsilon/(2bN_0) \sum^{N_0}_{k=1}|x_k-L|+1/n\sum^{n}_{k=N_0+1}\epsilon/2\leq$$
+(in the range $N_0>k$,$|x_k-L|\leq b$)
+$$\epsilon/(2bN_0) \sum^{N_0}_{k=1}b+1/n\sum^{n}_{k=N_0+1}\epsilon/2=$$
+$$\epsilon/(2bN_0) *N_0b+1/n*(n-N_0)\epsilon/2\leq$$($n-N_0<n$)
+$$\epsilon/2+\epsilon/2=\epsilon$$
+Thus $y_n\rightarrow L$.
+\end{proof}
+\begin{exercise}
+
+Suppose that $(a_n)$ is a sequence of positive numbers and that $\lim_{n\rightarrow \infty} a_n = L > 0$. Prove that there exists an $m > 0$ such that $a_n \geq m$ for all $n \in \mathbb{N}$.
+\end{exercise}
+\begin{proof}
+Suppose that $(a_n)$ is a sequence of positive numbers and that $\lim_{n\rightarrow \infty} a_n = L > 0$.  Noting that $L/2>0$ we can say that there must exist a $N$ such that for all $n>N$, $|a_n-L|<L/2$.  There are a finite number of terms of $a_n$ where $n<N$, so we can find the minimum of these terms, call it $m_1$.  Noting that $m_1$ is a term in the sequence we can say $m_1>0$.  Define $m=\min(m_1,L/2)>0$.  Choose an arbitrary element of the sequence $a_n$, call it $a$, and call its index $n_0$.  If $n_0<N$ then we know that $a\geq m_1\geq m$.  If $n_0\geq N$ then we know that $|a-L|<L/2$ so $-L/2<a-L$ so $L/2<a$ thus $m<L/2<a$.  Since we chose a arbitrary element of the sequence and showed that it is grater than or equal to $m$ we can say that $m$ is less than or equal to all of the terms in the sequence. 
+\end{proof}
+\begin{exercise}
+
+Use the Bolzano-Weierstrass theorem to prove the Monotone Convergence Theorem without assuming any other form of the Axiom of Completeness.
+\end{exercise}
+\begin{proof}
+Assume that eavery bounded sequence has a convergent sub sequence.\\
+Consider a bounded monotone increasing sequence $a_n$.  There exists a sub-sequence $a_{m_j}$ that converges to $l$.  Choose $\epsilon>0$.  There exists a $J\in\mathbb{N}$ such that for all $j\geq J$, $|a_{m_j}-l|<\epsilon$.  Define $N=m_J$.  Choose $n\geq N$.  Note that we proved on a homework $n\leq m_n$.  Note that $m_J\leq n\leq m_n$, since the sequence $a_n$ is monotone increasing note that $a_{m_J}\leq a_n\leq a_{m_n}$.  Note that $|a_{m_J}-l|<\epsilon$, $-\epsilon<a_{m_j}-l$.  Also note that $n\geq N=m_J\geq J$ thus $|a_{m_n}-l|<\epsilon$, $a_{m_n}-l<\epsilon$.  Note that $a_{m_J}\leq a_n\leq a_{m_n}$ means that $-\epsilon< a_{m_J}-l\leq a_n-l\leq a_{m_n}-l<\epsilon$ or $|a_n-l|<\epsilon$, for all $n\geq N$.  Thus $a_n$ converges on $l$.  Since we chose a arbitrary bounded monotone increasing sequence and showed that it converged we can conclude that all bounded monotone increasing sequenses converge.\\
+Consider a bounded monotone decreasing sequence $a_n$.  If $a_n$ is a bounded monotone decreasing series note that $b_n=-a_n$ is monotone increading and so $b_n\rightarrow l$.  By the arithmetic limit theorem we can say $a_n=-b_n\rightarrow -l$.  Thus all bounded monotone decreasing sequences converge.\\
+We can now say all bounded monotone sequences converge (MCT).
+\end{proof}
+\begin{exercise}
+
+Suppose $(x_n)$ is a sequence and that for all $n \geq 2$,
+$$|x_{n+1} - x_n| \leq\frac{1}{2}|x_n - x_{n-1}|$$.
+Show that the sequence converges.
+\end{exercise}
+\begin{proof}
+Suppose $(x_n)$ is a sequence and that for all $n \geq 2$,
+$$|x_{n+1} - x_n| \leq\frac{1}{2}|x_n - x_{n-1}|$$
+Define $k=2|x_2-x_1|$.  For $n=1$, $|x_{n+1} - x_n|\leq (1/2)^nk$ would mean $|x_2-x_1|\leq |x_2-x_1|$, clearly true.  Suppose $|x_{n+1} - x_n|\leq (1/2)^nk$.  Note that $|x_{n+2} - x_{n+1}| \leq(1/2)|x_{n+1} - x_{n}|$, so $|x_{n+2} - x_{n+1}|\leq (1/2)^{n+1}k$.  By induction $|x_{n+1} - x_n|\leq (1/2)^nk$ for all natural numbers $n$.\\\\
+Note that for $m=1$, $|x_{n+m} - x_n|\leq (1/2)^nk2\sum_{i=1}^m(1/2)^i$ would mean $|x_{n+1} - x_n|\leq (1/2)^nk$, clearly true.  Suppose for some $m$, $|x_{n+m} - x_n|\leq (1/2)^nk2\sum_{i=1}^m(1/2)^i$.  Note that $|x_{n+m+1} - x_{n+m}|\leq (1/2)^{n+m}k$.  Note that $|x_{n+m+1} - x_n|=|x_{n+m+1} - x_{n+m}+x_{n+m} - x_n|\leq|x_{n+m+1} - x_{n+m}|+|x_{n+m} - x_n| \leq (1/2)^nk2\sum_{i=1}^m(1/2)^i+(1/2)^{n+m}k=(1/2)^nk2(\sum_{i=1}^m(1/2)^i+(1/2)^{m+1})=(1/2)^nk2\sum_{i=1}^{m+1}(1/2)^i$.  By induction on $m$ I conclude $|x_{n+m} - x_n|\leq (1/2)^nk2\sum_{i=1}^m(1/2)^i$ for all natural numbers $m$.\\\\
+Note that $\sum_{i=1}^m(1/2)^i\leq \sum_{i=1}^{\infty}(1/2)^i=\sum_{i=0}^{\infty}(1/2)^i-1=2-1=1$ (see geometric series Pg. 73).  Thus $|x_{n+m} - x_n|\leq (1/2)^nk2$ for all $m$ and $n$.\\\\
+Choose $\epsilon>0$.  Note that there exists a natural number $N>2k/\epsilon$, chuse one of these and set it equal to $N$.  Choose $m>n\geq N$.  Define $d=m-n$, note that $d\in\mathbb{N}$.  Note that $2^n\geq n\geq N>2k/\epsilon$ so $(1/2)^n=1/2^n<\epsilon/(2k)$ and $(1/2)^nk2<\epsilon$.  Note that $|x_m - x_n|=|x_{n+d} - x_n|\leq (1/2)^nk2<\epsilon$.  We now know the sequence is Caushey and thefore it will converge.
+\end{proof}
+
+\begin{exercise}
+
+Let $(a_n)$ and $(b_n)$ be sequences with $b_n \geq 0$ for all $n$ and $b_n\rightarrow 0$. We say that $a_n = O(b_n)$ if there is a constant $C$ such that $|a_n| \leq Cb_n$ for all $n$.  Roughly speaking, $a_n = O(b_n)$ if the sequence an converges to zero at least as fast as the sequence $b_n$.  Suppose $a_n$ and $b_n$ are sequences with $b_n > 0$. Suppose also that $\frac{a_n}{b_n}\rightarrow L$ for some number $L$. Prove that $a_n = O(b_n)$.
+\end{exercise}
+There must exsist a $N$ such that for all $n\geq N$, $|\frac{a_n}{b_n}-L|<1$.  Noting that there are a finite number of elements of $\frac{a_n}{b_n}$ where $n\leq N$, we can find the minimum, call it $A_{\min}$, and maximum, call it $A_{\max}$, for these elements.  Define $C_{\min}=\min(A_{\min},L-1)$ and $C_{\max}=\max(A_{\max},L+1)$.  Choose a arbitrary element of $b=\frac{a_n}{b_n}$ with index $n$.  If $n\leq N$ we know that $C_{\min} \leq A_{\min}\leq b\leq A_{\max}\leq C_{\max}$.  If $n\geq N$ we know that $C_{\min} \leq L-1 \leq b\leq L+1 \leq C_{\max}$.  So $C_{\min} \leq \frac{a_n}{b_n} \leq C_{\max}$ for all $n$.  Note that $|\frac{a_n}{b_n}| \leq \max(C_{\max},-C_{\min})=C$, so $|a_n|\leq C|b_n|=Cb_n$ therfore $a_n = O(b_n)$.
+\begin{exercise}
+
+Suppose $(a_n)$ and $(b_n)$ are sequences with $b_n \geq 0$ and $a_n = O(b_n)$.
+\end{exercise}
+\begin{enumerate}[a)]
+\item
+Suppose that $\sum b_n$ converges on $l$. Prove that $\sum a_n$ converges also.\\
+Note that there exists a constant $C$ such that $|a_n| \leq Cb_n$ for all $n$.  Define $SAa_n=\sum_{k=1}^n |a_k|$ the partial sum of the absolute terms of $a$.  Define $Sb_n=\sum_{k=1}^n b_k$.  Note that $SAa_n$ is monotonic increasing.  Note that $Sb_n$ is monotonic.  Note that $SAa_n\leq Sb_n\leq l$.  Thus $SAa_n$ is bounded above and monotonic increasing, thus it converges.  Since $\sum a_n$ converges absolutely it converges.
+\item
+Suppose that $\sum a_n$ diverges. Prove that $\sum b_n$ diverges.\\
+Suppose to the contrary that $\sum a_n$ diverges while that $\sum b_n$ converges.  Since $\sum b_n$ converges we know that $\sum a_n$ converges, a contradicction.  We are forced to conclude if $\sum a_n$, $\sum b_n$ diverges.
+\item
+Determine if $\sum_{n=1}^\infty \sqrt{\frac{n^3-3n+2}{8n^4+n^2+22}}$ converges\\
+Define $b_n=\sqrt{\frac{n^3-3n+2}{8n^4+n^2+22}}$.  Note that $b_n$ is the result of a square root, thus $b_n\geq 0$.  Define $c_n=\frac{n^3-3n+2}{8n^4+n^2+22}$.  Note that $c_n=\frac{1/n-3/n^3+2/n^4}{8+1/n^2+22/n^4}\rightarrow 0$ by the algebreic limit theum, and therfore $b_n\rightarrow 0$.  Define $a_n=1/n$.  Note that asumming $n>1$ ($b_n\neq 0$), $|\frac{a_n}{b_n}|=\sqrt{1/n^2\frac{8n^4+n^2+22}{n^3-3n+2}}=\sqrt{\frac{8n^2+1+22/n^2}{n^3-3n+2}}=\sqrt{\frac{8/n+1/n^3+22/n^5}{1-3/n^2+2/n^3}}\rightarrow 0$.  We now can say based on exercise 9 that $a_n=O(b_n)$.  We also know that $\sum a_n$ diverges and so now can conclude that $b_n$ will diverge, $\sum_{n=1}^\infty \sqrt{\frac{n^3-3n+2}{8n^4+n^2+22}}$ diverges.
+\end{enumerate}
 \end{document}

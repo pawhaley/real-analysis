@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.4)  20 OCT 2016 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.6)  20 OCT 2016 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -374,29 +374,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] (./midterm1.aux) ) 
+] [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--177
+
+ []
+
+[4] [5] (./midterm1.aux) ) 
 Here is how much of TeX's memory you used:
  3113 strings out of 494910
  39056 string characters out of 6179837
- 100148 words of memory out of 5000000
+ 101148 words of memory out of 5000000
  6356 multiletter control sequences out of 15000+600000
  24118 words of font info for 61 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 27i,11n,43p,1056b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.
-enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfo
-nts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on midterm1.pdf (2 pages, 54073 bytes).
+ 27i,12n,43p,1056b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tx
+fonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on midterm1.pdf (5 pages, 69999 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
