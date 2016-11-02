@@ -1,0 +1,256 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Homework 6}
+\docauthor{Parker Whaley}
+\docdate{Due October 26, 2016}
+
+\begin{document}
+Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.  I am also operating under the convention $v_a(b)=\{x\in\mathbb{R}:b-a<x<b+a\}$
+\begin{exercise}
+
+4.3.7\\
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Show that Dirichlet's function is not continus for all points in $\mathbb{R}$.\\
+Recall that Dirichlet's function is defined as $$g(x)=\begin{cases}
+1 & x\in\mathbb{Q}\\
+0 & x\not\in\mathbb{Q}\end{cases}$$
+Suppose Dirichlet's function is continus at $c$.  Note that we can construct a series of rational numbers $q_n$, by selecting rational numbers from $(c-1/n,c+1/n)$.  Noting that $q_n\rightarrow c$ and that $g(x)$ is continus at $c$ we can see that $g(q_n)\rightarrow g(c)$ and sinse all $g(q_n)=1$ we know that $g(c)=1$.  Note that we can construct a series of non-rational numbers $a_n$, by selecting non-rational numbers from $(c-1/n,c+1/n)$.  Noting that $a_n\rightarrow c$ and that $g(x)$ is continus at $c$ we can see that $g(a_n)\rightarrow g(c)$ and sinse all $g(a_n)=0$ we know that $g(c)=0$.  We conclude $1=0$, a contradiction, thus Dirichlet's function is not continus for all points in $\mathbb{R}$.
+\item
+Define $$h(x)=\begin{cases}
+1 & x=0\\
+1/n & x=m/n\in\mathbb{Q}-\{0\}$ is in lowest terms$\\
+0 & x\not\in\mathbb{Q}
+\end{cases}$$
+Demonstrate that $h(x)$ is discontinus at eavery rational point.\\
+Suppose $h(x)$ is continus at some point $c\in\mathbb{Q}$.  Note that we can construct a series of non-rational numbers $a_n$, by selecting non-rational numbers from $(c-1/n,c+1/n)$.  Noting that $a_n\rightarrow c$ and that $h(x)$ is continus at $c$ we can see that $h(a_n)\rightarrow h(c)$ and sinse all $h(a_n)=0$ we know that $h(c)=0$.  Note that $h(0)\neq 0$ an so $c\neq 0$.  since $c$ is a non-zero rational it can be written in its lowest terms with $n>0$, $m/n$.  Note that $h(c)=1/n\neq 0$.  A contradiction thus we conclude there are no rational numbers for witch $h(x)$ is continus.
+\item
+Demonstrate $h(x)$ is continus at eavery irrational point.\\
+Consider a arbitrary irrational point $c$.\\
+Consider a arbitrary sequence $a_n$, where $a_n\rightarrow c$.\\
+Choose a $\epsilon>0$.  Note that there exists a natural number $i$ such that $1/i<\epsilon$.  Consider the set $S=\{|m/n-c|:m\in [-i*(|c|+1),i*(|c|+1)]\cap \mathbb{Z}$ and $n\in [0,i]\cap \mathbb{N}\}$.  Note $S$ is finite since there are a finite number of posible $n$ and $m$ values.  Note that all elements of $S$ are irrational.  Note that  for all $x\in S$, $x>0$.  Define $\epsilon'=min(S,1)$, this can be done since $S$ has finitely many elements.  Note that $\epsilon'>0$, Therfore there exists a $N\in\mathbb{N}$ such that for all $n\geq N$, $|a_n-c|<\epsilon'$, select this $N$.  Choose $n\geq N$.  Suppose $a_n\not\in\mathbb{Q}$.  In this case $|h(a_n)-h(c)|=|0-0|=0<\epsilon$.  Suppose $a_n\in\mathbb{Q}$.  Cosider the reduced form of $a_n=j/k$.  Suppose $k<i$.  Note $|a_n-c|<\epsilon'\leq 1$ thus $-(|c|+1)\leq c-1<j/k<c+1\leq |c|+1$ so $-i(|c|+1)\leq -k(|c|+1)<j<k(|c|+1)\leq i(|c|+1)$ and so $j\in [-i*(|c|+1),i*(|c|+1)]\cap \mathbb{Z}$ and thus $|a_n-c|\in S$.  We now have $|a_n-c|<\epsilon'\leq |a_n-c|$, a contradiction.  We conclude $k\geq i$.  Note that $|h(a_n)-h(c)|=|h(j/k)-0|=|1/k|=1/k<1/i<\epsilon$.  We conclude that for all $n\geq N$, $|h(a_n)-h(c)|<\epsilon$ and thus $h(a_n)\rightarrow h(c)$.  Since $a_n$ is a arbitrary sequence converging on $c$ and we showed $h(a_n)$ converges on $h(c)$ we can conclude $h(x)$ is continus at $x=c$.  Since $c$ was a arbitrary irrational we can say $h(x)$ is continus at eavery irrational.
+\end{enumerate}
+\begin{exercise}
+
+Suppose $K \subseteq \mathbb{R}$ is compact. Show that there exists $x_M \in K$ such that $x_M \geq x$ for all $x \in K$.
+Then, with very little work, show that there exists $x_m \in K$ such that $x_m \leq x$ for all $x \in K$.
+\end{exercise}
+Note that $K$ is bounded.  Define $x_M=\sup(K)$.  Suppose $x_M\not\in K$.  Choose $\epsilon>0$.  Note that $x_M-\epsilon$ is not a upper bound on $K$ thus there exist a element $x\in K$ such that $x>x_M-\epsilon$.  Note that $x<x_M$, so $x\in v_\epsilon(x_M)\cap (K-\{x_M\})$.  Therfore $x_M$ is a limit point of $K$, since $K$ is closed $x_M\in K$, a contradiction with our supposition, thus $x_M\in K$.  We have found a $x_M\in K$ such that $x_M \geq x$ for all $x \in K$.\\
+Note that $K$ is bounded.  Define $x_m=\inf(K)$.  Suppose $x_m\not\in K$.  Choose $\epsilon>0$.  Note that $x_M+\epsilon$ is not a lower bound on $K$ thus there exist a element $x\in K$ such that $x<x_m+\epsilon$.  Note that $x>x_m$, so $x\in v_\epsilon(x_m)\cap (K-\{x_M\})$.  Therfore $x_m$ is a limit point of $K$, since $K$ is closed $x_m\in K$, a contradiction with our supposition, thus $x_m\in K$.  We have found a $x_m\in K$ such that $x_m \leq x$ for all $x \in K$.
+\begin{exercise}
+
+Suppose $f : \mathbb{R} \rightarrow \mathbb{R}$ and $\lim_{x\rightarrow \infty} f (x) = 0$ and $\lim_{x\rightarrow -\infty} f (x) = 0$. Show that either $f$ achieves
+at least one of a minimum or a maximum. Give an example to show that $f$ need not achieve
+both.
+\end{exercise}
+This is clearly false.  I will present a counterexample.  Consider the function $$f(x)=\begin{cases}
+1/(x+1) & x>0\\
+0 & x=0\\
+-1/(-x+1) & x<0\\
+\end{cases}$$
+This function clearly has the property $f : \mathbb{R} \rightarrow \mathbb{R}$ and $\lim_{x\rightarrow \infty} f (x) = 0$ and $\lim_{x\rightarrow -\infty} f (x) = 0$, however note that the suppremum of $1$ is not a possible output and the infimum of $-1$ is not a possible output, thus $f$ never acceves a minimum or maximum.\\
+This example shows that $f$ need not achieve both.
+\begin{exercise}
+
+4.4.6
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+A continus function $f:(0,1)\rightarrow \mathbb{R}$ and a Cauchy sequence $a_n$ where $f(a_n)$ is not Cauchy.\\
+Define $f(x)=1/x$. Define $a_n=1/n$.  Note that $f(x)$ is continus.  Note that $a_n$ is convergent and therfore Cauchy.  Note that $f(a_n)=n$ is divergent and thus not Cauchy.
+\item
+A uniformly continus function $f:(0,1)\rightarrow \mathbb{R}$ and a Cauchy sequence $a_n$ where $f(a_n)$ is not Cauchy.\\
+Impossible.  Choose $\epsilon>0$.  There must exist a $\delta>0$ such that for all $x,y\in (0,1)$ where $|x-y|<\delta$, $|f(x)-f(y)|<\epsilon$.  Note that there exists a $N$ such that for $n,m\geq N$, $|a_n-a_m|<\delta$.  Note that for $n,m\geq N$, $|f(a_n)-f(a_m)|<\epsilon$.  Therfore $f(a_n)$ is Cauchy.
+\item
+A continus function $f:[0,\infty)\rightarrow \mathbb{R}$ and a Cauchy sequence $a_n$ where $f(a_n)$ is not Cauchy.\\
+Impossible.  Note that $a_n$ is a convergent sequence define $l$ to be its limit.  Note that $a_n\geq 0$ for all $n$ and thus $0\leq l$ so $l\in [0,\infty)$ and $f(l)$ is defined.  Choose $\epsilon>0$.  There must exist a $\delta>0$ such that for all $x\in [0,\infty)$ where $|x-l|<\delta$, $|f(x)-f(l)|<\epsilon$.  Note that there exists a $N$ such that for $n\geq N$, $|a_n-l|<\delta$.  Note that for $n\geq N$, $|f(a_n)-f(l)|<\epsilon$.  Therfore $f(a_n)$ is convergent and therfore Cauchy.
+\end{enumerate}
+\begin{exercise}
+
+5
+\end{exercise}
+\begin{enumerate}[a)]
+\item
+Assume $f : [0, \infty) \rightarrow \mathbb{R}$ is continuous and is uniformly continuous on $[b, \infty)$ for
+some $b > 0$. Show that $f$ is uniformly continuous.\\
+Note that $[0,b]$ is compact, thus $f$ is uniformly continuous on $[0,b]$.  Choose $\epsilon>0$.  There exists a $\delta_0 >0$ such that $x,y\in [0,b]$ where $|x-y|<\delta_0$, $|f(x)-f(y)|<\epsilon$.  There exists a $\delta_1 >0$ such that $x,y\in [b, \infty)$ where $|x-y|<\delta_1$, $|f(x)-f(y)|<\epsilon$.  Define $\delta=\min(\delta_0,\delta_1)$.  Note that for all $x,y\in [0,\infty)$ where $|x-y|<\delta$, $|f(x)-f(y)|<\epsilon$.  Thus $f$ is uniformly continuous.
+\item
+Prove $f(x)=\sqrt{x}$ is uniformly continuous.\\
+Note that $f:[0,\infty)\rightarrow \mathbb{R}$ is continuous.  Choose $\epsilon>0$.  Define $\delta=\epsilon$.  Choose $x,y\in [1,\infty)$ where $|x-y|<\delta$.  Note that $\sqrt{x}\leq x$ and $\sqrt{y}\leq y$.  Note that $|f(x)-f(y)|=\sqrt{(\sqrt{x}-\sqrt{y})^2}=\sqrt{(x+y-2\sqrt{x}\sqrt{y}}$.  Note that $x+y-2\sqrt{x}\sqrt{y}\leq x+y-2xy$.  Note $|f(x)-f(y)|\leq \sqrt{x+y-2xy}=\sqrt{(x-y)^2}=|x-y|<\delta=\epsilon$.  Thus $f$ is uniformly continuous on $[1,\infty)$ and by the above proof in part $a)$, $f$ is uniformly continuous.
+\end{enumerate}
+\begin{exercise}
+
+Give a example or prove that such a function does not exist.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+A continuous function on $[0,1]$ with the range $(0,1)$.\\
+Imposible, continuous functions map compact sets to compact sets, no continuous function can map $[0,1]$, a compact set, to $(0,1)$ a non-compact set.
+\item
+A continuous function on $(0,1)$ with the range $[0,1]$.\\
+Consider $f:(0,1)\rightarrow [0,1]$ where $f(x)=\frac{1+sin(5000x)}{2}$.  Note that $\frac{\pi}{2*5000}\in(0,1)$ and $f(\frac{\pi}{2*5000})=1$.  Note that $\frac{3\pi}{2*5000}\in(0,1)$ and $f(\frac{3\pi}{2*5000})=0$.  Note $f((0,1))=[0,1]$ and $f$ is continuous.
+\item
+A continuous function on $(0,1]$ with the range $(0,1)$.\\
+Consider $f:(0,1)\rightarrow [0,1]$ where $$f(x)=\frac{1+\frac{\sin(\frac{1}{x})}{1+x}}{2}$$.  This function is continuous on $(0,1]$ also eavery output will fall into the range $(0,1)$.  As $x$ goes to zero this function begins ossilating rapidly from extreamly close to 1 to extreamly close to 0, thus it will cover all of $(0,1)$.
+\end{enumerate}
+
+
+
+\begin{exercise}
+
+Give a example or prove that such a function does not exist.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+A continuous function defined on a open interval with a range of a closed interval.\\
+See b on the previous question
+\item
+A continuous function defined on a closed interval with a range of a open interval.\\
+Imposible, continuous functions map compact sets to compact sets, a closed interval is a compact set, and a open interval is not a compact set.
+\item
+A continuous function defined on a open interval with a range of a unbounded open set not equal to $\mathbb{R}$.\\
+Consider $f:(0,1)\rightarrow \mathbb{R}$ where $f(x)=1/x$,  The range on this set is the unbounded open set $S=\{x\in\mathbb{R} : x>1\}$ witch is clearly not equal to the $\mathbb{R}$.
+\item
+A continuous function defined on $\mathbb{R}$ with a range of $\mathbb{Q}$.\\
+\end{enumerate}
+
+
+
+
+\newpage
+\W
+\begin{exercise}
+
+A function $f:A\rightarrow \mathbb{R}$ is Lipschitz if there exists a $M>0$ such that
+$$|\frac{f(x)-f(y)}{x-y}|\leq M$$ for all $x\neq y\in A$.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Show that if $f$ is Lipschitz then $f$ is uniform continuous on A.\\
+Suppose $f:A\rightarrow \mathbb{R}$ is Lipschitz.  There exists a $M>0$ such that
+$$|\frac{f(x)-f(y)}{x-y}|\leq M$$ for all $x\neq y\in A$.  Choose $\epsilon>0$.  Define $\delta=\epsilon/M$.  Choose $x,y\in A$ where $|x-y|<\delta$.  If $x=y$ then $|f(x)-f(y)|=0<\epsilon$.  If $x\neq y$ then $|f(x)-f(y)|\leq M*|x-y|<M\delta=\epsilon$.  Therfore $f$ is uniform continuous on A.
+\item
+It is not true that if $f$ is uniform continuous on A then $f$ is Lipschitz.\\
+Consider $f:[0,\infty)\rightarrow \mathbb{R}$ where $f(x)=\sqrt{x}$.  As previously proven in this homework $f$ is uniform continuous.  Suppose $f$ is Lipschitz.  There exists a $M>0$ such that $$|\frac{f(x)-f(y)}{x-y}|\leq M$$ for all $x\neq y\in A$.  Define $x=\frac{1}{2M^2}<\frac{1}{M^2}$.  Define $y=0$.  Note that $x\neq y\in A$.  We can now conclude,
+$$|\frac{f(x)-f(y)}{x-y}|\leq M$$
+$$|\frac{\sqrt{x}}{x}|\leq M$$
+$$|\frac{1}{\sqrt{x}}|\leq M$$
+$$\frac{1}{\sqrt{x}}\leq M$$
+$$\sqrt{x}\geq \frac{1}{M}$$
+$$\frac{1}{M^2}>x\geq \frac{1}{M^2}$$
+We have reached a contradiction and must conclude Suppose $f$ is not Lipschitz.  We now have a example of a function that is is uniform continuous but not Lipschitz.
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
