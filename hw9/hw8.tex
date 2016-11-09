@@ -88,8 +88,92 @@ Note that I am operating under the convention that $N,n,m,i,j$ are natural numbe
 IVT\\
 \end{exercise}
 \begin{proof}
-Suppose $f:[a,b]\rightarrow \mathbb{R}$ is a continuous function with $f(a)<f(b)$.  Choose $v\in\mathbb{R}$ such that $f(a)<v<f(b)$.  Define for $Y\subseteq\mathbb{R}$, $f^{-1}(Y)=\{a\in A:f(a)\in Y\}$.  Define $A_v=f^{-1}((-\infty,v))$.  Note that $f(a)<v$ and so $a\in A_v$.  Note that for all $x\in A_v$, $x\in A$ and thus $x<=b$ and so $b$ is a upper bound on $A_v$.  Since $A_v$ is bounded and non-empty it has a suppremum.  Define $x=\sup(A_v)$.  We have previously proven there is a sequence $A_v$ that converges to $x$, This can be easily proven since $[\sup(S)-1/n,\sup(S)]\cap S\neq \emptyset$ for all $n\in\mathbb{N}$, call this sequence $\{a_n\}$.  Note that $f(a_n)\in (-\infty,v)$ since $a_n\in A_v$, thus $f(a_n)<v$.
+Suppose $f:[a,b]\rightarrow \mathbb{R}$ is a continuous function with $f(a)<f(b)$.  Choose $v\in\mathbb{R}$ such that $f(a)<v<f(b)$.  Define for $Y\subseteq\mathbb{R}$, $f^{-1}(Y)=\{a\in A:f(a)\in Y\}$.  Define $A_v=f^{-1}((-\infty,v))$.  Note that $f(a)<v$ and so $a\in A_v$.  Note that for all $x\in A_v$, $x\in A$ and thus $x<=b$ and so $b$ is a upper bound on $A_v$.  Since $A_v$ is bounded and non-empty it has a suppremum.  Define $x=\sup(A_v)$.  We have previously proven there is a sequence $A_v$ that converges to $x$, This can be easily proven since $[\sup(S)-1/n,\sup(S)]\cap S\neq \emptyset$ for all $n\in\mathbb{N}$, call this sequence $\{a_n\}$.  Note that $f(a_n)\in (-\infty,v)$ since $a_n\in A_v$, thus $f(a_n)<v$.  By the limit Order theorem $f(x)\leq v$.  Note that $x<\frac{x^n+b}{n+1}=z_n<b$ for all n, and $z_n\rightarrow x$.  Since $x=\sup(A_v)$ we know that $z_n\not\in A_v$ thus $\neg f(z_n)\in (-\infty,v)$ and so $f(z_n)\geq v$.  By the limit order theorem $f(x)\geq v$.  We thus conclude $f(x)=v$.
 \end{proof}
+\begin{exercise}
+
+Abbott 4.2.10\\
+\end{exercise}
+\begin{enumerate}[(a)]
+
+\item
+Define sided neighborhoods as $V^+_\epsilon(c)=\{x\in\mathbb{R}:0\leq x-c <\epsilon\}$ and $V^-_\epsilon(c)=\{x\in\mathbb{R}:\epsilon< x-c \leq 0\}$.  We can now define sided limit points of $A$, $c$ is a positive limit point of $A$ if $\forall \epsilon>0,  V^+_\epsilon(c)\cap A-\{c\}\neq \emptyset$, and $c$ is a negative limit point of $A$ if $\forall \epsilon>0,  V^-_\epsilon(c)\cap A-\{c\}\neq \emptyset$.\\
+Let $f:A\rightarrow \mathbb{R}$, and let $c$ be a positive limit point of $A$.  We say that $\lim_{x\rightarrow c^+} f(x)=L$ if $\forall \epsilon>0$, $\exists \delta>0$ such that if $0<x-c<\delta$ then $|f(x)-L|<\epsilon$.\\
+Let $f:A\rightarrow \mathbb{R}$, and let $c$ be a negative limit point of $A$.  We say that $\lim_{x\rightarrow c^-} f(x)=L$ if $\forall \epsilon>0$, $\exists \delta>0$ such that if $0>x-c>-\delta$ then $|f(x)-L|<\epsilon$.
+\item
+Suppose $f:A\rightarrow \mathbb{R}$ and $c$ is both a positive and negative limit point of $A$.\\\\
+Suppose $\lim_{x\rightarrow c} f(x)=L$.  Choose $\epsilon>0$. There must exist a $\delta>0$ such that if $0<|x-c|<\delta$ then $|f(x)-L|<\epsilon$.  Choose a $x$ where $0<x-c<\delta$, note that $0<|x-c|<\delta$, thus $|f(x)-L|<\epsilon$.  Conclude $\lim_{x\rightarrow c^+} f(x)=L$.  Choose a $x$ where $0>x-c>-\delta$, note that $0<|x-c|<\delta$, thus $|f(x)-L|<\epsilon$.  Conclude $\lim_{x\rightarrow c^-} f(x)=L$.\\\\
+Suppose $\lim_{x\rightarrow c^-} f(x)=L=\lim_{x\rightarrow c^+} f(x)$.  Choose $\epsilon>0$. There must exist a $\delta_1>0$ such that if $0<x-c<\delta$ then $|f(x)-L|<\epsilon$.  There must exist a $\delta_2>0$ such that if $0>x-c>\delta$ then $|f(x)-L|<\epsilon$.  Define $\delta=\min(\delta_1,\delta_2)$.  Choose a $x$ where $0<|x-c|<\delta$.  Note that eater $0<x-c<\delta\leq \delta_1$ or $0>x-c>-\delta\geq -\delta_2$.  Conclude $|f(x)-L|<\epsilon$, thus $\lim_{x\rightarrow c} f(x)=L$.
+\end{enumerate}
+
+\begin{exercise}
+
+Suppose $f : [a, b] \rightarrow \mathbb{R}$ is increasing. Show that for each $c \in (a, b]$, $lim_{x\rightarrow c^-} f (x)$ exists.  State, but do not prove, a similar result for limits from the right.\\
+\end{exercise}
+\begin{proof}
+Suppose $f : [a, b] \rightarrow \mathbb{R}$ is increasing.  Choose $c \in (a, b]$.\\
+Choose $\epsilon>0$.  Note that $\max(a,c-\epsilon/2)\in V^-_\epsilon(c)\cap A-\{c\}$ and thus $c$ is a negative limit point of $[a,b]$.\\
+Define $L=\sup(f([a,c)))$, note that $f([a,c))$ is bounded, by $f(c)$, and non-empty, contains $f(a)$, and thus admits a suppremum.  Choose $\epsilon>0$.  Define $A_\epsilon=f^{-1}((L-\epsilon/2,L])$.  We know that $L-\epsilon/2$ is not a upper bound on $f([a,c))$ thus there exists $f(d)\in f([a,c))$ where $f(d)>L-\epsilon/2$.  Note that $f(d)\leq L$, $d\in A_\epsilon$.  Also note that $A_\epsilon$ is bounded below by $a$ thus $A_\epsilon$ admits a infimum.  Note that $\inf(A_\epsilon)\leq d<c$.  Define $\delta=c-\inf(A_\epsilon)>0$.  Choose a $x$ where $0>x-c>-\delta$.  Note that $c>x>\inf(A_\epsilon)$, thus $f(c)\geq f(x)\geq f(\inf(A_\epsilon))\geq L-\epsilon/2$.  Note that $f(x)\in f([a,c))$ thus $f(x)\leq L$.  Conclude $-\epsilon<x-L\leq 0<\epsilon$ thus $|x-L|<\epsilon$, and $lim_{x\rightarrow c^-} f (x)=L$ exists.
+\end{proof}
+Suppose $f : [a, b] \rightarrow \mathbb{R}$ is increasing. For each $c \in [a, b)$, $lim_{x\rightarrow c^+} f (x)$ exists.
+\begin{exercise}
+
+Suppose that $f : [a, b] \rightarrow \mathbb{R}$ is increasing. Show that for each $c \in (a, b)$, $lim_{x\rightarrow c^-} f (x) \leq f (c) \leq lim_{x\rightarrow c^+} f (x)$.\\
+\end{exercise}
+\begin{proof}
+Suppose that $f : A=[a, b] \rightarrow \mathbb{R}$ is increasing.  Choose $c \in (a, b)$.  Note that by the above proof $lim_{x\rightarrow c^-} f (x)=L_-$ and $lim_{x\rightarrow c^+} f (x)=L_+$ exist.\\
+Suppose $f (c)<L_- $.  Let $\epsilon=L_--f(c)>0$.  There exists a $\delta>0$ such that if $0>x-c>-\delta$ then $|f(x)-L_-|<\epsilon$.  Note that $V^-_\delta(c)\cap A-\{c\}\neq \emptyset$, take $x\in V^-_\delta(c)\cap A-\{c\}$.  Note that $\delta< x-c < 0$.  Note that $x<c$, so $f(x)\leq f(c)$.  Note that $|L_--f(x)|<\epsilon$, $L_--f(x)<L_--f(c)$, $-f(x)<-f(c)$,$f(x)>f(c)$ a contradiction, we thus conclude $L_-\leq f (c)$.\\
+Suppose $f (c)>L_+ $.  Let $\epsilon=f(c)-L_+>0$.  There exists a $\delta>0$ such that if $0<x-c<\delta$ then $|f(x)-L_+|<\epsilon$.  Note that $V^+_\delta(c)\cap A-\{c\}\neq \emptyset$, take $x\in V^-_\delta(c)\cap A-\{c\}$.  Note that $\delta> x-c > 0$.  Note that $x>c$, so $f(x)\geq f(c)$.  Note that $|f(x)-L_+|<\epsilon$, $f(x)-L_+<f(c)-L_+$, $f(x)<f(c)$ a contradiction, we thus conclude $L_+\geq f (c)$.\\
+\end{proof}
+\begin{exercise}
+
+Suppose that $f : [a, b] \rightarrow \mathbb{R}$ is increasing and $f ([a, b]) = [f (a), f (b)]$. Show that $f$ is continuous.\\
+\end{exercise}
+\begin{proof}
+Suppose that $f : A=[a, b] \rightarrow \mathbb{R}$ is increasing and $f ([a, b]) = [f (a), f (b)]$.\\
+Choose $c\in [a,b]$.  Choose $\epsilon>0$.  Define $y^+=\min(f(c)+\epsilon/2,f(b))$.  Define $y^-=\max(f(c)-\epsilon/2 ,f(a))$.  Note that $f(a)\leq y^-<y^+\leq f(b)$, thus $y^-,y^+\in [f (a), f (b)]$ and $y^-,y^+\in f ([a, b])$.  Since $y^-,y^+\in f ([a, b])$ there must exist a $x^-,x^+\in[a, b]$ such that $f(x^-)=y^-$ and $f(x^+)=y^+$.  Note that $f(x^-)\leq f(c)\leq f(x^+)$ thus $x^-\leq c\leq x^+$.  Define 
+$$\delta=\begin{cases} \min(c-x^-,x^+-c) & x^+\neq c \wedge x^-\neq c\\
+c-x^- & x^+= c \wedge x^-\neq c\\
+x^+-c & x^+\neq c \wedge x^-= c\\
+\end{cases}$$ noting that $a\neq b$, $y^+\neq y^-$, $x^+\neq x^-$.  Note $\delta>0$.  Choose $x\in [a, b]$ such that $|x-c|<\delta$.  Note that $c-\delta<x<c+\delta$, also $a\geq x\leq b$.  Note that if $x^+= c$ then $c=b$ and if $x^-= c$ then $c=a$.  Thus in all three cases for $\delta$ note that $x^-\leq x\leq x^+$.  Note that $f(c)-\epsilon/2\leq y^-\leq f(x)\leq y^+\leq f(c)+\epsilon/2$.  Note that $-\epsilon<f(x)-f(c)<\epsilon$.  Thus $f$ is continuous at all points in $[a,b]$.
+\end{proof}
+
+\begin{exercise}
+
+Suppose that $f : [a, b] \rightarrow \mathbb{R}$ is increasing but discontinuous. Show that $f ([a, b]) \subset [f (a), f (b)]$.\\
+\end{exercise}
+\begin{proof}
+Suppose that $f : [a, b] \rightarrow \mathbb{R}$ is increasing but discontinuous.  Choose $y\in f ([a, b])$.  Note that there exists a $x\in[a,b]$ where $f(x)=y$.  Note that $a\leq x\leq b$ implies that $f(a)\leq f(x)\leq f(b)$ thus $y\in [f(a),f(b)]$.  Hence $f ([a, b]) \subseteq [f (a), f (b)]$.\\
+Suppose $f ([a, b]) = [f (a), f (b)]$.  By the above proof $f$ is continuous, a contradiction and thus we conclude $f ([a, b]) \neq [f (a), f (b)]$.\\
+Conclude $f ([a, b]) \subset [f (a), f (b)]$.
+\end{proof}
+
+
+\begin{exercise}
+
+5.2.5\\
+Let $f_a(x)=\begin{cases}
+x^a&x>0\\
+0&x\leq 0
+\end{cases}$.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+For what $a$ is $f_a$ continuous at 0?\\
+We know that all functions of the form $x^a$ are continuous everywhere that they can be evaluated, thus $f_a$ will be continuous at 0 if and only if $0^a=0$.  This is true if and only if $a>0$, as $a\leq 0$ gives us a undefined value of $f_a(0)$, (I think $0^0$ is undefined).
+\item
+For what $a$ is $f_a$ differentiable at 0?\\
+the function $f_a$ is differentiable at 0 if and only if $f_a(x)=f(0)+\mu(x)*x=\mu(x)*x$ where $\mu(x)$ is continuous at $0$.  $f_a(x)=x^{a-1}*x$, note that $x^{a-1}$is continuous only when $a>1$.  Note that if $f_a$ is differentiable $f'_a(0)=x^{a-1}=0$ so $f'_a(x)$ is continuous if it exists.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
 
 
 
