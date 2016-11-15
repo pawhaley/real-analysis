@@ -92,12 +92,27 @@ style, and the other using the sequential characterization of limits.
 \begin{proof}
 Suppose $f : A \rightarrow \mathbb{R}$ and $c$ is a limit point of $A$. Suppose $f (x) \geq 0$ for all $x \in A$ and that
 $lim_{x \rightarrow c}f (x)=L$ exists.\\
-Suppose $L<0$.  Define $\epsilon=-L/2>0$.  There must exist a $\delta>0$ such that for all $x\in A$ where $0<|x-c|<\delta$, $|f(x)-L|<\epsilon$.  Note that $c$ is a limit point of $A$, thus $V_\delta(c)\cap A-\{c\}\neq \emptyset$.  Take one of the elements of this set $a\in V_\delta(c)\cap A-\{c\}$.  Note that $a\neq c$.  Note that $a\in A$.  Note $|a-c|<\delta$.  Thus $|f(a)-L|<\epsilon$ and so $L-\epsilon<f(a)<L+\epsilon=L/2<0$.  A contradiction, we know that $f(a)\geq 0$ and now we have $f(a)<0$.
+Suppose $L<0$.  Define $\epsilon=-L/2>0$.  There must exist a $\delta>0$ such that for all $x\in A$ where $0<|x-c|<\delta$, $|f(x)-L|<\epsilon$.  Note that $c$ is a limit point of $A$, thus $v_\delta(c)\cap A-\{c\}\neq \emptyset$.  Take one of the elements of this set $a\in v_\delta(c)\cap A-\{c\}$.  Note that $a\neq c$.  Note that $a\in A$.  Note $|a-c|<\delta$.  Thus $|f(a)-L|<\epsilon$ and so $L-\epsilon<f(a)<L+\epsilon=L/2<0$.  A contradiction, we know that $f(a)\geq 0$ and now we have $f(a)<0$.  We now conclude $L\geq 0$.
 \end{proof}
+\begin{exercise} 2
+Let $a_n$ be a sequence of numbers such that for some $M \in \mathbb{R}$, $\sum^\infty_{n=1} a_nM^n$ converges. Suppose
+that $|x| < M$. Show that $\sum^\infty_{n=1} a_nx^n$ converges absolutely. Give an example to show
+that divergence is possible if $|x| = |M|$. Hint: ($a_nM^n$) converges to zero, and is hence
+bounded.
+\end{exercise}
+\begin{proof}
+Let $a_n$ be a sequence of numbers such that for some $M \in \mathbb{R}$, $\sum^\infty_{n=1} a_nM^n$ converges. Suppose
+that $|x| < M$.\\
+Note that by our supposition $|x| < M$ we can conclude $0< M$.  Define $-1<0\leq r=\frac{|x|}{M}<1$.  Note that $\lim_{n\rightarrow \infty} a_nM^n=0$ since $\sum^\infty_{n=1} a_nM^n$ converges.  Note that a convergent sequence is bounded so we can define $N\in\mathbb{R}$ such that $|a_nM^n|<N$ for all $n$.  Note $|r|<1$, thus $\sum_{n=1}^\infty N r^n$ converges lets call it's limit $L$.  Noting that $0\leq N$ and $0\leq r$ we can conclude $0\leq N r^n$ for $n\in\mathbb{N}$ and thus $\sum_{n=1}^k N r^n$ is monotone increasing.  Note $\sum_{n=1}^k N r^n\leq \sum_{n=1}^\infty N r^n=L$.  Define $S_k=\sum^k_{n=1} |a_nx^n|$.  Note that $S_k\leq S_k+|a_{k+1}x^{k+1}|=S_{k+1}$ for $k\in\mathbb{N}$ and thus $S_k$ is monotone increasing.  Note that $|a_n|<\frac{N}{M^n}$, recall $|a_nM^n|<N$ and $0\leq M$.  Note that $S_k=\sum^k_{n=1} |a_nx^n|<\sum^k_{n=1} \frac{N}{M^n}|x^n|=\sum^k_{n=1} N r^n\leq L$.  By the MCT $S_k$ converges and thus $\sum^\infty_{n=1} a_nx^n$ converges absolutely.
 
-
-
-
+\end{proof}
+For a example where $|x| = |M|$ and $\sum^\infty_{n=1} a_nx^n$ does not converges absolutely, consider the case $a_n=(-1)^n1/n$, $M=1$, $x=1$.  Note that $\sum^\infty_{n=1} a_nM^n=\sum^\infty_{n=1} (-1)^n1/n$ converges.  However $\sum^\infty_{n=1} |a_nx^n|=\sum^\infty_{n=1} 1/n$ does not converge.
+\begin{exercise} 3
+Suppose $f : (0,1]=A \rightarrow\mathbb{R}$ is uniformly continuous. Show that $lim_{x\rightarrow 0} f (x)$ exists.
+\end{exercise}
+\begin{proof}
+Note that 0 is a limit point of $(0,1]$.  Take a arbitrary sequence $a_n\in A$ where $a_n\rightarrow 0$.  Choose $\epsilon>0$.  Note that there exists $\delta>0$ such that for all $x,y\in A$ if $|x-y|<\delta$ then $|f(x)-f(y)|<\epsilon/2$
+\end{proof}
 
 
 
