@@ -188,11 +188,21 @@ Choose $y\in (f(a), f(b))$.  Choose $\epsilon>0$.  Define $x=f^{-1}(y)$, note $x
 Choose $\epsilon>0$.  Define $\delta=f(b)-f(b-\epsilon)>0$.  Choose $y\in [f(a), f(b)]$ such that $|f(b)-y|<\delta$.  Note that $y\leq f(b)$.  Note that $0 \leq f(b)-y<\delta$ or $f(b) \geq y>f(b)-\delta=f(b-\epsilon)$.  Note $b \geq f^{-1}(y)>b-\epsilon$ or $|f^{-1}(y)-f^{-1}(f(b))|<\epsilon$.  Thus $f^{-1}$ is continuous at $f(b)$.\\
 Choose $\epsilon>0$.  Define $\delta=f(a+\epsilon)-f(a)>0$.  Choose $y\in [f(a), f(b)]$ such that $|f(a)-y|<\delta$.  Note that $y\geq f(a)$.  Note that $0 \leq y-f(a)<\delta$ or $f(a) \leq y<f(a)+\delta=f(a+\epsilon)$.  Note $a \leq f^{-1}(y)<a+\epsilon$ or $|f^{-1}(y)-f^{-1}(f(a))|<\epsilon$.  Thus $f^{-1}$ is continuous at $f(a)$.\\
 Thus $f^{-1}$ is continuous on $[f(a),f(b)]$.\\
-Consider $f:[0,M]$, $f(x)=x^n$ where $n\in\mathbb{N}$.  Note that it is a polynomial and therfore continuous.  Note that it is strictly increasing.
+Consider $f_n:[0,\infty)\rightarrow [0,\infty)$, $f(x)=x^n$ where $n\in\mathbb{N}$.  Consider $g_n:[0,\infty)\rightarrow [0,\infty)$, $f(x)=x^{1/n}$ where $n\in\mathbb{N}$.  Note that $g_n$ and $f_n$ are inverses, $g_n (f_n(x))=(x^n)^{1/n}=x=(x^{1/n})^n=f_n (g_n (x))$ where $n\in\mathbb{N}$.  Consider some point $c\in [0,\infty)$ and some $n\in\mathbb{N}$.  Define $x=g_n(c)$.  Note that $F [0,x+1]\rightarrow \mathbb{R}$ where $F(x)=f_n(x)$, is a strictly increasing continuous function.  Note that it has a continuous inverse $G : [f_n(0),f_n(x+1)]\rightarrow [0,x+1]$.  Note that $G(y)=g_n(y)$ for all $y\in [f(0),f(x+1)]$.  Note that $f_n(0)\leq c<f_n(x+1)$.  Conclude that $g_n$ is continuous at $c$.  Since $c$ was chosen arbitrarially we can say that $g_n$ is continuous allong its domain.  Since $n$ was chosen arbitrarially we can say $g_n$ is continuous for all $n\in\mathbb{N}$.  Thus $x^{1/n}$ is continuous for all $n\in\mathbb{N}$.
 \end{proof}
-
-
-
+\begin{exercise} 8
+Suppose $f : [0,1] \rightarrow\mathbb{R}$ is continuous and that $f ([0,1]) \subseteq [0,1]$.  Prove that there is a solution of the equation $f (x) = x$.
+\end{exercise}
+\begin{proof}
+Suppose $f : [0,1] \rightarrow\mathbb{R}$ is continuous and that $f ([0,1]) \subseteq [0,1]$.  Suppose that there is no solution of the equation $f (x) = x$.  In other words $f(x)\neq x$ for all $x\in [0,1]$.  Note that $0<f(0)$ and $f(1)<1$ or $f(1)-1<0$, since we already knew that $f(0),f(1)\in[0,1]$.  Define $g:[0,1]\rightarrow \mathbb{R}$ where $g(x)=f(x)-x$.  Note that $g$ is continuous.  Note that $g(0)=f(0)>0$ and $g(1)=f(1)-1<0$ thus by the IVT there exists a $c\in (0,1)$ such that $g(c)=0$.  Note that $g(c)=f(c)-c=0$ thus $f(c)=c$, a contradiction.  We conclude the negation of our supposition there is a solution to the equation $f (x) = x$.
+\end{proof}
+\begin{exercise} 9
+Abbott 5.2.12
+\end{exercise}
+If $f:[a,b] \to \mathbb{R}$ is one-to-one, then there exists an inverse function $f^{-1}$ defined on the range of $f$ given by $f^{-1}(y) = x$ where $y = f(x)$. In Exercise 4.5.8 we saw that if $f$ is continuous on $[a,b]$, then $f^{-1}$ is continuous on its domain. Let's add the assumption that $f$ is differentiable on $[a,b]$ with $f'(x)\neq 0$ for all $x \in [a,b]$. Show $f^{-1}$ is differentiable with $$(f^{-1})'(y) = \frac{1}{f'(x)} \text{ where } y=f(x).$$
+\begin{proof}
+Suppose $f:[a,b]=X \to \mathbb{R}$ is one-to-one.  Note there exists an inverse function $f^{-1}$ defined on $f([a,b])=Y$.  Suppose $f$ is continuous on $X$.  Note that $f^{-1}$ is continuous on its domain.  Suppose $f$ is differentiable on $X$ with $f'(x)\neq 0$ for all $x \in X$.  Choose $b\in Y$.  Note that there exists $c\in X$ such that $f(c)=b$.  Choose $y\in Y$.  Note that there exists $x\in X$ such that $f(x)=y$.  Note that $f$ is differentiable at $c$ thus $f(x)=f(c)+\mu(x)(x-c)$ where $\mu$ is continuous at $c$ and $\mu(c)=f'(c)$.  Note that $y=b+\mu(x)(f^{-1}(y)-f^{-1}(b))$ or $y-b=\mu(x)(f^{-1}(y)-f^{-1}(b))$.  Consider two cases, $y=b$ and $y\neq b$.  If $y=b$ then $x=c$ and $\mu(x)=\mu(c)=f'(c)\neq 0$.  If $y\neq b$ then $y-b\neq 0$ and thus $\mu(x)\neq 0$.  Thus $\mu(x)\neq 0$ in all cases.  Note $f^{-1}(y)=f^{-1}(b)+\frac{1}{\mu(x)}(y-b)$ or $f^{-1}(y)=f^{-1}(b)+\frac{1}{\mu(f^{-1}(y))}(y-b)$.  Since $y$ was chosen arbitraraly from $Y$ we can conclude that for all $y\in Y$, $f^{-1}(y)=f^{-1}(b)+\frac{1}{\mu(f^{-1}(y))}(y-b)$.  Since $f^{-1}(y)$ is defined for all $y\in Y$ we know that $\frac{1}{\mu(f^{-1}(y))}$ is defined for all $y\in Y$ and by the algebreic continuity theorem and the composite continuity theorem $\frac{1}{\mu(f^{-1}(y))}$ is continuous at $y=b$.  We can conclude that $(f^{-1})'(b) = \frac{1}{\mu(f^{-1}(b))}=\frac{1}{\mu(c)}=\frac{1}{f'(c)}$.  Since $b$ was chosen arbitrarially from $Y$ we can conclude that $f^{-1}$ is differentiable with $(f^{-1})'(y) = \frac{1}{f'(x)} \text{ where } y=f(x)$.
+\end{proof}
 
 
 
