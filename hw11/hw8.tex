@@ -1,0 +1,238 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Homework 11}
+\docauthor{Parker Whaley}
+\docdate{Due November 30, 2016}
+
+\begin{document}
+Note that I am operating under the convention that $N,n,m,i,j$ are natural numbers unless otherwise specified.  I am also operating under the convention $v_a(b)=\{x\in\mathbb{R}:b-a<x<b+a\}$
+\begin{exercise}
+1
+Abbott 6.3.5 (c)
+\end{exercise}
+Let $f_n(x)=\frac{nx^2+1}{2n+x}$.  Note that $f:[0,\infty)\rightarrow \mathbb{R}$.
+\begin{enumerate}[(a)]
+\item
+Note that $f_n(x)=\frac{x^2+1/n}{2+x/n}$.  Note $f_n(x)\rightarrow f(x)= x^2/2$ and thus $f'(x)=x$.
+\item
+Note that $f_n'(x)=\frac{4n^2x+nx^2-1}{4n^2+4nx+x^2}$.  Choose $M\in\mathbb{R}^+$.  Choose $\epsilon>0$.  Let $N_1\in\mathbb{N}$ such that $1/(4N_1^2)<\epsilon/3$.  Let $N_2\in\mathbb{N}$ such that $M^4/(4N_2^2)<\epsilon/3$.  Let $N_3\in\mathbb{N}$ such that $3M^2/(4N_3)<\epsilon/3$.  Let $N=\max(N_1,N_2,N_3)$.  Choose $n\geq N$.  Choose $x\in[0,M]$.  Note that $|f_n'(x)-x|=|\frac{-3nx^2-1-x^3}{4n^2+4nx+x^2}|=\frac{3nx^2+1+x^3}{4n^2+4nx+x^2}\leq \frac{3nx^2+1+x^3}{4n^2}\leq \frac{3nM^2+1+M^3}{4n^2}\leq 3\epsilon/3=\epsilon$.  We conclude that $f_n'(x)\rightarrow x$ uniformly on any domain $[0,M]$ and thus $f'(x)=x$.
+\end{enumerate}
+\begin{exercise}
+2
+Abbott 6.4.2
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+If $\sum_{n=1}^\infty g_n$ converges uniformly then $(g_n)$ converges to zero.  True since uniform convergence implies point-wise convergence and that implies convergence for any value of $x$, if, for a particular $x$, $\sum_{n=1}^\infty g_n(x)$ then $g_n(x)\rightarrow 0$.  We conclude $g_n(x)\rightarrow 0$ for all $x$.
+\item
+Suppose $0\leq f_n\leq g_n$ and $\sum_{n=1}^\infty g_n$ converges uniformly.  Choose $\epsilon>0$.  Note that there exists a $N\in\mathbb{N}$ such that $\forall n>m\geq N$, $\sum_{k=m}^n g_k=|\sum_{k=m}^n g_k|<\epsilon$.  Define $N$ in this manner.  Choose $n>m\geq N$.  Note that $|\sum_{k=m}^n f_k|=\sum_{k=m}^n f_k\leq \sum_{k=m}^n g_k<\epsilon$, therefore $\sum_{k=m}^n f_k$ converges uniformly.
+\item
+If $\sum_{n=1}^\infty f_n$ converges uniformly on $A$, then there exist constants $M_n$ such that $|f_n(x)|\le M_n$ for all $x \in A$ and $\sum_{n=1}^\infty M_n$ converges.\\
+False, as a counterexample let $f_n(x)=\begin{cases} e^x & x=1\\ -e^x & x=2\\ 0 & \text{otherwise} \end{cases}$.  Note that $\sum_{n=1}^\infty f_n$ converges uniformly on $\mathbb{R}$, however there is no upper bound on $f_1(x)=e^x$.
+\end{enumerate}
+\begin{exercise}
+3
+Abbott 6.4.3
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Show that $$g(x) = \sum_{n=0}^\infty \frac{cos(2^n x)}{2^n}$$ is continuous on all of $\RR$.\\
+Note that $|\frac{cos(2^n x)}{2^n}|\leq 1/2^n$ for all $x,n$.  Also note that $\sum_{n=0}^\infty 1/2^n$ is a geometric series and thus converges.  By the Weierstrass M-test we note that $\sum_{n=0}^\infty \frac{cos(2^n x)}{2^n}$ converges uniformly.
+\item
+The function $g$ was cited in Section 5.4 as an example of a continuous nowhere differentiable function. What happens if we try to use Theorem 6.4.3 to explore whether $g$ is differentiable?\\
+The problem with using this theorem is that $\sum_{n=0}^\infty g'(x)=\sum_{n=0}^\infty -sin(2^n x)$ witch does not converge for some $x$ values, and thus fails one of our assumptions for that theorem.
+\end{enumerate}
+\begin{exercise}
+4
+Abbott 6.4.7
+\end{exercise}
+Let $$f(x) = \sum_{k=1}^\infty \frac{sin(kx)}{k^3}=f_k(x).$$
+\begin{enumerate}[(a)]
+\item
+Show that $f(x)$ is differentiable and that the derivative $f'(x)$ is continuous.\\
+Choose $x\in\RR$.  Note that $|\frac{sin(kx)}{k^3}|\leq  \frac{1}{k^3}\leq \frac{1}{k^2}$, for all $k\in\mathbb{N}$.  Noting that $\sum_{k=1}^\infty \frac{1}{k^2}$ converges we can say via the comparison test that $\sum_{k=1}^\infty \frac{sin(kx)}{k^3}$ converges point-wise to some function $f$.\\\\
+Note that $f_k'(x)=frac{cos(kx)}{k^2}$.  Note that $f_k'(x)\leq 1/k^2$, and $\sum_{k=1}^\infty \frac{1}{k^2}$ converges so $f_k'(x)=frac{cos(kx)}{k^2}$ converges uniformly and $f'$ exists.  Note That since each of our finite sums $\sum_{k=1}^\infty \frac{sin(kx)}{k^3}$ are the continuous and they converge uniformly on $f'(x)$ we can say $f'(x)$ is continuous.
+\item
+Can we determine if $f$ is twice-differentiable?\\
+No, at least not using this procedure, the failure occurs due to $f_k''(x)=frac{-sin(kx)}{k}$.  Witch does not have a limiting function.
+\end{enumerate}
+\begin{exercise}
+5
+Abbott 6.5.4
+\end{exercise}
+Assume $f(x) = \sum_{n=0}^\infty a_n x^n$ converges on $(-R,R)$.
+\begin{enumerate}[(a)] 
+\item Show $$F(x) = \sum_{n=0}^\infty \frac{a_n}{n+1}x^{n+1}$$ is defined on $(-R,R)$ and satisfies $F'(x)=f(x)$.\\
+Choose $x\in(-R,R)$.  By the algebraic limit theorem for series we know that $\sum_{n=0}^\infty R|a_n x^n|$ converges.  Since $|\frac{a_n}{n+1}x^{n+1}|\leq R|a_n x^n|$ we can say that $F(x) = \sum_{n=0}^\infty \frac{a_n}{n+1}x^{n+1}$ is defined on $(-R,R)$.  Note that $f_n=F_n'$.  Also note that $f_n$ and $F_n$ are power series that converge point-wise, thus they each converge uniformly and $F'(x)=f(x)$.
+\item Anti-derivatives are not unique. If $g$ is an arbitrary function satisfying $g'(x) = f(x)$ on $(-R,R)$, find a power series representation for $g$.\\
+Suppose $g_n=\sum_{k=0}^n b_k x^k$ and $g_n\rightarrow g$ point-wise.  Note that $g_n\rightarrow g$ uniformly.  Further suppose $g'=f$.  Note that $g^{(n+1)}(0)=b_{n+1}(n+1)!=f^{(n)}=a_{n}(n)!$ or $b_{n+1}=a_n/(n+1)$.  This fixes all $b_n$ except $b_0$.  Suppose the most general case $b_0$ is a arbitrary real.  Note that $g'(x)=\sum_{n=1}^\infty b_n nx^{n-1}=\sum_{n=0}^\infty b_{n+1} (n+1)x^{n}=f(x)$ so in the most general case $b_{n+1}=a_n/(n+1)$ and $b_0$ is a arbitrary real.
+\end{enumerate}
+\begin{exercise}
+6
+Abbott 6.5.5
+\end{exercise}
+Theorem 6.5.6 states that if $\sum_{n=0}^\infty a_n x^n$ converges for all $x \in (-R,R)$, then the differentiated series $\sum_{n=1}^\infty na_n x^{n-1}$ converges at each $x \in (-R,R)$ as well. Consequently, the convergence is uniform on compact sets contained in $(-R,R)$.
+\begin{enumerate}[(a)] 
+\item If $s$ satisfies $0<s<1$, show $ns^{n-1}$ is bounded for all $n\ge1$.\\
+Observe that the difference between successive terms is $(n+1)s^{n}-ns^{n-1}=(n+1)s^{n}-ns^{n-1}=(sn+s-n)s^{n-1}$.  Note that the sequence $ns^{n-1}$ will be decreasing if $(sn+s-n)s^{n-1}$, in other words if $\frac{s}{1-s}<n$.  Since $0<s<1$ $\frac{s}{1-s}$ is some number, after witch we will be guaranteed to be decreasing.  Since this sequence is bounded below by 0 and eventually decreasing it converges.  Recalling that the terms of a convergent sequence are bounded we can say that the terms $ns^{n-1}$ are bounded.
+\item Given an arbitrary $x \in (-R,R)$, pick $t$ to satisfy $|x|<t<R$. Use this start to construct a proof for Theorem 6.5.6
+\begin{proof}
+Suppose $\sum_{n=0}^\infty a_n x^n$ converges for all $x \in (-R,R)$.  Choose $x \in (-R,R)$.  Note that there exists $t>0$ such that $|x|<t<R$.  Note that $|na_n x^{n-1}|=n|a_n| (|x|/t)^{n-1} t^{n-1}$.  Let $l$ be a upper bound on $n(|x|/t)^{n-1}$.  Note $|na_n x^{n-1}|\leq l/t|a_n| t^{n}$.  Since $\sum_{n=0}^\infty |a_n t^n|$ converges we can say that $\sum_{n=0}^\infty |na_n x^{n-1}|$ converges and thus $\sum_{n=0}^\infty na_n x^{n-1}$ converges.
+\end{proof}
+\end{enumerate}
+\begin{exercise}
+7
+Abbott 6.5.6
+\end{exercise}
+Previous work on geometric series (Example 2.7.5) justifies the formula $$\frac{1}{1-x} = 1 + x + x^2 + x^3 + x^4 + \cdots \text{, for all } |x|<1.$$
+Use the results about power series proved in this section to find values for $\sum_{n=1}^\infty n/2^n$ and $\sum_{n=1}^\infty n^2/2^n$. The discussion in Section 6.1 may be helpful.\\
+Consider the power series $f(x)=\sum_{n=0}^\infty x^n$.  Recall that this converges for all $x\in (-1,1)$.  Note that it's derivative is $g(x)=\sum_{n=0}^\infty (n/x) x^n$ and it's second derivative is $h(x)=\sum_{n=0}^\infty (n(n-1)/x^2) x^n$.  Noting that power series give us uniform convergence we see that $f'(x)=g(x)$ and $f''(x)=h(x)$.  In other words $\frac{1}{(1-x)^2}=g(x)$ and $\frac{2(1-x)}{(1-x)^4}=h(x)$, when $x\in (-1,1)$.  Note that $4=\frac{1}{(1-1/2)^2}=g(1/2)=\sum_{n=0}^\infty 2n/2^n=2\sum_{n=0}^\infty n/2^n$, thus $2=\sum_{n=0}^\infty n/2^n$.  Note that $2^4=\frac{2(1-1/2)}{(1-1/2)^4}=h(1/2)=sum_{n=0}^\infty 4(n^2-n) (1/2)^n=sum_{n=0}^\infty 4n^2(1/2)^n-4sum_{n=0}^\infty n (1/2)^n=4sum_{n=0}^\infty n^2(1/2)^n-8$ thus $6=sum_{n=0}^\infty n^2(1/2)^n$.
+\begin{exercise}
+8
+Abbott 6.6.8
+\end{exercise}
+\begin{enumerate}[(a)] 
+\item First establish a lemma: if $g$ and $h$ are differentaible on $[0,x]$ with $g(0)=h(0)$ and $g'(t) \le h'(t)$ for all $t \in [0,x]$, then $g(t) \le h(t)$ for all $t \in [0,x]$.\\
+\begin{proof}
+Suppose $g$ and $h$ are differentaible on $[0,x]$ with $g(0)=h(0)$ and $g'(t) \le h'(t)$ for all $t \in [0,x]$.  Consider a new function $f(x)=h(x)-g(x)$.  Note that $f'(x)=h'(x)-g'(x)$, and thus $f'(t)\geq 0$ for all $t\in [0,x]$.  Choose $t\in [0,x]$.  Note that $f(t)=f(0)+f'(\xi)t$ where $\xi\in[0,t]$.  Since $f'(\xi)t\geq 0$, $f(t)\geq f(0)=0$.  Thus $h(t)\geq g(t)$.
+\end{proof}
+\item Let $f$, $S_N$, and $E_N$, be as Theorem 6.6.3, and take $0 < x < R$. If $|f^{N+1}(t)|\le M$ for all $t \in [0,x]$, show $$|E_N(x)|\le \frac{Mx^{N+1}}{(N+1)!}.$$
+Note that $|E_N(x)|=\frac{|f^{(N+1)}(\xi)|x^{N+1}}{(N+1)!}\leq \frac{Mx^{N+1}}{(N+1)!}$.
+\end{enumerate}
+\newpage
+\W
+\begin{exercise}
+9
+Let$f(x)=\frac{1}{\sqrt{1+x}}$. Compute the Taylor series $S_\infty(x)$ for $f$ and then use the remainder theorem to prove that in fact $f(x) = S_\infty(x)$ for all $x\in (-\frac{1}{2},\frac{1}{2})$.
+\end{exercise}
+Let's start by establishing a rule for taking the derivative of $f_n(x)=\frac{1}{\sqrt{x}x^n}$ where $n\in\mathbb{N}$.  Using product rule we get $f'_n(x)=[\frac{-1}{2\sqrt{x}xx^n}+\frac{-n}{\sqrt{x}x^{n+1}}]=\frac{1}{\sqrt{x}x^{n+1}}[-1/2-n]=f_{n+1}(x)[-1/2-n]$.\\\\
+Using chain rule note that $f(x)=f_0(1+x)$ and so $f'(x)=f_1(1+x)[-1/2-0]$.  It is trivial to show via induction that $f^{(n)}(x)=f_n(1+x)\prod_{k=0}^{n-1} [-1/2-k]$.  Note that $f_n(1+0)=1$ thus $f^{(n)}(0)=\prod_{k=0}^{n-1} [-1/2-k]$.\\\\
+We can now put down the Taylor series, $S_\infty(x)=\sum_{i=0}^\infty \frac{x^i}{i!} \prod_{k=0}^{i-1} [-1/2-k]$.\\\\
+Choose $x\in (-\frac{1}{2},\frac{1}{2})$.  What is the error in the nth Taylor estimation for $f(x)$?  We can use the Lagrange remainder theorem to find out, $|E_n(x)|=|\frac{x^{(n+1)}}{{(n+1)}!} f_{(n+1)}(1+\xi)\prod_{k=0}^{{(n+1)}-1} [-1/2-k]|$ for some $\xi\in (-\frac{1}{2},\frac{1}{2})$.  Note that $|\prod_{k=0}^{{(n+1)}-1} [-1/2-k]|=\prod_{k=0}^{n} [1/2+k]\leq \prod_{k=0}^{n} [1+k]=(n+1)!$.  Note that $|x^{(n+1)}f_{(n+1)}(1+\xi)|=|\frac{x^{n+1}}{\sqrt{1+\xi}(1+\xi)^{n+1}}|=\frac{|x|^{n+1}}{\sqrt{1+\xi}(1+\xi)^{n+1}}$.  Define $|x|/(1+\xi)=b$, note that $|x|<1/2$ and $(1+\xi)>1/2$ so $b\in [0,1)$.  Note that $\frac{|x|^{n+1}}{(1+\xi)^{n+1}}=(|x|/(1+\xi))^{n+1}=b^{n+1}$.  Thus $|E_n(x)|\leq \frac{b^{n+1}(n+1)!}{\sqrt{1+\xi}{(n+1)}!}= \frac{b^{n+1}}{\sqrt{1+\xi}}$.  Note that $\sqrt{1+\xi}\geq \sqrt{1/2}\geq 1/2$ thus $\frac{1}{\sqrt{1+\xi}}\leq 2$.  We now know $|E_n(x)|<2b^{n+1}$.\\\\
+Simply note that as we take $n\rightarrow \infty$, $b^{n+1}\rightarrow 0$, and thus $|E_n(x)|\rightarrow 0$.  We can now conclude our Taylor estimation is exact ($E_\infty (x)=0$) for all $x\in (-\frac{1}{2},\frac{1}{2})$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
