@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Homework 12}
+\docauthor{Parker Whaley}
+\docdate{Due December 7, 2016}
+
+\begin{document}
+\begin{exercise}
+1
+Abbott 7.2.5
+\end{exercise}
+Suppose $\{f_n\}$ are a sequence of functions uniformly convergent on $f$, and suppose that $f_n\in R[a,b]$.  Choose $\epsilon>0$.  Define $N\in\mathbb{N}$ such that for all $n\geq N$ and $x\in[a,b]$, $|f_n(x)-f(x)|<\alpha=\epsilon/(4(b-a))$.  Define $P\in P[a,b]$ such that $U(f_N,P)-L(f_N,P)<\beta=\epsilon/2$.  Define $M_k$ and $m_k$ to be the suppremum and infimum for $f_N$ in the $k$th interval of $P$.  Define $n$ to be the number of partitions in $P$.  Define $\Delta x_k$ to be the width of the $k$th interval in $P$.  Note that $U(f_N,P)-L(f_N,P)=\sum^n_{k=1} (M_k-m_k)\Delta x_k<\beta$.  Note that $|f_N(x)-f(x)|<\alpha$ or $f_N(x)-\alpha<f(x)<f_N(x)+\alpha$.  Consider a perticular interval, $I_k$.  Note that in this interval $m_k-\alpha\leq f_N(x)-\alpha<f(x)<f_N(x)+\alpha \leq M_k+\alpha$.  We can now see $U(f,P)\leq \sum^n_{k=1} (M_k+\alpha) \Delta x_k=U(f_N,P)+ \alpha(b-a)$ and $L(f,P)\geq \sum^n_{k=1} (m_k-\alpha) \Delta x_k=L(f_N,P)- \alpha(b-a)$ thus $U(f,P)-L(f,P)\leq U(f_N,P)+ 2\alpha(b-a) -L(f_N,P)<\beta+2\alpha(b-a)=\epsilon$.  We conclude $f\in R[a,b]$.
+
+\begin{exercise}
+2
+Abbott 7.2.7
+\end{exercise}
+Suppose $f:[a,b]\rightarrow\mathbb{R}$ is a increasing function.  Choose $\epsilon>0$.  Define $n\in\mathbb{N}$ such that $1/n<\gamma=\epsilon/(f(b)-f(a))(b-a)$.  Define $\Delta x=(b-a)/n$.  Define $x_0=a$, $x_k=x_{k-1}+\Delta x$ for all $k\in [1,n]$.  Note that $x_n=x_0+n\Delta x=b$.  We can define $P\in P[a,b]$ as the partition using $\{x_k \}_{k=0}^n$.  Note that $f(x_{k-1}) \leq f(x)\leq f(x_k)$ for $x\in I_k$ the $k$th interval in $P$.  Thus $f(x_k)\geq \sup(f(I_k))$ and $f(x_{k-1})\leq \inf(f(I_k))$ for all $k\in [1,n]$.  Note that $\sum_{k=1}^n f(x_k)-f(x_{k-1})=f(x_n)-f(x_0)=f(b)-f(a)$.  Note that $U(f,P)-L(f,P)= \sum_{k=1}^n(\sup(f(I_k))-\inf(f(I_k)))\Delta x\leq \Delta x\sum_{k=1}^n f(x_k)-f(x_{k-1})=\Delta x (f(b)-f(a))=(f(b)-f(a))(b-a)/n<(f(b)-f(a))(b-a)\gamma=\epsilon$.  We conclude $f\in R[a,b]$.
+
+\begin{exercise}
+3
+Abbott 7.3.4
+\end{exercise}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
