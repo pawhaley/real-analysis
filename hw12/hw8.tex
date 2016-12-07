@@ -84,10 +84,12 @@
 \begin{document}
 \begin{exercise}
 1
-Abbott 7.2.5
+Abbott 7.2.5 \W
 \end{exercise}
-Suppose $\{f_n\}$ are a sequence of functions uniformly convergent on $f$, and suppose that $f_n\in R[a,b]$.  Choose $\epsilon>0$.  Define $N\in\mathbb{N}$ such that for all $n\geq N$ and $x\in[a,b]$, $|f_n(x)-f(x)|<\alpha=\epsilon/(4(b-a))$.  Define $P\in P[a,b]$ such that $U(f_N,P)-L(f_N,P)<\beta=\epsilon/2$.  Define $M_k$ and $m_k$ to be the suppremum and infimum for $f_N$ in the $k$th interval of $P$.  Define $n$ to be the number of partitions in $P$.  Define $\Delta x_k$ to be the width of the $k$th interval in $P$.  Note that $U(f_N,P)-L(f_N,P)=\sum^n_{k=1} (M_k-m_k)\Delta x_k<\beta$.  Note that $|f_N(x)-f(x)|<\alpha$ or $f_N(x)-\alpha<f(x)<f_N(x)+\alpha$.  Consider a perticular interval, $I_k$.  Note that in this interval $m_k-\alpha\leq f_N(x)-\alpha<f(x)<f_N(x)+\alpha \leq M_k+\alpha$.  We can now see $U(f,P)\leq \sum^n_{k=1} (M_k+\alpha) \Delta x_k=U(f_N,P)+ \alpha(b-a)$ and $L(f,P)\geq \sum^n_{k=1} (m_k-\alpha) \Delta x_k=L(f_N,P)- \alpha(b-a)$ thus $U(f,P)-L(f,P)\leq U(f_N,P)+ 2\alpha(b-a) -L(f_N,P)<\beta+2\alpha(b-a)=\epsilon$.  We conclude $f\in R[a,b]$.
+Suppose $\{f_n\}$ are a sequence of functions uniformly convergent on $f$, and suppose that $f_n\in R[a,b]$.  Choose $\epsilon>0$.  Define $N\in\mathbb{N}$ such that for all $n\geq N$ and $x\in[a,b]$, $|f_n(x)-f(x)|<\alpha=\epsilon/(4(b-a))$.  Define $P\in P[a,b]$ such that $U(f_N,P)-L(f_N,P)<\beta=\epsilon/2$.  Define $M_k$ and $m_k$ to be the suppremum and infimum for $f_N$ in the $k$th interval of $P$.  Define $n$ to be the number of partitions in $P$.  Define $\Delta x_k$ to be the width of the $k$th interval in $P$.  Note that $U(f_N,P)-L(f_N,P)=\sum^n_{k=1} (M_k-m_k)\Delta x_k<\beta$.  Note that $|f_N(x)-f(x)|<\alpha$ or $f_N(x)-\alpha<f(x)<f_N(x)+\alpha$.  Consider a particular interval, $I_k$.  Note that in this interval $m_k-\alpha\leq f_N(x)-\alpha<f(x)<f_N(x)+\alpha \leq M_k+\alpha$.  We can now see $U(f,P)\leq \sum^n_{k=1} (M_k+\alpha) \Delta x_k=U(f_N,P)+ \alpha(b-a)$ and $L(f,P)\geq \sum^n_{k=1} (m_k-\alpha) \Delta x_k=L(f_N,P)- \alpha(b-a)$ thus $U(f,P)-L(f,P)\leq U(f_N,P)+ 2\alpha(b-a) -L(f_N,P)<\beta+2\alpha(b-a)=\epsilon$.  We conclude $f\in R[a,b]$.
 
+
+\newpage
 \begin{exercise}
 2
 Abbott 7.2.7
@@ -98,12 +100,74 @@ Suppose $f:[a,b]\rightarrow\mathbb{R}$ is a increasing function.  Choose $\epsil
 3
 Abbott 7.3.4
 \end{exercise}
+Let $f$ and $g$ be functions defined on (possibly different) closed intervals, and assume the range of $f$ is contained in the domain of $g$ so that the composition $g \circ f$ is properly defined. 
+\begin{enumerate}[(a)] 
+\item Show, by example, that is not the case that if $f$ and $g$ are integrable, then $g \circ f$ is integrable.\\
+Since a increasing bounded function is integrable see part $c$ for a counterexample.
+
+Now decide on the validity of each of the following conjectures, supplying a proof or counterexample as appropriate.
+\item If $f$ is increasing and $g$ is integrable, then $g \circ f$ is integrable. 
+\item If $f$ is integrable and $g$ is increasing, then $g \circ f$ is integrable.\\
+Let $f:[0,1]\rightarrow[0,1]$ where $f(x)=t(x)$, Thomae's function.  Let $g:[0,1]\rightarrow[0,1]$ where $g(x)=\begin{cases} 0 & x=0\\ 1 & x\neq 0 \end{cases}$.  Note that $f$ is integrable by the proof in the following section, also note that $g$ is increasing, $g(x)\geq g(y)$ if $x\geq y$.  Note that $g\circ f=\begin{cases} 0 & x\not\in\mathbb{Q}\\ 1 & x\in\mathbb{Q}\end{cases}$ witch is non-integrable.
+\end{enumerate}
+
+\begin{exercise}
+4
+Abbott 7.3.2
+\end{exercise}
+Recall that Thomae's function
+\[
+t(x) = 
+\begin{cases}
+1 &\text{if } x = 0 \\
+1/n &\text{if } x = m/n \in \Rats - \{0\}  \text{ is in the lowest terms with } n >0 \\
+0 &\text{if } x \not \in\Rats 
+\end{cases}
+\]
+has a countable set of discontinuities occurring at precisely every rational number. Follow these steps to prove $t(x)$ is integrable on $[0,1]$ with $\int_{0}^{1} t = 0$
+\begin{enumerate}[(a)] 
+\item First argue that $L(t,P) = 0$ for any partition $P$ of $[0,1]$.\\
+Suppose $P$ is a partition on $[0,1]$.  Take $I_k$ to be the $k$th interval in $P$.  Note that in any interval $I_k$ there exists a irrational number thus $\inf(t(I_k))\leq 0$.  Note that $t(x)\geq 0$ for all $x\in[0,1]$ thus $\inf(t(I_k))\geq 0$.  We conclude that $\inf(t(I_k))=0$.  Note that if there are n intervals in $P$ then $L(t,P)=\sum_{k=1}^{n} \inf(t(I_k)) \Delta x_k=\sum_{k=1}^{n} 0=0$.
+\item Let $\epsilon > 0$ and consider the set of points $D_{\epsilon/2} = \{ x \in [0,1] : t(x) \ge \epsilon/2 \}$. How big is $D_{\epsilon/2}$?\\
+This is a very challenging problem since there is a multiplicity problem ie $1/2=2/4=3/6$, for the next step all I will need is that there are finitely many points, so I will try to bound the number of elements in $D_{\epsilon/2}$.  Note that there exists $N\in\mathbb{N}$ such that $1/N<\epsilon/2$.  Note that if $x \in [0,1]$ and $t(x) \geq \epsilon/2$ then $x=1$ or $x=m/n$ where $m<n\in\mathbb{N}\cap[1,N]$.  Note that in the previous representation we will have $N$ possibilities for $n$ and fewer than $N$ possibilities for $m$ thus I can say that there are fewer than $N^2$ possible $m/n$ values and so there are fewer than $N^2+1$ elements in $D_{\epsilon/2}$.
+\item To complete the argument, explain how to construct a partition $P_{\epsilon}$ of $[0,1]$ so that $U(t,P_\epsilon) < \epsilon$.\\
+Define $N\in\mathbb{N}$ such that $1/N<\epsilon$.  Define $\gamma=\epsilon/(8N^2)$  Let $P$ be the partition defined by $\{x\in[0,1]:x-\gamma\in D_{\epsilon/2}\text{ or } x+\gamma \in D_{\epsilon/2}\} +\{0,1\}$, witch we note has finitely many elements.  Define $n$ to be the number of intervals in $P$.  Define $\Delta x_k$ to be the width of the $k$th interval.  Note that $U(t,P)-L(t,P)=U(t,P)=\sum_{k=1}^{n} \sup(t(I_k))\Delta x_k$.  Define $I^a$ to be the set of intervals in $P$ that contain a element of $D_{\epsilon/2}$ and $I^b$ to be the rest of the intervals of $P$.  Define the shorthand $\sum_{I_k\in I}$ to mean sum over all of the $I_k$ in $I$, defined only if $I$ has finitely many elements.  Note that $U(t,P)-L(t,P)=\sum_{I_k\in I^a} \sup(t(I_k))\Delta x_k+\sum_{I_k\in I^b} \sup(t(I_k))\Delta x_k$.  Note that there are fewer than $N^2$ elements in $D_{\epsilon/2}$ and so there are fewer than $N^2$ elements in $I^a$.  Note that if $I_k\in I^a$ then $\Delta x_k\leq 2\gamma$.  Note that $\sup(t(I_k))\leq 1$.  Note that $\sum_{I_k\in I^a} \sup(t(I_k))\Delta x_k\leq \sum_{I_k\in I^a} 2\gamma\leq 2N^2\gamma<\epsilon/2$.  Note that if $I_k\in I^b$ then $\sup(t(I_k))\leq \epsilon/2$ since $I_k$ contains no points in $D_{\epsilon/2}$.  Note that $\sum_{I_k\in I^b} \sup(t(I_k))\Delta x_k\leq \sum_{I_k\in I^b} \epsilon/2\Delta x_k=\epsilon/2 \sum_{I_k\in I^b} \Delta x_k\leq \epsilon/2 \sum_{I_k\in I} \Delta x_k=\epsilon/2$.  Conclude that $U(t,P)-L(t,P)=\sum_{I_k\in I^a} \sup(t(I_k))\Delta x_k+\sum_{I_k\in I^b} \sup(t(I_k))\Delta x_k<\epsilon/2+\epsilon/2=\epsilon$, and thus that $t(x)$ is integrable.
+\end{enumerate}
+
+\begin{exercise}
+5
+Abbott 7.4.1
+\end{exercise}
+Let $f$ be a bounded function on a set $A$, and set $$M(A) = \sup \{f(x) : x \in A \}, m(A) = \inf \{f(x): x\in A\}$$ $$M'(A) = \sup\{|f(x)| : x \in A \}, \text{ and } m'(A)=\inf\{|f(x)| : x \in A \}$$
+\begin{enumerate}[(a)] 
+\item Show that $M(A) - m(A) \ge M'(A) - m'(A)$.\\
+Let's consider three cases.
+\begin{enumerate}[(1)]
+\item Suppose $M(A)\geq m(A)\geq 0$.  Note that $f=|f|$ on all of $A$, thus $M(A)=M'(A)$ and $m(A)=m'(A)$, therefore $M(A) - m(A) = M'(A) - m'(A)$.
+\item Suppose $0\geq M(A)\geq m(A)$.  Note that $-f=|f|$ on all of $A$, thus $-M(A)=m'(A)$ and $-m(A)=M'(A)$, therefore $M(A) - m(A) = M'(A) - m'(A)$.
+\item Suppose $M(A)\geq 0\geq m(A)$.  Note that $\max(M(A),-m(A))=M'(A)$ and $M'(A) \geq m'(A)\geq 0$, therefore $M'(A) - m'(A)\leq M'(A)=\max(M(A),-m(A))\leq M(A) - m(A)$.
+
+\end{enumerate}
+Note that in all three cases $M(A) - m(A) \ge M'(A) - m'(A)$.
+\item Show that if $f$ is integrable on the interval $[a,b]$, then $|f|$ is also integrable on this interval.\\
+Choose $\epsilon>0$.  There exists a partition $P\in P[a,b]$ such that $U(f,P)-L(f,P)=\sum_{I_k\in P} (M(I_k)-m(I_k))\Delta x_k<\epsilon$ where $\Delta x_k$ is defined in the same manner as the previous problems.  Note that $U(|f|,P)-L(|f|,P)=\sum_{I_k\in P} (M'(I_k)-m'(I_k))\Delta x_k\leq \sum_{I_k\in P} (M(I_k)-m(I_k))\Delta x_k <\epsilon$, thus $|f|$ is integrable.
+\item Provide the details for the argument that in this case we have $|\int_{a}^{b}f| \le \int_{a}^{b} |f|$.\\
+Choose a partition $P\in P[a,b]$.  Note that since $-|f|\leq f\leq |f|$, $-M'(A) \leq M(A)\leq M'(A)$.  Note that $U(f,P)= \sum_{I_k\in P} M(I_k)\Delta x_k\leq\sum_{I_k\in P} M'(I_k)\Delta x_k=U(|f|,P)$ and that $-U(|f|,P)\leq U(f,P)$ in the same fashion.  Note that $U(f)\leq U(f,P) \leq U(|f|,P)$ for all partitions $P$, thus $U(f)$ is a lower bound on $U(|f|,P)$ and so $U(f)\leq U(|f|)$.  Note that $U(f)\leq U(f,P) \leq U(|f|,P)$ for all partitions $P$, thus $U(f)$ is a lower bound on $U(|f|,P)$ and so $U(f)\leq U(|f|)$.  In the same fashion $-U(|f|)\leq U(f)$.  Now we can say $|\int_{a}^{b}f|=|U(f)| \le U(|f|) \int_{a}^{b} |f|$.
+\end{enumerate}
 
 
-
-
-
-
+\begin{exercise}
+6
+Abbott 7.4.5
+\end{exercise}
+Let $f$ and $g$ be integrable functions on $[a,b]$.
+\begin{enumerate}[(a)] 
+\item Show that if $P$ is any partition of $[a,b]$, then $$U(f+g,P) \le U(f,P) + U(g,P)$$
+Provide a specific example where the inequality is strict. What does the corresponding inequality for the lower sums look like?\\
+Define $M(h,A)=\sup\{h(x) : x \in A \}$ and $m(h,A)=\inf\{h(x) : x \in A \}$ for some function $h$ defined on a interval $A$.  Consider $I$ some closed interval in $[a,b]$.  Note that $M(f+g,I)=sup\{f(x)+g(x) : x \in I \}$.  Noting that $f(x)\leq M(f,I)$ and $g(x)\leq M(g,I)$ we can say that $f(x)+g(x)\leq M(f,I)+M(g,I)$, for all $x\in I$.  Note now that $M(f+g,I)\leq M(f,I)+M(g,I)$.  Note that $U(f+g,P)=\sum_{I_k\in P} M(f+g,I_k)\Delta x_k \le \sum_{I_k\in P} (M(f,I_k)+M(g,I_k))\Delta x_k=\sum_{I_k\in P} M(f,I_k)\Delta x_k+\sum_{I_k\in P} M(g,I_k)\Delta x_k= U(f,P) + U(g,P)$.
+\item Review the proof of Theorem 7.4.2 (ii), and provide an argument for part (i) of this theorem.\\
+Note that for any partition $P$ and function $h$, where $U(h,P)$ and $L(h,P)$ exist, $L(h,P)=-U(-h,P)$.  Note that since $U(f+g,P) \le U(f,P) + U(g,P)$ for all $f,g\in R[a,b]$ then $U(-f-g,P) \le U(-f,P) + U(-g,P)$, since $f,g\in R[a,b]$ implies $-f,-g\in R[a,b]$, note $L(f+g,P)=-U(-f-g,P) \geq -U(-f,P) - U(-g,P)=L(f,P) +L(g,P)$.  Define a sequence of partitions $P^1_n$ such that $U(f,P^1_n)-L(f,P^1_n)\rightarrow 0$ and $P^2_n$ such that $U(g,P^2_n)-L(g,P^2_n)\rightarrow 0$.  Define $P_n$ to be the refinement of $P^1_n$ and $P^2_n$.  Note that $L(f,P_n) +L(g,P_n) \leq L(f+g,P_n)$ and $ U(f+g,P_n) \leq U(f,P_n) + U(g,P_n)$ thus $0\leq U(f+g,P_n)-L(f+g,P_n) \leq U(f,P_n)-L(f,P_n) + U(g,P_n)-L(g,P_n)$.  Note now that $U(f+g,P_n)-L(f+g,P_n)\rightarrow 0$ by the squeeze theorem and thus $f+g$ is integrable.  Note that $L(f,P) +L(g,P) \leq L(f+g,P)\leq L(f+g)\leq U(f+g) \leq U(f+g,P) \leq U(f,P) + U(g,P)$ for all partitions $P$.  Note that $U(f+g)$ is a lower bound for $U(f,P) + U(g,P)$ and a upper bound for $L(f,P) +L(g,P)$ thus $\int_a^b f+\int_a^b g=L(f) +L(g) \leq U(f+g)=\int_a^b f+g\leq U(f) + U(g)=\int_a^b f+\int_a^b g$.  We conclude that $\int_a^b f+\int_a^b g=\int_a^b f+g$.
+\end{enumerate}
 
 \end{document}
 
