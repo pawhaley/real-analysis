@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 401: Final}
+\docauthor{Parker Whaley}
+\docdate{Due December 15, 2016}
+
+\begin{document}
+\begin{exercise}
+1
+Suppose $(x_n)$ and $(y_n)$ are sequences such that $\lim_{n\rightarrow \infty} x_n = L$ and $lim_{n\rightarrow\infty} y_n =\infty$.  Show that $lim_{n\rightarrow\infty} x_n/y_n = 0$.
+\end{exercise}
+\begin{proof}
+Suppose $(x_n)$ and $(y_n)$ are sequences such that $\lim_{n\rightarrow \infty} x_n = L$ and $lim_{n\rightarrow\infty} y_n =\infty$.  Note that since $x_n$ is a convergent sequence it must be bounded thus there exists $M\in(0,\infty)$ such that $|x_n|<M$ for all $n\in\mathbb{N}$.  Choose $\epsilon>0$.  Define $k\in\mathbb{N}$ such that $1/k<\epsilon/M$.  Define $N\in\mathbb{N}$ such that $y_n>k$ for all $n\in [N,\infty]\cap \mathbb{N}$.  Choose $n\in\mathbb{N}$ where $n\geq N$.  Note that $|x_n/y_n-0|=|x_n|/|y_n|=|x_n|/y_n<|x_n|/k<M/k<\epsilon$.  We conclude that $x_n/y_n\rightarrow 0$.
+\end{proof}
+
+\begin{exercise}
+2
+A number is algebraic if it is a solution of a polynomial equation $a_nx^n + a_{n−1}x^{n−1} + \cdots + a_1x + a_0 = 0$ where each $a_k$ is an integer, $n \geq 1$, and $a_n \neq 0$. Show that the collection of all algebraic numbers is countable.
+\end{exercise}
+First let us prove that polynomials have finitely many zeros.
+\begin{proof}
+Note that a polynomial as described above of order 1 takes the form $P_1(x)=a_1x+a_0$.  Suppose that there were infinately many solution to $P_1(x)=0$, choose two of these, $x_1<x_2$.  Note that $P'_1(x)=a_1\neq 0$ for all $x\in\mathbb{R}$.  By the mean value theorem there exists some $x_3$ such that $x_3\in(x_1,x_2)$ and $P'_1(x_3)=0$.  This is a contradiction and thus we conclude that $P_1(x)$ has finitely many solutions.\\\\
+Suppose that all polynomials of degree $n-1$ have finitely many solutions.  Consider $P_n(x)=\sum_{k=0}^n a_k x^k$ a arbitrary polynomial of degree $n$.  Note that $P'_n(x)=\sum_{k=1}^n ka_k x^{k-1}$ a polynomal of degree $n-1$.  We conclude that $P'_n(x)=0$ has finitely many solutions, define $l$ to be the number of solutions to $P'_n(x)=0$.  Suppose $P_n(x)=0$ has infinately many solutions.  Select $l+2$ solutions to $P_n(x)=0$ and arrange them in a list $\{x_k\}_{k=0}^{l+1}$ such that $x_k<x_{k+1}$ for all $k\in [0,l+1]\cap\mathbb{N}$.  Now construct intervals $I_k=(x_{k-1},x_k)$ for all $k\in [1,l+1]\cap\mathbb{N}$.  Note that there are no shared elements between any two intervals.  By the mean value theorem there exists a value $y_k\in I_k$ such that $P'(y_k)=0$.  Noting that there are $l+1$ non-identical $y_k$'s we conclude that we have found $l+1$ solutions to $P'_n(x)=0$, a contradiction, we are forced to conclude that there are finitely many solution to $P_n(x)=0$.\\\\
+By induction conclude that there are finitely many solutions to any polynomial as constructed above.
+\end{proof}
+Now to prove that there are countably infinate algebreic numbers.
+\begin{proof}
+Recall from proofs that each natural number has a unique prime factorization and also that there are countably infinate primes.  Now we can define a bijective mapping from a polynomial of the described form to the naturals.  Define $p_n$ to be the $n$'th prime number.  Consider $n$ to be a arbitrary natural number with prime factorization $\sum^N_{k=1}p_n^{a_n}$ where $N\in\mathbb{N}$ and assoceate it with the polymomial $P_n(x)=\sum_{k=0}^N a_k x^k$.  Associate a arbitrary polynomial $P_n(x)=\sum_{k=0}^N a_k x^k$ where $N\in\mathbb{N}$ with the natural $\sum^N_{k=1}p_n^{a_n}$.  Note that each natural is associated with one and only one polynomial and each polynomial is associated with one and only one natural, via the uniquness of prime factorization.  Call this mapping $M_1$ wich takes a polynomial to a natural bijectively.  Note that there exists a bijective map from $\mathbb{N}\times \mathbb{N}\rightarrow\mathbb{N}$ call this map $M_2$.  Consider a arbitrary algebreic number $k$.  Note that there exists a non-empty set of polynomials $S$ where $P(k)=0$ for all $P(x)\in S$.  Define $P(x)$ to be the polynomial in $S$ with the smallest mapped value under $M_1$.  Take $X=\{x\in\mathbb{R}:P(x)=0\}$.  Note that there are finitely many elements in $X$ as proved in the previous proof.  Ordering $X$ by increasing value we can associate $k$ with a integer $i$ where $i$ is $k$'s position in the ordered $X$.  Note that I have now defined a mapping, let's call it $M_3$ that maps a algebreic number to a polynomial and a natural number.  Note that $M_3$ is one-to-one, given a polynomial $P(x)$ a a natural $n$ there is at most one number that is the $n$'th solution to $P(x)=0$.  Note that now I can construct a one-to-one mapping from the algebreic numbers to the naturals, use $M_3$ to map a algebreic to a polynomial and a natural, use $M_1$ to map the polynomial to a natural, use $M_2$ to map the resulting two naturals to one natural, since all of these steps are individually one-to-one the entire process is one-to-one.  Now we can conclude that the algebreic numbers are at most countably infinite.  Noting that for eavery $n\in\mathbb{N}$, $n$ will be a solution to $x-n=0$ we conclude the naturals are algebreic and thus that the algebreic numbers are at least countably infinite.  We are forced to conclude that the algebreic numbers are countably infinite.
+\end{proof}
+\begin{exercise}
+3
+Let $p$ be a fifth order polynomial, so $p(x) = \sum^5_{k=0} a_kx^k$ where each $a_k\in\mathbb{R}$ , and $a_5 \neq 0$.
+Prove that there is a solution of $p(x) = 0$.
+\end{exercise}
+Suppose
+
+
+
+
+
+
+
+
+
+
+\end{document}
