@@ -82,6 +82,7 @@
 \docdate{Due December 15, 2016}
 
 \begin{document}
+Note that I am operating under the convention $V_\epsilon(d)=(d-\epsilon,d+\epsilon)$.
 \begin{exercise}
 1
 Suppose $(x_n)$ and $(y_n)$ are sequences such that $\lim_{n\rightarrow \infty} x_n = L$ and $lim_{n\rightarrow\infty} y_n =\infty$.  Show that $lim_{n\rightarrow\infty} x_n/y_n = 0$.
@@ -96,22 +97,170 @@ A number is algebraic if it is a solution of a polynomial equation $a_nx^n + a_{
 \end{exercise}
 First let us prove that polynomials have finitely many zeros.
 \begin{proof}
-Note that a polynomial as described above of order 1 takes the form $P_1(x)=a_1x+a_0$.  Suppose that there were infinately many solution to $P_1(x)=0$, choose two of these, $x_1<x_2$.  Note that $P'_1(x)=a_1\neq 0$ for all $x\in\mathbb{R}$.  By the mean value theorem there exists some $x_3$ such that $x_3\in(x_1,x_2)$ and $P'_1(x_3)=0$.  This is a contradiction and thus we conclude that $P_1(x)$ has finitely many solutions.\\\\
-Suppose that all polynomials of degree $n-1$ have finitely many solutions.  Consider $P_n(x)=\sum_{k=0}^n a_k x^k$ a arbitrary polynomial of degree $n$.  Note that $P'_n(x)=\sum_{k=1}^n ka_k x^{k-1}$ a polynomal of degree $n-1$.  We conclude that $P'_n(x)=0$ has finitely many solutions, define $l$ to be the number of solutions to $P'_n(x)=0$.  Suppose $P_n(x)=0$ has infinately many solutions.  Select $l+2$ solutions to $P_n(x)=0$ and arrange them in a list $\{x_k\}_{k=0}^{l+1}$ such that $x_k<x_{k+1}$ for all $k\in [0,l+1]\cap\mathbb{N}$.  Now construct intervals $I_k=(x_{k-1},x_k)$ for all $k\in [1,l+1]\cap\mathbb{N}$.  Note that there are no shared elements between any two intervals.  By the mean value theorem there exists a value $y_k\in I_k$ such that $P'(y_k)=0$.  Noting that there are $l+1$ non-identical $y_k$'s we conclude that we have found $l+1$ solutions to $P'_n(x)=0$, a contradiction, we are forced to conclude that there are finitely many solution to $P_n(x)=0$.\\\\
+Note that a polynomial as described above of order 1 takes the form $P_1(x)=a_1x+a_0$.  Suppose that there were infinitely many solution to $P_1(x)=0$, choose two of these, $x_1<x_2$.  Note that $P'_1(x)=a_1\neq 0$ for all $x\in\mathbb{R}$.  By the mean value theorem there exists some $x_3$ such that $x_3\in(x_1,x_2)$ and $P'_1(x_3)=0$.  This is a contradiction and thus we conclude that $P_1(x)$ has finitely many solutions.\\\\
+Suppose that all polynomials of degree $n-1$ have finitely many solutions.  Consider $P_n(x)=\sum_{k=0}^n a_k x^k$ a arbitrary polynomial of degree $n$.  Note that $P'_n(x)=\sum_{k=1}^n ka_k x^{k-1}$ a polynomial of degree $n-1$.  We conclude that $P'_n(x)=0$ has finitely many solutions, define $l$ to be the number of solutions to $P'_n(x)=0$.  Suppose $P_n(x)=0$ has infinitely many solutions.  Select $l+2$ solutions to $P_n(x)=0$ and arrange them in a list $\{x_k\}_{k=0}^{l+1}$ such that $x_k<x_{k+1}$ for all $k\in [0,l+1]\cap\mathbb{N}$.  Now construct intervals $I_k=(x_{k-1},x_k)$ for all $k\in [1,l+1]\cap\mathbb{N}$.  Note that there are no shared elements between any two intervals.  By the mean value theorem there exists a value $y_k\in I_k$ such that $P'(y_k)=0$.  Noting that there are $l+1$ non-identical $y_k$'s we conclude that we have found $l+1$ solutions to $P'_n(x)=0$, a contradiction, we are forced to conclude that there are finitely many solution to $P_n(x)=0$.\\\\
 By induction conclude that there are finitely many solutions to any polynomial as constructed above.
 \end{proof}
-Now to prove that there are countably infinate algebreic numbers.
+Now to prove that there are countably infinite algebraic numbers.
 \begin{proof}
-Recall from proofs that each natural number has a unique prime factorization and also that there are countably infinate primes.  Now we can define a bijective mapping from a polynomial of the described form to the naturals.  Define $p_n$ to be the $n$'th prime number.  Consider $n$ to be a arbitrary natural number with prime factorization $\sum^N_{k=1}p_n^{a_n}$ where $N\in\mathbb{N}$ and assoceate it with the polymomial $P_n(x)=\sum_{k=0}^N a_k x^k$.  Associate a arbitrary polynomial $P_n(x)=\sum_{k=0}^N a_k x^k$ where $N\in\mathbb{N}$ with the natural $\sum^N_{k=1}p_n^{a_n}$.  Note that each natural is associated with one and only one polynomial and each polynomial is associated with one and only one natural, via the uniquness of prime factorization.  Call this mapping $M_1$ wich takes a polynomial to a natural bijectively.  Note that there exists a bijective map from $\mathbb{N}\times \mathbb{N}\rightarrow\mathbb{N}$ call this map $M_2$.  Consider a arbitrary algebreic number $k$.  Note that there exists a non-empty set of polynomials $S$ where $P(k)=0$ for all $P(x)\in S$.  Define $P(x)$ to be the polynomial in $S$ with the smallest mapped value under $M_1$.  Take $X=\{x\in\mathbb{R}:P(x)=0\}$.  Note that there are finitely many elements in $X$ as proved in the previous proof.  Ordering $X$ by increasing value we can associate $k$ with a integer $i$ where $i$ is $k$'s position in the ordered $X$.  Note that I have now defined a mapping, let's call it $M_3$ that maps a algebreic number to a polynomial and a natural number.  Note that $M_3$ is one-to-one, given a polynomial $P(x)$ a a natural $n$ there is at most one number that is the $n$'th solution to $P(x)=0$.  Note that now I can construct a one-to-one mapping from the algebreic numbers to the naturals, use $M_3$ to map a algebreic to a polynomial and a natural, use $M_1$ to map the polynomial to a natural, use $M_2$ to map the resulting two naturals to one natural, since all of these steps are individually one-to-one the entire process is one-to-one.  Now we can conclude that the algebreic numbers are at most countably infinite.  Noting that for eavery $n\in\mathbb{N}$, $n$ will be a solution to $x-n=0$ we conclude the naturals are algebreic and thus that the algebreic numbers are at least countably infinite.  We are forced to conclude that the algebreic numbers are countably infinite.
+Recall from proofs that each natural number has a unique prime factorization and also that there are countably infinite primes.  Now we can define a bijective mapping from a polynomial of the described form to the naturals.  Define $p_n$ to be the $n$'th prime number.  Associate a arbitrary polynomial $P_n(x)=\sum_{k=0}^N a_k x^k$ where $N\in\mathbb{N}$ with the natural $\sum^N_{k=1}p_n^{a_n}$.  Note that each polynomial is associated with one and only one natural, via the uniqueness of prime factorization.  Note that given a natural number there is at most one polynomial associated with it, via the uniqueness of prime factorization, thus this mapping is one-to-one.  Call this mapping $M_1$ witch takes a polynomial to a natural in a one-to-one manner.  Note that there exists a bijective map from $\mathbb{N}\times \mathbb{N}\rightarrow\mathbb{N}$ call this map $M_2$.  Consider a arbitrary algebraic number $k$.  Note that there exists a non-empty set of polynomials $S$ where $P(k)=0$ for all $P(x)\in S$.  Define $P(x)$ to be the polynomial in $S$ with the smallest mapped value under $M_1$.  Take $X=\{x\in\mathbb{R}:P(x)=0\}$.  Note that there are finitely many elements in $X$ as proved in the previous proof.  Ordering $X$ by increasing value we can associate $k$ with a integer $i$ where $i$ is $k$'s position in the ordered $X$.  Note that I have now defined a mapping, let's call it $M_3$ that maps a algebraic number to a polynomial and a natural number.  Note that $M_3$ is one-to-one, given a polynomial $P(x)$ a a natural $n$ there is at most one number that is the $n$'th solution to $P(x)=0$.  Note that now I can construct a one-to-one mapping from the algebraic numbers to the naturals, use $M_3$ to map a algebraic to a polynomial and a natural, use $M_1$ to map the polynomial to a natural, use $M_2$ to map the resulting two naturals to one natural, since all of these steps are individually one-to-one the entire process is one-to-one.  Now we can conclude that the algebraic numbers are at most countably infinite.  Noting that for every $n\in\mathbb{N}$, $n$ will be a solution to $x-n=0$ we conclude the naturals are algebraic and thus that the algebraic numbers are at least countably infinite.  We are forced to conclude that the algebraic numbers are countably infinite.
 \end{proof}
 \begin{exercise}
 3
 Let $p$ be a fifth order polynomial, so $p(x) = \sum^5_{k=0} a_kx^k$ where each $a_k\in\mathbb{R}$ , and $a_5 \neq 0$.
 Prove that there is a solution of $p(x) = 0$.
 \end{exercise}
-Suppose
+\begin{proof}
+Suppose $p(x) = \sum^5_{k=0} a_kx^k$ where each $a_k\in\mathbb{R}$ , and $a_5 \neq 0$.  Suppose $a_5>0$.  Define $a=a_5/5$.  Note that I can now re-write $p(x) = \sum^5_{k=0} a_kx^k=5ax^5+\sum^4_{k=0} a_kx^k=\sum^4_{k=0} ax^5+a_kx^k$.  Note that $a>0$.  Choose some $x_M>\max(1,\{|a_n|/a:n\in\{0,1,2,3,4\}\})$.  Note that $ax_M^5=ax_Mx_M^4>|a_n|x_M^4=|a_nx_M^n||x_M^{4-n}|\geq |a_nx_M^n|\geq -a_nx_M^n$, or $ax_M^5+a_nx_M^n>0$ for all $n\in\{0,1,2,3,4\}$.  Now note that $p(x_M) =\sum^4_{k=0} ax_M^5+a_kx_M^k>0$.  Choose some $x_m<\min(-1,\{-|a_n|/a:n\in\{0,1,2,3,4\}\})$.  Note that $ax_m^5=ax_mx_m^4<-|a_n|x_m^4=-|a_nx_m^4|=-|a_nx_m^n||x_m^{4-n}|\leq -|a_nx_m^n|\leq -a_nx_m^n$, or $ax_m^5+a_nx_m^n<0$ for all $n\in\{0,1,2,3,4\}$.  Now note that $p(x_m) =\sum^4_{k=0} ax_m^5+a_kx_m^k<0$.  By the intermediate value theorem there exists some $x'\in[x_m,x_M]$ such that $p(x')=0$.  We now conclude that there is a solution to a fifth order polynomial with $a_5>0$.\\\
+Suppose $p(x) = \sum^5_{k=0} a_kx^k$ where each $a_k\in\mathbb{R}$ , and $a_5 \neq 0$.  Suppose $a_5<0$.  Note that $p_2(x)=-p(x)$ is a fifth order polynomial with $a_5>0$ and thus there exist some $x'$ such that $p_2(x')=0$, note that $p(x')=-p_2(x')=0$.  We now can conclude that there is a solution to $p(x) = 0$ for any fifth order polynomial, $a_5 \neq 0$.
+\end{proof}
+\begin{exercise}
+4
+We say that a function $f : \mathbb{R}\rightarrow\mathbb{R}$ is periodic if there is a number $L$ such that $f (x) =
+f (x+L)$ for all $x \in\mathbb{R}$. Show that a continuous, periodic function is uniformly continuous.
+\end{exercise}
+\begin{proof}
+Suppose $f : \mathbb{R}\rightarrow\mathbb{R}$ is periodic with periodicity $L$ and continuous.  Define $A=[-L,L]$.  Note that $A$ is closed and bounded thus compact.  Note that $f$ is uniformly convergent on $A$.  Choose $\epsilon>0$.  Note that there exists $\delta>0$ such that if $x,y\in A$ and $|x-y|<\delta$ then $|f(x)-f(y)|<\epsilon$.  Choose $x,y\in\mathbb{R}$ such that $|x-y|<\min(\delta,L)$.  Without loss of generality suppose $x\geq y$.\\\\
+Suppose $x>0$.  Define sequences $x_0=x$ and $y_0=y$ and $x_n=x_{n-1}-L$ and $y_n=y_{n-1}-L$ for $n\in\mathbb{N}$.  Note that $|f(x_n)-f(y_n)|=|f(x_{n-1})-f(y_{n-1})|$ and thus $|f(x_n)-f(y_n)|=|f(x_0)-f(y_0)|=|f(x)-f(y)|$  Define $n'\in\mathbb{Z}$ to be the floor of $x/L$.  Note that $x/L\geq n'>x/L-1\geq -1$, thus $n'\in\mathbb{N}+\{0\}$.  Note that $x\geq Ln'>x-L$ and $0\geq Ln'-x>-L$ and $0\leq x-Ln'<L$.  Note that $x-Ln'=x_{n'}$.  Note that $x_{n'}-y_{n'}=x-y=|x-y|<L$ thus $-L\leq x_{n'}-L<y_{n'}<x_{n'}<L$.  Thus $x_{n'},y_{n'}\in A$ and $|x_{n'}-y_{n'}|=|x-y|<\delta$ so $|f(x)-f(y)|=|f(x_{n'})-f(y_{n'})|<\epsilon$.\\\\
+The exercise for this in the case the $x<0$ is a copy paste with a few sign changes and inequality flips (I was instructed on the midterm to refrain from doing this repetition) however the conclusion is the same.  This allows us to say $|f(x)-f(y)|<\epsilon$.  We conclude that the function is uniform convergent.
+\end{proof}
+\begin{exercise}
+5
+Use the Nested Interval Property to deduce the Axiom of Completeness without using any other form of the Axiom of Completeness.  Hint: Look at the proof of the Bolzano Weierstrass Theorem.
+\end{exercise}
+\begin{proof}
+Suppose $S$ is a bounded set.  There exists $M$ such that $x<M$ for all $x\in S$.  There exists $x\in S$.  Define a sequence by $a_0=x-1$ and 
+$$a_n=\begin{cases} a_{n-1} & \frac{a_{n-1}+b_{n-1}}{2} \text{ is a upper bound on }S\\
+\frac{a_{n-1}+b_{n-1}}{2} & \text{otherwise}\end{cases}$$for all $n\in\mathbb{N}$.  
+Define a sequence by $b_0=M$ and 
+$$b_n=\begin{cases} \frac{a_{n-1}+b_{n-1}}{2} & \frac{a_{n-1}+b_{n-1}}{2} \text{ is a upper bound on }S\\
+b_{n-1} & \text{otherwise}\end{cases}$$for all $n\in\mathbb{N}$.  
+Note that $b_n-a_n=\frac{b_0-a_0}{2^n}\leq \frac{b_0-a_0}{n}$ for all $n\in\mathbb{N}$.  Note that $a_n$ is not a upper bound on $S$ for all $n\in\mathbb{N}$.  Note that $b_n$ is a upper bound on $S$ for all $n\in\mathbb{N}$.  Consider the sequence of intervals $I_n=[a_n,b_n]$.  Note that $I_n\subseteq I_{n-1}$ for all $n\in\mathbb{N}$.  By NIP we can conclude that $K=\cap_{n=0}^\infty I_n\neq \emptyset$.  Suppose that $a\neq b\in K$.  Note that there exists a $n_1\in\mathbb{N}$ such that $\frac{b_0-a_0}{n_1}<|b-a|$.  Note that $a,b\in I_{n_1}$ and thus $|b-a|\leq b_{n_1}-a_{n_1}<\frac{b_0-a_0}{{n_1}}$, a contradiction conclude that there is one and only one element in $K$, call this number $c$.  Suppose that there exists $d\in S$ such that $c<d$.  Note that there exists a $n_2\in\mathbb{N}$ such that $\frac{b_0-a_0}{n_2}<|d-c|$.  Note that $a_{n_2}\leq c<d\leq b_{n_2}$ and thus $|c-d|\leq b_{n_2}-a_{n_2}<\frac{b_0-a_0}{{n_2}}$, a contradiction conclude that $c$ is a upper bound on $S$.  Suppose that $e$ is a upper bound on $S$ and $e<c$.  Note that there exists a $n_3\in\mathbb{N}$ such that $\frac{b_0-a_0}{n_3}<|e-c|$.  Note that $a_{n_3}\leq e<c\leq b_{n_3}$ and thus $|c-e|\leq b_{n_3}-a_{n_3}<\frac{b_0-a_0}{{n_3}}$, a contradiction conclude that $c$ is less than or equal to every upper bound on $S$.  We have proven $c=\sup(S)$, thus we conclude AoC.
+\end{proof}
+\begin{exercise}
+6
+Let $A$ be a subset of $\mathbb{R}$. The closure of $A$ is the union of $A$ together with its limit points.
+We denote it by $\bar{A}$.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item
+Explain why it is not obvious that $\bar{A}$ is a closed set.\\
+It is non-obvious since we are not guaranteed that $\bar{A}$ has the same limit points as $A$.  Perhaps adding in all of $A$'s limit points generated a new limit point, witch would not be included in $\bar{A}$.
+\item
+Suppose $c$ is a limit point of $A$. Show that for every $\epsilon > 0$ there are at least two
+points $x\in A$ with $x\neq c$ and $|x - c| <\epsilon$.\\
+By the definition of limit point $V_\epsilon(c)\cap A- \{c\}\neq \emptyset$.  Choose one on these elements and call it $x_1$.  Note that $x_1\neq c$ and $|x_1 - c| <\epsilon$.  Define $\epsilon_2=|x_1 - c|$.  By the definition of limit point $V_{\epsilon_2}(c)\cap A- \{c\}\neq \emptyset$.  Choose one on these elements and call it $x_2$.  Note that $x_2\neq c$ and $x_2\neq x_1$ and $|x_2 - c| <\epsilon_2<\epsilon$.
+\item
+Suppose $d$ is a limit point of $\bar{A}$. Show that there exists a sequence in $A$, with no
+terms equal to $c$, that converges to $d$.\\
+Suppose $d$ is not a limit point of $A$.  There must exist $\epsilon>0$ such that $V_\epsilon(d)\cap A-\{d\}=\emptyset$.  Note that since $d$ is a limit point of $\bar{A}$, $V_{\epsilon/2}\cap \bar{A}-\{d\}\neq\emptyset$.  Let $a\in V_{\epsilon/2}\cap \bar{A}-\{d\}$.  Define $\delta=\min(|a-d|,\epsilon/2)$.  Suppose $x\in V_\delta(a)\cap A-\{a\}$.  Note that $x\neq d$ since $|a-x|<\delta\leq |a-d|$.  Note that $|a-d|<\epsilon/2$ also note that $|x-d|=|x-a+a-d|\leq |x-a|+|a-d|<\epsilon/2+\epsilon/2$ thus $x\in V_\epsilon(d)$.  Note that $x\in V_\epsilon(d)\cap A-\{d\}=\emptyset$ we can now conclude that no such $x$ could exist and thus $V_\delta(a)\cap A-\{a\}=\emptyset$.  This means that $a$ is not a limit point of $A$ and thus since it ended up in $\bar{A}$ we can conclude $a\in A$.  Thus $a\in V_\epsilon(d)\cap A-\{d\}=\emptyset$, a contradiction, thus $d$ is a limit point of $A$.  Since $d$ is a limit point of $A$ it must also be a limit point of $A-\{c\}$ thus there exists a sequence in $A-\{c\}$ converging on $d$.
+\item
+Conclude that $\bar{A}$ is closed.\\
+Suppose $d$ is a limit point of $\bar{A}$.  Note that $d$ is a limit point of $A$.  Thus $d\in\bar{A}$.
+\end{enumerate}
+\begin{exercise}
+7
+Let $(r_n)$ be an enumeration of the rational numbers. Define $f:\RR \to \RR$ by $$f(x) =
+\begin{cases}
+1/n & x=r_n \\
+0 & x\neq\mathbb{Q}
+\end{cases}$$
+Determine, with proof, where $f$ is continuous.
+\end{exercise}
+\begin{proof}
+Choose $x\in\mathbb{Q}$.  Suppose $f$ is continuous at $x$.  Define $n\in\mathbb{N}$ such that $r_n=x$.  Define $\epsilon=1/n$.  There exists $\delta>0$ such that if $y\in V_\delta(x)$ then $|f(x)-f(y)|<\epsilon$.  Define $y\not\in\mathbb{Q}$ such that $y\in V_\delta(x)$.  Note that $|f(x)-f(y)|=|f(x)|=1/n=\epsilon<\epsilon$, a contradiction.  We are forced to conclude that $f$ is discontinuous at every rational.\\
+Choose $x\not\in\mathbb{Q}$.  Choose $\epsilon>0$.  Define $n\in\mathbb{N}$ such that $1/n<\epsilon$.  Define $\delta=\min(\{|x-r_k|:k\in\mathbb{N}\text{ and } k\leq n\})$.  Note that $\delta>0$.  Choose $y\in V_\delta(x)$.  Note that $y\not\in \{|x-r_k|:k\in\mathbb{N}\text{ and } k\leq n\}$, thus $f(y)<1/n$.  Note that $|f(x)-f(y)|=|f(y)|<1/n<\epsilon$.  Conclude that $f$ is continuous on the irrationals only.
+\end{proof}
+\begin{exercise}
+8
+Abbott 5.3.5 a)
+\end{exercise}
+Prove the generalized mean value theorem.
+\begin{proof}
+Suppose $f$ and $g$ are continuous on $[a,b]$ and differentiable on $(a,b)$.  Define $h(x)=[f(b)-f(a)]g(x)-[g(b)-g(a)]f(x)$ where $h(x)$ is defined on $[a,b]$.  By the algebraic theorem for continuity and differentiability we can conclude that $h(x)$ is continuous on $[a,b]$ and differentiable on $(a,b)$.  Note that $h'(x)=[f(b)-f(a)]g'(x)-[g(b)-g(a)]f'(x)$.  By the mean value theorem there exists $c\in(a,b)$ such that $h'(c)=\frac{h(a)-h(b)}{a-b}$.  Note that $[f(b)-f(a)]g'(c)-[g(b)-g(a)]f'(c)=\frac{[f(b)-f(a)]g(a)-[g(b)-g(a)]f(a)-[f(b)-f(a)]g(b)-[g(b)-g(a)]f(b)}{a-b}=\frac{f(b)g(a)-f(a)g(a)-f(a)g(b)+f(a)g(a)-f(b)g(b)+f(a)g(b)+f(b)g(b)-f(b)g(a)}{a-b}=\frac{0}{a-b}=0$.  Now we see that $[f(b)-f(a)]g'(c)-[g(b)-g(a)]f'(c)=0$, and so $[f(b)-f(a)]g'(c)=[g(b)-g(a)]f'(c)$.  We have now concluded the generalized mean value theorem.\\
+Suppose further that $g'(x)\neq 0$ for all $x\in(a,b)$.  If $g(a)=g(b)$ we would conclude via the mean value theorem that for some $x\in(a,b)$, $g'(x)=0$ we now can conclude $[g(b)-g(a)]\neq 0$.  Now we can see in this case $[f(b)-f(a)]g'(c)=[g(b)-g(a)]f'(c)$ becomes $[f(b)-f(a)]/[g(b)-g(a)]=f'(c)/g'(c)$ for some $c\in(a,b)$.
+\end{proof}
+\begin{exercise}
+9
+Consider the function $$f(x) = \sum_{k=1}^\infty \frac{1}{2^k} sin(kx).$$ Show that $f$ is infinitely differentiable.
+\end{exercise}
+
+First recall that the derivative of $\sin(x)$ is $\cos(x)$ and the derivative of$\cos(x)$ is $-\sin(x)$.\\
+Next as a sub-proof let me show that $\sum_{k=1}^n \frac{k^\alpha}{2^k}$ converges for any $\alpha\in\mathbb{N}+\{0\}$.
+\begin{proof}
+Let us apply the ratio test to test for convergence.  Note that $|\frac{2^k(k+1)^\alpha}{2^{k+1}k^\alpha}|=1/2\frac{(k+1)^\alpha}{k^\alpha}$.  Note that $\lim_{k\rightarrow\infty}\frac{(k+1)^\alpha}{k^\alpha}=\lim_{k\rightarrow\infty}\frac{(k+1)^{\alpha-1}}{k^{\alpha-1}}$ if $\alpha\neq 0$, noting that $\alpha\in \mathbb{N}+\{0\}$ we can continue doing this reduction $\alpha$ times to obtain $\lim_{k\rightarrow\infty}\frac{(k+1)^\alpha}{k^\alpha}=\lim_{k\rightarrow\infty}\frac{(k+1)^0}{k^0}=1$.  Thus $\lim_{k\rightarrow\infty}|\frac{2^k(k+1)^\alpha}{2^{k+1}k^\alpha}|=1/2<1$ and so we conclude convergence.
+\end{proof}
+Now we are ready to begin the proof proper.
+\begin{proof}
+Define $g_{k,\alpha}(x)=\frac{k^\alpha}{2^k}\sin(kx)$.  Define $f_{n,\alpha}(x)=\sum_{k=1}^n g_{k,\alpha}(x)$.  Note that $|g_{k,\alpha}(x)|=|\frac{k^\alpha}{2^k}\sin(kx)|\leq \frac{k^\alpha}{2^k}$, By the Weierstrass M-Test we can conclude that $f_{n,\alpha}(x)\rightarrow f_\alpha(x)=\sum_{k=1}^\infty g_{k,\alpha}(x)$ uniformly.\\
+Repeating this argument with $\cos$ we get exactly the same result.\\
+We will begin a proof by induction, our induction hypothesis is the $\alpha$ derivative of $f(x)$ is $$f^{(\alpha)}(x)=\begin{cases}
+\sum_{k=1}^\infty \frac{k^\alpha}{2^k}\sin(kx) & 4\alpha\in\mathbb{N}+\{0\}\\
+\sum_{k=1}^\infty \frac{k^\alpha}{2^k}\cos(kx) & 4\alpha+1 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^\infty -\frac{k^\alpha}{2^k}\sin(kx) & 4\alpha+2 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^\infty -\frac{k^\alpha}{2^k}\cos(kx) & 4\alpha+3 \in\mathbb{N}+\{0\}\\
+\end{cases}$$
+In the base case this is true by inspection since the $f^{(0)}$ is the same as the $f$ given in the problem.\\
+For the induction step suppose the hypothesis in the $\alpha$ case.  Note that $$f^{(\alpha)}_n(x)=\begin{cases}
+\sum_{k=1}^n \frac{k^\alpha}{2^k}\sin(kx) & 4\alpha\in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n \frac{k^\alpha}{2^k}\cos(kx) & 4\alpha+1 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n -\frac{k^\alpha}{2^k}\sin(kx) & 4\alpha+2 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n -\frac{k^\alpha}{2^k}\cos(kx) & 4\alpha+3 \in\mathbb{N}+\{0\}\\
+\end{cases}$$
+converges uniformly to $f^{(\alpha)}(x)$ by the first part of this proof.  Note that $${f^{(\alpha)}}'_n(x)=\begin{cases}
+\sum_{k=1}^n -\frac{k^{\alpha+1}}{2^k}\cos(kx) & 4\alpha\in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n \frac{k^{\alpha+1}}{2^k}\sin(kx) & 4\alpha+1 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n \frac{k^{\alpha+1}}{2^k}\cos(kx) & 4\alpha+2 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n -\frac{k^{\alpha+1}}{2^k}\sin(kx) & 4\alpha+3 \in\mathbb{N}+\{0\}\\
+\end{cases}$$
+converges uniformly on $$h(x)=\begin{cases}
+\sum_{k=1}^\infty -\frac{k^{\alpha+1}}{2^k}\cos(kx) & 4\alpha\in\mathbb{N}+\{0\}\\
+\sum_{k=1}^\infty \frac{k^{\alpha+1}}{2^k}\sin(kx) & 4\alpha+1 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^\infty \frac{k^{\alpha+1}}{2^k}\cos(kx) & 4\alpha+2 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^\infty -\frac{k^{\alpha+1}}{2^k}\sin(kx) & 4\alpha+3 \in\mathbb{N}+\{0\}\\
+\end{cases}$$
+so we can conclude that ${f^{(\alpha+1)}}(x)={f^{(\alpha)}}'(x)=h(x)$.  By doing a change of variable $\alpha'=\alpha+1$ we see $$f^{(\alpha')}_n(x)=\begin{cases}
+\sum_{k=1}^n \frac{k^{\alpha'}}{2^k}\sin(kx) & 4\alpha'\in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n \frac{k^{\alpha'}}{2^k}\cos(kx) & 4\alpha'+1 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n -\frac{k^{\alpha'}}{2^k}\sin(kx) & 4\alpha'+2 \in\mathbb{N}+\{0\}\\
+\sum_{k=1}^n -\frac{k^{\alpha'}}{2^k}\cos(kx) & 4\alpha'+3 \in\mathbb{N}+\{0\}\\
+\end{cases}$$
+Via induction we now conclude that the $n$th derivative of $f$ is the $f^{(n)}(x)$ described above, and thus infinitely differentiable.
+\end{proof}
+\begin{exercise}
+{10}
+Suppose $f:(0,\infty)\to \RR$ is twice differentiable.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item Suppose $|f(x)|\le M_0$ and $|f''(x)|\le M_1$ for all $x>0$. Show that for all $h>0$, $$|f'(x)|\le \frac{2}{h}M_0 + \frac{h}{2}M_1.$$\\
+Choose $h>0$, $x>0$.  Note that the Taylor remainder theorem tells us that $f(x+h)=f(x)+f'(x)h+f''(\xi)h^2/2$ for some $\xi$ in the interval between $x$ and $h$.  After some manipulation we can see $|f'(x)|=|f(x+h)/h-f(x)/h-f''(\xi)h/2|\leq M_0/h+M_0/h+M_1h/2=\frac{2}{h}M_0 + \frac{h}{2}M_1$.
+\item Suppose $|f(x)|\le M_0$ and $|f''(x)|\le M_1$ for all $x>0$. Show that for all $x>0$, $$|f'(x)|\le 2\sqrt{M_0M_1}.$$\\
+Suppose $M_1=0$, in this case $f''(x)=0$ for all $x$, this means that $f'(x)$ is a constant, and $f(x)=f(0)+f'(x)h$, notice that in order for $f(x)$ to be bounded $f'(x)=0$.  In this case our inequality becomes $0=|f'(x)|\le 2\sqrt{M_0M_1}=0$, clearly true.\\
+Suppose $M_0=0$, in this case we have a constant function and thus $f'(x)=0$.  In this case our inequality becomes $0=|f'(x)|\le 2\sqrt{M_0M_1}=0$, clearly true.\\
+Suppose $M_1\neq 0$ and $M_2\neq 0$.  In this case we can define $h=2\sqrt{M_0}/\sqrt{M_1}>0$.  Notice that the first relation becomes $|f'(x)|\leq \frac{2}{h}M_0 + \frac{h}{2}M_1=\sqrt{M_0M_1} + \sqrt{M_0M_1}=2\sqrt{M_0M_1}$.
+\item Suppose instead that $f''(x)$ is bounded for $x>0$ and $\lim_{x\to\infty} f(x)=0$. Show $\lim_{x\to\infty}|f'(x)|=0$.\\
+Define $M_1$ to be a upper bound on $f''(x)$.  Choose $\epsilon>0$.  Define $M$ such that if $x>M$, $f(x)<\epsilon^2/(4M_1)$.  Note that the previous two proofs did not utilize the starting at zero property of $f$, thus they hold just as well for the section of $f: (M,\infty)$.  In this range $|f(x)|<M_0=\epsilon^2/(4M_1)$ and thus $|f'(x)|\le 2\sqrt{M_0M_1}<\epsilon$.  We can now conclude that $\lim_{x\to\infty}|f'(x)|=0$.
+\end{enumerate}
+\begin{exercise}
+{11}
+Let $g_n$ and $g$ be uniformly bounded on $[0,1]$, meaning that there exists a single $M>0$ satisfying $|g(x)|\le M$ and $|g_n(x)|\le M$ for all $n \in \NN$ and $x \in [0,1]$. Assume $g_n \to g$ point-wise on $[0,1]$ and uniformly on any set of the form $[0,\alpha]$, where $0 < \alpha<1$.
+
+If all the functions are integrable, show that $\lim_{n\to\infty}\int_0^1 g_n = \int_0^1 g$.
+\end{exercise}
+
+\begin{proof}
+Choose $\epsilon>0$.  Define $\alpha=\max(1-\epsilon/(2M),1/2)$.  Note that $\lim_{n\to\infty}\int_0^\alpha g_n=\int_0^\alpha g$, by the integrable limit theorem.  Define $N\in\mathbb{N}$ such that if $n\geq N$, $|\int_0^\alpha g_n-\int_0^\alpha g|<\epsilon/2$.  Choose $n\geq N$.  Note that $|\int_\alpha^1 g_n|\leq M(1-\alpha)$ by Theorem 7.4.2, and $|\int_\alpha^1 g|\leq M(1-\alpha)$.  Note that $|\int_0^1 g_n-\int_0^1 g|\leq |\int_0^\alpha g_n-\int_0^\alpha g|+|\int_\alpha^1 g_n|+|\int_\alpha^1 g|<\epsilon/2+2M(1-\alpha)\leq\epsilon$.
+\end{proof}
 
 
+\begin{exercise}{12} Given a function $f$ on $[a,b]$, define the $total$ $variation$ of $f$ to be $$Vf = \sup \left \{ \sum_{k=1}^n |f(x_k) - f(x_{k-1})| \right \} ,$$ where the supremum is taken over all partitions $P$ of $[a,b]$.
+\end{exercise}
+\begin{enumerate}[(a)]
+\item If $f$ is continuously differentiable ($f'$ exists as a continuous function), use the Fundamental Theorem of Calculus to show $Vf \le \int_a^b|f'|$.\\
+Consider a arbitrary partition of $[a,b]$ call it $P$.  Note that $\int_a^b|f'|=\sum_{k=1}^n \int_{x_{k-1}}^{x_k}|f'|\geq \sum_{k=1}^n |\int_{x_{k-1}}^{x_k}f'|=\sum_{k=1}^n |f(x_k) - f(x_{k-1})|$.  Note that $\int_a^b|f'|$ is a upper bound on the set that $Vf$ is taking the supremum of, thus $Vf \le \int_a^b|f'|$.
+\item Use the Mean Value Theorem to establish the reverse inequality and conclude that $Vf = \int_a^b|f'|$.\\
+Take $P$ to be the partition using the extrema of the function $f$.  Note that $\int_a^b|f'|=\sum_{k=1}^n \int_{x_{k-1}}^{x_k}|f'|= \sum_{k=1}^n |\int_{x_{k-1}}^{x_k}f'|=\sum_{k=1}^n |f(x_k) - f(x_{k-1})|$.
+\end{enumerate}
 
 
 
